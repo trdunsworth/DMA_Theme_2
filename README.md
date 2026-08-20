@@ -1,6 +1,6 @@
 # DMA Theme
 
-A semantic color theme for editors, terminals, and Obsidian focused on blues, teals, turquoises, and greens with warm error/warning colors. Created by [Dunsworth-Mann Analytics LLC](https://dunsworth-mann.com).
+A semantic color theme for editors, terminals, and Obsidian focused on blues, teals, turquoises, and greens with warm error/warning colors. Created by [Dunsworth, Mann, and Associates LLC](https://dunsworth-mann.com).
 
 ## Overview
 
