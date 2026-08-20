@@ -1,0 +1,55 @@
+{
+  "name": "dma-theme",
+  "displayName": "DMA Theme",
+  "description": "A semantic color theme for VS Code focused on blues, teals, turquoises, and greens with warm error/warning colors. Created by Dunsworth-Mann Analytics LLC.",
+  "version": "1.0.0",
+  "publisher": "dunsworth-mann-analytics",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "color-theme",
+    "semantic",
+    "blue",
+    "teal",
+    "turquoise",
+    "green",
+    "dark",
+    "light"
+  ],
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dunsworth-mann-analytics/dma-theme"
+  },
+  "bugs": {
+    "url": "https://github.com/dunsworth-mann-analytics/dma-theme/issues"
+  },
+  "homepage": "https://github.com/dunsworth-mann-analytics/dma-theme/blob/main/README.md",
+  "license": "MIT",
+  "contributes": {
+    "themes": [
+      {
+        "label": "DMA Theme Light",
+        "uiTheme": "vs",
+        "path": "./dma-theme-light-color-theme.json"
+      },
+      {
+        "label": "DMA Theme Dark",
+        "uiTheme": "vs-dark",
+        "path": "./dma-theme-dark-color-theme.json"
+      }
+    ]
+  },
+  "scripts": {
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^2.15.0"
+  }
+}

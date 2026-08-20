@@ -1,0 +1,187 @@
+# DMA Theme Light for Warp
+# A semantic color theme focused on blues, teals, turquoises, and greens
+# with warm error/warning colors.
+# Author: Dunsworth-Mann Analytics LLC
+# https://dunsworth-mann.com
+
+name: "DMA Theme Light"
+description: "A semantic color theme focused on blues, teals, turquoises, and greens with warm error/warning colors."
+author: "Dunsworth-Mann Analytics LLC"
+
+background: "#F8FAFC"
+foreground: "#1E282D"
+cursor_color: "#007BDB"
+cursor_text_color: "#F8FAFC"
+selection_background: "#C5DEF9"
+selection_foreground: "#002B5C"
+
+# ANSI colors
+ansi_colors:
+  - "#1E282D"  # black
+  - "#E80000"  # red
+  - "#009933"  # green
+  - "#E88800"  # yellow
+  - "#007BDB"  # blue
+  - "#007F7F"  # magenta
+  - "#00B3B3"  # cyan
+  - "#C8D6E3"  # white
+
+# Bright ANSI colors
+bright_ansi_colors:
+  - "#485C6E"  # bright black
+  - "#FF1A1A"  # bright red
+  - "#00B33B"  # bright green
+  - "#FF9F00"  # bright yellow
+  - "#1A91E6"  # bright blue
+  - "#1ACECE"  # bright magenta
+  - "#4DDDDD"  # bright cyan
+  - "#F0F4F8"  # bright white
+
+# Extended palette for semantic colors
+# Error/Red variants
+indexed_colors:
+  16: "#7A0000"
+  17: "#9E0000"
+  18: "#C40000"
+  19: "#E80000"
+  20: "#FF1A1A"
+  21: "#FF4D4D"
+  22: "#FF7A7A"
+  23: "#FFA8A8"
+  24: "#FFD4D4"
+  25: "#FFEAEA"
+
+  # Warning/Orange variants
+  26: "#7A4A00"
+  27: "#9E5E00"
+  28: "#C47300"
+  29: "#E88800"
+  30: "#FF9F00"
+  31: "#FFAD33"
+  32: "#FFC466"
+  33: "#FFDB99"
+  34: "#FFF0CC"
+  35: "#FFF8E6"
+
+  # Info/Blue variants
+  36: "#002B5C"
+  37: "#003D7A"
+  38: "#00529E"
+  39: "#0069C0"
+  40: "#007BDB"
+  41: "#0091E6"
+  42: "#33A8EE"
+  43: "#66BFFF"
+  44: "#99D4FF"
+  45: "#CCE9FF"
+  46: "#E6F4FF"
+
+  # Success/Green variants
+  47: "#004D1A"
+  48: "#006622"
+  49: "#007F2A"
+  50: "#009933"
+  51: "#00B33B"
+  52: "#33CC5A"
+  53: "#66D97A"
+  54: "#99E599"
+  55: "#CCF0CC"
+  56: "#E6F8E6"
+
+  # Primary Blue variants
+  57: "#002B5C"
+  58: "#003D7A"
+  59: "#00529E"
+  60: "#0069C0"
+  61: "#007BDB"
+  62: "#1A91E6"
+  63: "#4DA8EE"
+  64: "#8FC3F5"
+  65: "#C5DEF9"
+  66: "#E8F4FC"
+
+  # Teal variants
+  67: "#004D4D"
+  68: "#006666"
+  69: "#007F7F"
+  70: "#009999"
+  71: "#00B3B3"
+  72: "#1ACCCC"
+  73: "#4DE5E5"
+  74: "#99F0F0"
+  75: "#CCF7F7"
+  76: "#E6FBFB"
+
+  # Turquoise variants
+  77: "#005C5C"
+  78: "#007373"
+  79: "#008A8A"
+  80: "#00A1A1"
+  81: "#00B8B8"
+  82: "#1ACECE"
+  83: "#4DDDDD"
+  84: "#99EDED"
+  85: "#CCF6F6"
+  86: "#E6FBFB"
+
+  # Green variants
+  87: "#004D1A"
+  88: "#006622"
+  89: "#007F2A"
+  90: "#009933"
+  91: "#00B33B"
+  92: "#1ACC4D"
+  93: "#4DD966"
+  94: "#99E599"
+  95: "#CCF0CC"
+  96: "#E6F8E6"
+
+  # Grayscale
+  240: "#C8D6E3"
+  241: "#93ABC3"
+  242: "#6E89A0"
+  243: "#485C6E"
+  244: "#2D4058"
+  245: "#182430"
+  246: "#101820"
+  247: "#0A0F14"
+
+  # Selection
+  248: "#C5DEF9"
+  249: "#8FC3F5"
+  250: "#4DA8EE"
+
+  # Cursor
+  251: "#007BDB"
+  252: "#1A91E6"
+  253: "#4DA8EE"
+  254: "#8FC3F5"
+  255: "#C5DEF9"
+
+# UI colors
+ui:
+  tab_bar:
+    background: "#F0F4F8"
+    border: "#C8D6E3"
+    active_tab:
+      background: "#F8FAFC"
+      foreground: "#1E282D"
+      border: "#007BDB"
+    inactive_tab:
+      background: "#E0E8EF"
+      foreground: "#6E89A0"
+    hover_tab:
+      background: "#E8F4FC"
+
+  scrollbar:
+    thumb: "#C8D6E3"
+    track: "transparent"
+    thumb_hover: "#93ABC3"
+
+  pane:
+    border: "#C8D6E3"
+    border_focus: "#007BDB"
+
+  search:
+    match_background: "#FFF0CC"
+    current_match_background: "#FFDB99"

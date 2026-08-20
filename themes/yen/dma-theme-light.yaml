@@ -1,0 +1,210 @@
+# DMA Theme Light for Yen
+# A semantic color theme focused on blues, teals, turquoises, and greens
+# with warm error/warning colors.
+# Author: Dunsworth-Mann Analytics LLC
+# https://dunsworth-mann.com
+
+name: "DMA Theme Light"
+author: "Dunsworth-Mann Analytics LLC"
+description: "A semantic color theme focused on blues, teals, turquoises, and greens with warm error/warning colors."
+
+colors:
+  # Primary colors
+  primary:
+    background: "#F8FAFC"
+    foreground: "#1E282D"
+    cursor: "#007BDB"
+    cursor_text: "#F8FAFC"
+
+  # Selection
+  selection:
+    background: "#C5DEF9"
+    foreground: "#002B5C"
+
+  # ANSI colors (0-15)
+  ansi:
+    black: "#1E282D"
+    red: "#E80000"
+    green: "#009933"
+    yellow: "#E88800"
+    blue: "#007BDB"
+    magenta: "#007F7F"
+    cyan: "#00B3B3"
+    white: "#C8D6E3"
+
+  # Bright ANSI colors (8-15)
+  bright:
+    black: "#485C6E"
+    red: "#FF1A1A"
+    green: "#00B33B"
+    yellow: "#FF9F00"
+    blue: "#1A91E6"
+    magenta: "#1ACECE"
+    cyan: "#4DDDDD"
+    white: "#F0F4F8"
+
+  # Extended 256-color palette (16-255)
+  indexed_colors:
+    # Grayscale
+    16: "#0A0F14"
+    17: "#101820"
+    18: "#182430"
+    19: "#203040"
+    20: "#2D4058"
+    21: "#3D526E"
+    22: "#526D85"
+    23: "#6E89A0"
+    24: "#93ABC3"
+    25: "#B8CDE0"
+    26: "#DCE8F0"
+    27: "#E8F4FC"
+    28: "#F0F4F8"
+    29: "#F8FAFC"
+    30: "#FFFFFF"
+    31: "#FFFFFF"
+
+    # Semantic - Error/Red variants
+    32: "#7A0000"
+    33: "#9E0000"
+    34: "#C40000"
+    35: "#E80000"
+    36: "#FF1A1A"
+    37: "#FF4D4D"
+    38: "#FF7A7A"
+    39: "#FFA8A8"
+    40: "#FFD4D4"
+    41: "#FFEAEA"
+
+    # Semantic - Warning/Orange variants
+    42: "#7A4A00"
+    43: "#9E5E00"
+    44: "#C47300"
+    45: "#E88800"
+    46: "#FF9F00"
+    47: "#FFAD33"
+    48: "#FFC466"
+    49: "#FFDB99"
+    50: "#FFF0CC"
+    51: "#FFF8E6"
+
+    # Semantic - Info/Blue variants
+    52: "#002B5C"
+    53: "#003D7A"
+    54: "#00529E"
+    55: "#0069C0"
+    56: "#007BDB"
+    57: "#0091E6"
+    58: "#33A8EE"
+    59: "#66BFFF"
+    60: "#99D4FF"
+    61: "#CCE9FF"
+    62: "#E6F4FF"
+
+    # Semantic - Success/Green variants
+    63: "#004D1A"
+    64: "#006622"
+    65: "#007F2A"
+    66: "#009933"
+    67: "#00B33B"
+    68: "#33CC5A"
+    69: "#66D97A"
+    70: "#99E599"
+    71: "#CCF0CC"
+    72: "#E6F8E6"
+
+    # Primary Blue variants
+    73: "#002B5C"
+    74: "#003D7A"
+    75: "#00529E"
+    76: "#0069C0"
+    77: "#007BDB"
+    78: "#1A91E6"
+    79: "#4DA8EE"
+    80: "#8FC3F5"
+    81: "#C5DEF9"
+    82: "#E8F4FC"
+
+    # Teal variants
+    83: "#004D4D"
+    84: "#006666"
+    85: "#007F7F"
+    86: "#009999"
+    87: "#00B3B3"
+    88: "#1ACCCC"
+    89: "#4DE5E5"
+    90: "#99F0F0"
+    91: "#CCF7F7"
+    92: "#E6FBFB"
+
+    # Turquoise variants
+    93: "#005C5C"
+    94: "#007373"
+    95: "#008A8A"
+    96: "#00A1A1"
+    97: "#00B8B8"
+    98: "#1ACECE"
+    99: "#4DDDDD"
+    100: "#99EDED"
+    101: "#CCF6F6"
+    102: "#E6FBFB"
+
+    # Green variants
+    103: "#004D1A"
+    104: "#006622"
+    105: "#007F2A"
+    106: "#009933"
+    107: "#00B33B"
+    108: "#1ACC4D"
+    109: "#4DD966"
+    110: "#99E599"
+    111: "#CCF0CC"
+    112: "#E6F8E6"
+
+    # UI colors - Borders
+    240: "#C8D6E3"
+    241: "#93ABC3"
+    242: "#6E89A0"
+    243: "#485C6E"
+    244: "#2D4058"
+    245: "#182430"
+    246: "#101820"
+    247: "#0A0F14"
+
+    # UI colors - Selection
+    248: "#C5DEF9"
+    249: "#8FC3F5"
+    250: "#4DA8EE"
+
+    # UI colors - Cursor
+    251: "#007BDB"
+    252: "#1A91E6"
+    253: "#4DA8EE"
+    254: "#8FC3F5"
+    255: "#C5DEF9"
+
+# UI Configuration
+ui:
+  tab_bar:
+    background: "#F0F4F8"
+    border: "#C8D6E3"
+    active_tab:
+      background: "#F8FAFC"
+      foreground: "#1E282D"
+      border: "#007BDB"
+    inactive_tab:
+      background: "#E0E8EF"
+      foreground: "#6E89A0"
+    hover_tab:
+      background: "#E8F4FC"
+
+  scrollbar:
+    thumb: "#C8D6E3"
+    track: "transparent"
+    thumb_hover: "#93ABC3"
+
+  split_pane:
+    border: "#C8D6E3"
+    border_focus: "#007BDB"
+
+  bell:
+    visual_flash: "#FFF0CC"

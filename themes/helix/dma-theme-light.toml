@@ -1,0 +1,441 @@
+# DMA Theme Light for Helix
+# A semantic color theme focused on blues, teals, turquoises, and greens
+# with warm error/warning colors.
+# Author: Dunsworth-Mann Analytics LLC
+# https://dunsworth-mann.com
+
+[theme]
+background = "#F8FAFC"
+ui-background = "#F0F4F8"
+ui-text = "#1E282D"
+ui-text-focus = "#1E282D"
+ui-text-dimmed = "#6E89A0"
+ui-popup = "#FFFFFF"
+ui-popup-selected = "#E8F4FC"
+ui-help = "#6E89A0"
+ui-help-key = "#007BDB"
+ui-window = "#C8D6E3"
+ui-linenr = "#6E89A0"
+ui-cursor = "#007BDB"
+ui-cursor-match = "#C5DEF9"
+ui-cursor-match-background = "#002B5C"
+ui-cursorline = "#E8F4FC"
+ui-selection = "#C5DEF9"
+ui-selection-primary = "#C5DEF9"
+ui-virtual = "#93ABC3"
+statusline-left = { bg = "#E0E8EF", fg = "#1E282D", modifiers = ["bold"] }
+statusline-left-separator = { bg = "#E0E8EF", fg = "#C8D6E3" }
+statusline-center = { bg = "#E0E8EF", fg = "#6E89A0" }
+statusline-right = { bg = "#E0E8EF", fg = "#1E282D", modifiers = ["bold"] }
+statusline-right-separator = { bg = "#E0E8EF", fg = "#C8D6E3" }
+diagnostic-error = "#E80000"
+diagnostic-warning = "#E88800"
+diagnostic-info = "#007BDB"
+diagnostic-hint = "#00B3B3"
+diff-added = "#009933"
+diff-deleted = "#E80000"
+diff-changed = "#007BDB"
+matching-bracket = { fg = "#007BDB", modifiers = ["bold", "underline"] }
+
+[palette]
+# Normal colors (0-7)
+red = "#E80000"
+green = "#009933"
+yellow = "#E88800"
+blue = "#007BDB"
+magenta = "#007F7F"
+cyan = "#00B3B3"
+white = "#C8D6E3"
+black = "#1E282D"
+
+# Bright colors (8-15)
+bright-red = "#FF1A1A"
+bright-green = "#00B33B"
+bright-yellow = "#FF9F00"
+bright-blue = "#1A91E6"
+bright-magenta = "#1ACECE"
+bright-cyan = "#4DDDDD"
+bright-white = "#F0F4F8"
+bright-black = "#485C6E"
+
+# Extended palette (16-255)
+# Semantic colors
+"16" = "#7A0000"   # error darkest
+"17" = "#9E0000"
+"18" = "#C40000"
+"19" = "#E80000"
+"20" = "#FF1A1A"   # error base
+"21" = "#FF4D4D"
+"22" = "#FF7A7A"
+"23" = "#FFA8A8"
+"24" = "#FFD4D4"
+"25" = "#FFEAEA"   # error lightest
+
+"26" = "#7A4A00"   # warning darkest
+"27" = "#9E5E00"
+"28" = "#C47300"
+"29" = "#E88800"
+"30" = "#FF9F00"   # warning base
+"31" = "#FFAD33"
+"32" = "#FFC466"
+"33" = "#FFDB99"
+"34" = "#FFF0CC"
+"35" = "#FFF8E6"   # warning lightest
+
+"36" = "#002B5C"   # info darkest
+"37" = "#003D7A"
+"38" = "#00529E"
+"39" = "#0069C0"
+"40" = "#007BDB"
+"41" = "#0091E6"   # info base
+"42" = "#33A8EE"
+"43" = "#66BFFF"
+"44" = "#99D4FF"
+"45" = "#CCE9FF"
+"46" = "#E6F4FF"   # info lightest
+
+"47" = "#004D1A"   # success darkest
+"48" = "#006622"
+"49" = "#007F2A"
+"50" = "#009933"
+"51" = "#00B33B"   # success base
+"52" = "#33CC5A"
+"53" = "#66D97A"
+"54" = "#99E599"
+"55" = "#CCF0CC"
+"56" = "#E6F8E6"   # success lightest
+
+# Primary Blue variants
+"57" = "#002B5C"
+"58" = "#003D7A"
+"59" = "#00529E"
+"60" = "#0069C0"
+"61" = "#007BDB"
+"62" = "#1A91E6"
+"63" = "#4DA8EE"
+"64" = "#8FC3F5"
+"65" = "#C5DEF9"
+"66" = "#E8F4FC"
+
+# Teal variants
+"67" = "#004D4D"
+"68" = "#006666"
+"69" = "#007F7F"
+"70" = "#009999"
+"71" = "#00B3B3"
+"72" = "#1ACCCC"
+"73" = "#4DE5E5"
+"74" = "#99F0F0"
+"75" = "#CCF7F7"
+"76" = "#E6FBFB"
+
+# Turquoise variants
+"77" = "#005C5C"
+"78" = "#007373"
+"79" = "#008A8A"
+"80" = "#00A1A1"
+"81" = "#00B8B8"
+"82" = "#1ACECE"
+"83" = "#4DDDDD"
+"84" = "#99EDED"
+"85" = "#CCF6F6"
+"86" = "#E6FBFB"
+
+# Green variants
+"87" = "#004D1A"
+"88" = "#006622"
+"89" = "#007F2A"
+"90" = "#009933"
+"91" = "#00B33B"
+"92" = "#1ACC4D"
+"93" = "#4DD966"
+"94" = "#99E599"
+"95" = "#CCF0CC"
+"96" = "#E6F8E6"
+
+# Grayscale
+"240" = "#C8D6E3"
+"241" = "#93ABC3"
+"242" = "#6E89A0"
+"243" = "#485C6E"
+"244" = "#2D4058"
+"245" = "#182430"
+"246" = "#101820"
+"247" = "#0A0F14"
+
+[highlights]
+# Comments
+Comment = { fg = "$palette.242", modifiers = ["italic"] }
+Comment.Doc = { fg = "$palette.242", modifiers = ["italic"] }
+
+# Constants
+Constant = { fg = "$palette.26" }
+String = { fg = "$palette.89" }
+Character = { fg = "$palette.89" }
+Number = { fg = "$palette.59" }
+Boolean = { fg = "$palette.59" }
+Float = { fg = "$palette.59" }
+
+# Identifiers
+Identifier = { fg = "$palette.134" }
+Function = { fg = "$palette.59" }
+Method = { fg = "$palette.59" }
+
+# Statements
+Statement = { fg = "$palette.67", modifiers = ["bold"] }
+Conditional = { fg = "$palette.67", modifiers = ["bold"] }
+Repeat = { fg = "$palette.67", modifiers = ["bold"] }
+Label = { fg = "$palette.67" }
+Operator = { fg = "$palette.67" }
+Keyword = { fg = "$palette.67", modifiers = ["bold"] }
+Exception = { fg = "$palette.67" }
+
+# Preprocessor
+PreProc = { fg = "$palette.72" }
+Include = { fg = "$palette.72" }
+Define = { fg = "$palette.72" }
+Macro = { fg = "$palette.72" }
+PreCondit = { fg = "$palette.72" }
+
+# Types
+Type = { fg = "$palette.68", modifiers = ["bold"] }
+StorageClass = { fg = "$palette.67" }
+Structure = { fg = "$palette.68", modifiers = ["bold"] }
+Typedef = { fg = "$palette.68", modifiers = ["bold"] }
+
+# Special
+Special = { fg = "$palette.32" }
+SpecialChar = { fg = "$palette.32", modifiers = ["bold"] }
+Tag = { fg = "$palette.67" }
+Delimiter = { fg = "$palette.243" }
+SpecialComment = { fg = "$palette.242" }
+Debug = { fg = "$palette.20" }
+
+# Underlined
+Underlined = { modifiers = ["underline"] }
+Bold = { modifiers = ["bold"] }
+Italic = { modifiers = ["italic"] }
+Strikethrough = { modifiers = ["crossed_out"] }
+
+# Errors
+Error = { fg = "$palette.20", bg = "$palette.25" }
+ErrorMsg = { fg = "$palette.20", modifiers = ["bold"] }
+WarningMsg = { fg = "$palette.30", modifiers = ["bold"] }
+ModeMsg = { fg = "$palette.134" }
+MoreMsg = { fg = "$palette.41" }
+Question = { fg = "$palette.41" }
+
+# Completion/Pmenu
+Pmenu = { fg = "$palette.134", bg = "$palette.133" }
+PmenuSel = { fg = "$palette.134", bg = "$palette.65" }
+PmenuSbar = { bg = "$palette.240" }
+PmenuThumb = { bg = "$palette.242" }
+
+# Statusline
+StatusLine = { fg = "$palette.134", bg = "$palette.133" }
+StatusLineNC = { fg = "$palette.242", bg = "$palette.132" }
+StatusLineTerm = { fg = "$palette.134", bg = "$palette.133" }
+StatusLineTermNC = { fg = "$palette.242", bg = "$palette.132" }
+
+# Tabs
+TabLine = { fg = "$palette.242", bg = "$palette.133" }
+TabLineFill = { bg = "$palette.133" }
+TabLineSel = { fg = "$palette.134", bg = "$palette.132", modifiers = ["bold"] }
+
+# Window separators
+WinSeparator = { fg = "$palette.240" }
+
+# Diff
+DiffAdd = { bg = "$palette.56" }
+DiffChange = { bg = "$palette.25" }
+DiffDelete = { bg = "$palette.25" }
+DiffText = { bg = "$palette.65" }
+DiffAdded = { fg = "$palette.90" }
+DiffRemoved = { fg = "$palette.20" }
+DiffChanged = { fg = "$palette.61" }
+
+# Spell
+SpellBad = { fg = "$palette.20", modifiers = ["undercurl"] }
+SpellCap = { fg = "$palette.30", modifiers = ["undercurl"] }
+SpellRare = { fg = "$palette.41", modifiers = ["undercurl"] }
+SpellLocal = { fg = "$palette.51", modifiers = ["undercurl"] }
+
+# Diagnostics
+DiagnosticError = { fg = "$palette.20" }
+DiagnosticWarn = { fg = "$palette.30" }
+DiagnosticInfo = { fg = "$palette.41" }
+DiagnosticHint = { fg = "$palette.71" }
+DiagnosticVirtualTextError = { fg = "$palette.20", bg = "$palette.25" }
+DiagnosticVirtualTextWarn = { fg = "$palette.30", bg = "$palette.35" }
+DiagnosticVirtualTextInfo = { fg = "$palette.41", bg = "$palette.46" }
+DiagnosticVirtualTextHint = { fg = "$palette.71", bg = "$palette.56" }
+DiagnosticUnderlineError = { modifiers = ["undercurl"], sp = "$palette.20" }
+DiagnosticUnderlineWarn = { modifiers = ["undercurl"], sp = "$palette.30" }
+DiagnosticUnderlineInfo = { modifiers = ["undercurl"], sp = "$palette.41" }
+DiagnosticUnderlineHint = { modifiers = ["undercurl"], sp = "$palette.71" }
+DiagnosticSignError = { fg = "$palette.20" }
+DiagnosticSignWarn = { fg = "$palette.30" }
+DiagnosticSignInfo = { fg = "$palette.41" }
+DiagnosticSignHint = { fg = "$palette.71" }
+
+# LSP
+LspReferenceText = { bg = "$palette.65" }
+LspReferenceRead = { bg = "$palette.65" }
+LspReferenceWrite = { bg = "$palette.65", modifiers = ["underline"] }
+LspCodeLens = { fg = "$palette.242" }
+LspCodeLensSeparator = { fg = "$palette.242" }
+LspSignatureActiveParameter = { fg = "$palette.13", modifiers = ["bold"] }
+LspInlayHint = { fg = "$palette.242", bg = "$palette.133" }
+
+# TreeSitter
+"@comment" = { link = "Comment" }
+"@comment.documentation" = { link = "Comment" }
+"@comment.error" = { fg = "$palette.20" }
+"@comment.warning" = { fg = "$palette.30" }
+"@comment.note" = { fg = "$palette.41" }
+"@comment.todo" = { fg = "$palette.30", modifiers = ["bold"] }
+
+"@string" = { link = "String" }
+"@string.documentation" = { link = "String" }
+"@string.regexp" = { fg = "$palette.26" }
+"@string.escape" = { fg = "$palette.29", modifiers = ["bold"] }
+"@string.special" = { fg = "$palette.26" }
+"@string.special.symbol" = { fg = "$palette.26" }
+"@string.special.url" = { fg = "$palette.40", modifiers = ["underline"] }
+
+"@character" = { link = "Character" }
+"@character.special" = { link = "SpecialChar" }
+
+"@number" = { link = "Number" }
+"@number.float" = { link = "Float" }
+
+"@boolean" = { link = "Boolean" }
+
+"@constant" = { link = "Constant" }
+"@constant.builtin" = { fg = "$palette.26" }
+"@constant.macro" = { fg = "$palette.26" }
+
+"@variable" = { link = "Identifier" }
+"@variable.builtin" = { fg = "$palette.134", modifiers = ["italic"] }
+"@variable.parameter" = { fg = "$palette.243" }
+"@variable.parameter.builtin" = { fg = "$palette.243", modifiers = ["italic"] }
+"@variable.member" = { fg = "$palette.134" }
+
+"@function" = { link = "Function" }
+"@function.builtin" = { fg = "$palette.59" }
+"@function.call" = { fg = "$palette.59" }
+"@function.macro" = { fg = "$palette.72" }
+"@function.method" = { fg = "$palette.59" }
+"@function.method.call" = { fg = "$palette.59" }
+
+"@keyword" = { link = "Keyword" }
+"@keyword.coroutine" = { fg = "$palette.67" }
+"@keyword.function" = { fg = "$palette.67" }
+"@keyword.operator" = { fg = "$palette.67" }
+"@keyword.import" = { fg = "$palette.72" }
+"@keyword.type" = { fg = "$palette.67" }
+"@keyword.modifier" = { fg = "$palette.67" }
+"@keyword.repeat" = { fg = "$palette.67" }
+"@keyword.return" = { fg = "$palette.67" }
+"@keyword.debug" = { fg = "$palette.20" }
+"@keyword.exception" = { fg = "$palette.67" }
+"@keyword.conditional" = { fg = "$palette.67" }
+"@keyword.conditional.ternary" = { fg = "$palette.67" }
+
+"@operator" = { link = "Operator" }
+
+"@punctuation" = { link = "Delimiter" }
+"@punctuation.delimiter" = { link = "Delimiter" }
+"@punctuation.bracket" = { fg = "$palette.242" }
+"@punctuation.special" = { fg = "$palette.243" }
+
+"@type" = { link = "Type" }
+"@type.builtin" = { fg = "$palette.68" }
+"@type.definition" = { fg = "$palette.68", modifiers = ["bold"] }
+"@type.qualifier" = { fg = "$palette.67" }
+
+"@attribute" = { fg = "$palette.72" }
+"@attribute.builtin" = { fg = "$palette.72" }
+"@property" = { fg = "$palette.134" }
+
+"@tag" = { link = "Tag" }
+"@tag.attribute" = { fg = "$palette.72" }
+"@tag.delimiter" = { fg = "$palette.243" }
+
+"@module" = { fg = "$palette.72" }
+"@namespace" = { fg = "$palette.72" }
+
+"@label" = { fg = "$palette.242" }
+
+"@markup" = { fg = "$palette.134" }
+"@markup.strong" = { fg = "$palette.134", modifiers = ["bold"] }
+"@markup.emphasis" = { fg = "$palette.134", modifiers = ["italic"] }
+"@markup.strikethrough" = { fg = "$palette.242", modifiers = ["crossed_out"] }
+"@markup.underline" = { modifiers = ["underline"] }
+"@markup.heading" = { fg = "$palette.67", modifiers = ["bold"] }
+"@markup.heading.1" = { fg = "$palette.67", modifiers = ["bold"] }
+"@markup.heading.2" = { fg = "$palette.67", modifiers = ["bold"] }
+"@markup.heading.3" = { fg = "$palette.67", modifiers = ["bold"] }
+"@markup.heading.4" = { fg = "$palette.67", modifiers = ["bold"] }
+"@markup.heading.5" = { fg = "$palette.67", modifiers = ["bold"] }
+"@markup.heading.6" = { fg = "$palette.67", modifiers = ["bold"] }
+"@markup.quote" = { fg = "$palette.242", modifiers = ["italic"] }
+"@markup.link" = { fg = "$palette.40", modifiers = ["underline"] }
+"@markup.link.label" = { fg = "$palette.40" }
+"@markup.link.url" = { fg = "$palette.40", modifiers = ["underline"] }
+"@markup.raw" = { fg = "$palette.89", bg = "$palette.133" }
+"@markup.raw.block" = { fg = "$palette.89", bg = "$palette.133" }
+"@markup.list" = { fg = "$palette.67" }
+"@markup.list.checked" = { fg = "$palette.51" }
+"@markup.list.unchecked" = { fg = "$palette.242" }
+
+"@diff.plus" = { fg = "$palette.90", bg = "$palette.56" }
+"@diff.minus" = { fg = "$palette.20", bg = "$palette.25" }
+"@diff.delta" = { fg = "$palette.61", bg = "$palette.65" }
+
+"@tag.tsx" = { fg = "$palette.67" }
+"@tag.javascript" = { fg = "$palette.67" }
+"@tag.typescript" = { fg = "$palette.67" }
+
+"@none" = {}
+"@conceal" = { fg = "$palette.242" }
+
+# LSP semantic tokens
+"@lsp.type.class" = { link = "@type" }
+"@lsp.type.decorator" = { link = "@attribute" }
+"@lsp.type.enum" = { link = "@type" }
+"@lsp.type.enumMember" = { link = "@constant" }
+"@lsp.type.function" = { link = "@function" }
+"@lsp.type.interface" = { link = "@type" }
+"@lsp.type.macro" = { link = "@function.macro" }
+"@lsp.type.method" = { link = "@function.method" }
+"@lsp.type.namespace" = { link = "@namespace" }
+"@lsp.type.parameter" = { link = "@variable.parameter" }
+"@lsp.type.property" = { link = "@property" }
+"@lsp.type.struct" = { link = "@type" }
+"@lsp.type.type" = { link = "@type" }
+"@lsp.type.typeParameter" = { link = "@type" }
+"@lsp.type.variable" = { link = "@variable" }
+"@lsp.type.comment" = { link = "@comment" }
+"@lsp.type.string" = { link = "@string" }
+"@lsp.type.keyword" = { link = "@keyword" }
+"@lsp.type.number" = { link = "@number" }
+"@lsp.type.regexp" = { link = "@string.regexp" }
+"@lsp.type.operator" = { link = "@operator" }
+"@lsp.type.property" = { link = "@property" }
+"@lsp.type.punctuation" = { link = "@punctuation" }
+
+"@lsp.mod.deprecated" = { modifiers = ["crossed_out"] }
+"@lsp.mod.readonly" = { modifiers = ["italic"] }
+"@lsp.mod.static" = { modifiers = ["bold"] }
+"@lsp.mod.abstract" = { modifiers = ["italic"] }
+"@lsp.mod.async" = { modifiers = ["italic"] }
+
+"@lsp.typemod.function.declaration" = { link = "@function" }
+"@lsp.typemod.function.definition" = { link = "@function" }
+"@lsp.typemod.method.declaration" = { link = "@function.method" }
+"@lsp.typemod.method.definition" = { link = "@function.method" }
+"@lsp.typemod.variable.declaration" = { link = "@variable" }
+"@lsp.typemod.variable.definition" = { link = "@variable" }
+
+"@lsp.type.selfParameter" = { fg = "$palette.134", modifiers = ["italic"] }

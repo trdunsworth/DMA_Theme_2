@@ -1,0 +1,31 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#002B5C;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#00529E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#007BDB;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00B3B3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00B33B;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="64" cy="64" r="60" fill="url(#bgGrad)" />
+  
+  <!-- Inner accent ring -->
+  <circle cx="64" cy="64" r="48" fill="none" stroke="url(#accentGrad)" stroke-width="4" opacity="0.8" />
+  
+  <!-- DMA letters -->
+  <text x="64" y="78" font-family="system-ui, -apple-system, sans-serif" 
+        font-size="42" font-weight="bold" fill="#FFFFFF" 
+        text-anchor="middle" dominant-baseline="middle">DMA</text>
+  
+  <!-- Decorative accent bars -->
+  <rect x="28" y="92" width="8" height="4" rx="2" fill="url(#accentGrad)" />
+  <rect x="40" y="92" width="16" height="4" rx="2" fill="#00B3B3" opacity="0.7" />
+  <rect x="60" y="92" width="8" height="4" rx="2" fill="#00B33B" opacity="0.7" />
+  <rect x="72" y="92" width="16" height="4" rx="2" fill="#007BDB" opacity="0.7" />
+  <rect x="92" y="92" width="8" height="4" rx="2" fill="#1ACECE" opacity="0.7" />
+</svg>

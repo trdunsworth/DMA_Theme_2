@@ -1,0 +1,27 @@
+Package: dmaTheme
+Title: DMA Theme - Semantic Color Palettes for Data Visualization
+Version: 1.0.0
+Authors@R: person("Dunsworth-Mann", "Analytics LLC", role = c("aut", "cre"),
+    email = "contact@dunsworth-mann.com")
+Description: A semantic color palette for data visualization in R.
+    Provides qualitative, sequential, and diverging color palettes
+    focused on blues, teals, turquoises, and greens with warm
+    error/warning colors. Compatible with ggplot2, plotly, and
+    base R graphics.
+License: MIT + file LICENSE
+URL: https://dunsworth-mann.com
+BugReports: https://github.com/dunsworth-mann-analytics/dma-theme/issues
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Depends: R (>= 3.5.0)
+Imports:
+    grDevices,
+    ggplot2 (>= 3.3.0),
+    plotly (>= 4.9.0)
+Suggests:
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+VignetteBuilder: knitr
+Config/testthat/edition: 3

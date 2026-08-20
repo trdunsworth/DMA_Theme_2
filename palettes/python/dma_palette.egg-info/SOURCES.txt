@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+setup.py
+dma_palette.egg-info/PKG-INFO
+dma_palette.egg-info/SOURCES.txt
+dma_palette.egg-info/dependency_links.txt
+dma_palette.egg-info/requires.txt
+dma_palette.egg-info/top_level.txt

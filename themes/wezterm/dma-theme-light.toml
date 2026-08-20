@@ -1,0 +1,205 @@
+# DMA Theme Light for WezTerm
+# A semantic color theme focused on blues, teals, turquoises, and greens
+# with warm error/warning colors.
+# Author: Dunsworth-Mann Analytics LLC
+# https://dunsworth-mann.com
+
+[colors]
+# Basic colors
+foreground = "#1E282D"
+background = "#F8FAFC"
+cursor_bg = "#007BDB"
+cursor_fg = "#F8FAFC"
+cursor_border = "#007BDB"
+selection_fg = "#1E282D"
+selection_bg = "#C5DEF9"
+
+# ANSI colors
+ansi = [
+  "#1E282D",  # black
+  "#E80000",  # red
+  "#009933",  # green
+  "#E88800",  # yellow
+  "#007BDB",  # blue
+  "#007F7F",  # magenta
+  "#00B3B3",  # cyan
+  "#C8D6E3",  # white
+]
+
+brights = [
+  "#485C6E",  # bright black
+  "#FF1A1A",  # bright red
+  "#00B33B",  # bright green
+  "#FF9F00",  # bright yellow
+  "#1A91E6",  # bright blue
+  "#1ACECE",  # bright magenta
+  "#4DDDDD",  # bright cyan
+  "#F0F4F8",  # bright white
+]
+
+# Indexed colors (16-255)
+# Grayscale
+indexed = {
+  16 = "#0A0F14"
+  17 = "#101820"
+  18 = "#182430"
+  19 = "#203040"
+  20 = "#2D4058"
+  21 = "#3D526E"
+  22 = "#526D85"
+  23 = "#6E89A0"
+  24 = "#93ABC3"
+  25 = "#B8CDE0"
+  26 = "#DCE8F0"
+  27 = "#E8F4FC"
+  28 = "#F0F4F8"
+  29 = "#F8FAFC"
+  30 = "#FFFFFF"
+  31 = "#FFFFFF"
+}
+
+# Semantic colors - Error/Red variants
+indexed[32] = "#7A0000"
+indexed[33] = "#9E0000"
+indexed[34] = "#C40000"
+indexed[35] = "#E80000"
+indexed[36] = "#FF1A1A"
+indexed[37] = "#FF4D4D"
+indexed[38] = "#FF7A7A"
+indexed[39] = "#FFA8A8"
+indexed[40] = "#FFD4D4"
+indexed[41] = "#FFEAEA"
+
+# Semantic colors - Warning/Orange variants
+indexed[42] = "#7A4A00"
+indexed[43] = "#9E5E00"
+indexed[44] = "#C47300"
+indexed[45] = "#E88800"
+indexed[46] = "#FF9F00"
+indexed[47] = "#FFAD33"
+indexed[48] = "#FFC466"
+indexed[49] = "#FFDB99"
+indexed[50] = "#FFF0CC"
+indexed[51] = "#FFF8E6"
+
+# Semantic colors - Info/Blue variants
+indexed[52] = "#002B5C"
+indexed[53] = "#003D7A"
+indexed[54] = "#00529E"
+indexed[55] = "#0069C0"
+indexed[56] = "#007BDB"
+indexed[57] = "#0091E6"
+indexed[58] = "#33A8EE"
+indexed[59] = "#66BFFF"
+indexed[60] = "#99D4FF"
+indexed[61] = "#CCE9FF"
+indexed[62] = "#E6F4FF"
+
+# Semantic colors - Success/Green variants
+indexed[63] = "#004D1A"
+indexed[64] = "#006622"
+indexed[65] = "#007F2A"
+indexed[66] = "#009933"
+indexed[67] = "#00B33B"
+indexed[68] = "#33CC5A"
+indexed[69] = "#66D97A"
+indexed[70] = "#99E599"
+indexed[71] = "#CCF0CC"
+indexed[72] = "#E6F8E6"
+
+# Primary Blue variants
+indexed[73] = "#002B5C"
+indexed[74] = "#003D7A"
+indexed[75] = "#00529E"
+indexed[76] = "#0069C0"
+indexed[77] = "#007BDB"
+indexed[78] = "#1A91E6"
+indexed[79] = "#4DA8EE"
+indexed[80] = "#8FC3F5"
+indexed[81] = "#C5DEF9"
+indexed[82] = "#E8F4FC"
+
+# Teal variants
+indexed[83] = "#004D4D"
+indexed[84] = "#006666"
+indexed[85] = "#007F7F"
+indexed[86] = "#009999"
+indexed[87] = "#00B3B3"
+indexed[88] = "#1ACCCC"
+indexed[89] = "#4DE5E5"
+indexed[90] = "#99F0F0"
+indexed[91] = "#CCF7F7"
+indexed[92] = "#E6FBFB"
+
+# Turquoise variants
+indexed[93] = "#005C5C"
+indexed[94] = "#007373"
+indexed[95] = "#008A8A"
+indexed[96] = "#00A1A1"
+indexed[97] = "#00B8B8"
+indexed[98] = "#1ACECE"
+indexed[99] = "#4DDDDD"
+indexed[100] = "#99EDED"
+indexed[101] = "#CCF6F6"
+indexed[102] = "#E6FBFB"
+
+# Green variants
+indexed[103] = "#004D1A"
+indexed[104] = "#006622"
+indexed[105] = "#007F2A"
+indexed[106] = "#009933"
+indexed[107] = "#00B33B"
+indexed[108] = "#1ACC4D"
+indexed[109] = "#4DD966"
+indexed[110] = "#99E599"
+indexed[111] = "#CCF0CC"
+indexed[112] = "#E6F8E6"
+
+# UI colors - Borders
+indexed[240] = "#C8D6E3"
+indexed[241] = "#93ABC3"
+indexed[242] = "#6E89A0"
+indexed[243] = "#485C6E"
+indexed[244] = "#2D4058"
+indexed[245] = "#182430"
+indexed[246] = "#101820"
+indexed[247] = "#0A0F14"
+
+# UI colors - Selection
+indexed[248] = "#C5DEF9"
+indexed[249] = "#8FC3F5"
+indexed[250] = "#4DA8EE"
+
+# UI colors - Cursor
+indexed[251] = "#007BDB"
+indexed[252] = "#1A91E6"
+indexed[253] = "#4DA8EE"
+indexed[254] = "#8FC3F5"
+indexed[255] = "#C5DEF9"
+
+# Additional UI colors
+scrollbar_thumb = "#C8D6E3"
+split = "#C8D6E3"
+
+# Copy mode colors
+copy_mode_active_highlight_bg = { Color = "#007BDB" }
+copy_mode_active_highlight_fg = { AnsiColor = "Black" }
+copy_mode_inactive_highlight_bg = { Color = "#C8D6E3" }
+copy_mode_inactive_highlight_fg = { AnsiColor = "White" }
+
+# Quick select colors
+quick_select_label_bg = { Color = "#007BDB" }
+quick_select_label_fg = { Color = "#FFFFFF" }
+quick_select_match_bg = { AnsiColor = "Blue" }
+quick_select_match_fg = { Color = "#FFFFFF" }
+
+# Input selector colors
+input_selector_label_bg = { AnsiColor = "Black" }
+input_selector_label_fg = { Color = "#FFFFFF" }
+
+# Launcher colors
+launcher_label_bg = { AnsiColor = "Black" }
+launcher_label_fg = { Color = "#FFFFFF" }
+
+# Compose cursor
+compose_cursor = "#FF9F00"

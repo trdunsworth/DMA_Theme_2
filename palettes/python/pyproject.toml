@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dma-palette"
+version = "1.0.0"
+description = "DMA Theme - Semantic color palettes for data visualization in Python"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Dunsworth-Mann Analytics LLC", email = "contact@dunsworth-mann.com"}
+]
+keywords = ["color", "palette", "theme", "visualization", "matplotlib", "seaborn", "plotnine", "ggplot2"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Topic :: Multimedia :: Graphics"
+]
+requires-python = ">=3.8"
+dependencies = [
+    "matplotlib>=3.5",
+    "cycler>=0.11",
+]
+optional-dependencies.seaborn = ["seaborn>=0.11"]
+optional-dependencies.plotnine = ["plotnine>=0.10"]
+optional-dependencies.all = ["seaborn>=0.11", "plotnine>=0.10"]
+
+[project.urls]
+Homepage = "https://dunsworth-mann.com"
+Repository = "https://github.com/dunsworth-mann-analytics/dma-theme"
+Issues = "https://github.com/dunsworth-mann-analytics/dma-theme/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dma_palette"]
+
+[tool.setuptools.package-data]
+"*" = ["*.py"]

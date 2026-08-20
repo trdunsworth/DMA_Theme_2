@@ -1,0 +1,15 @@
+{
+  "name": "dma_theme.nvim",
+  "version": "1.0.0",
+  "description": "DMA Theme for Neovim - A semantic color theme focused on blues, teals, turquoises, and greens with warm error/warning colors",
+  "license": "MIT",
+  "author": "Dunsworth-Mann Analytics LLC",
+  "homepage": "https://github.com/dunsworth-mann-analytics/dma-theme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dunsworth-mann-analytics/dma-theme.git"
+  },
+  "dependencies": {
+    "neovim": ">= 0.9.0"
+  }
+}
