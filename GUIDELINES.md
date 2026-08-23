@@ -169,6 +169,49 @@ themes/{editor}/
 - Target `.theme-light` and `.theme-dark` classes
 - Style markdown elements, code blocks, UI chrome
 
+### Contrast validation (required for every new editor/terminal)
+
+Every shipped theme file is checked for WCAG 2.1 contrast against the background
+*it declares*, not just the canonical `palette.json`. This catches drift between
+`palette.json` and the hand-authored environment files. The validator lives in
+`scripts/editor_contrast.py` and is wired into `CONTRAST.md` via
+`scripts/contrast_report.py`.
+
+**To add a new editor/terminal:**
+
+1. Create the light + dark files under `themes/{editor}/` (see naming convention above).
+2. Register it in `scripts/editor_contrast.py`:
+   - Editors → the `EDITORS` list: `("Name", "light/path", "dark/path", "fmt", "editor")`
+   - Terminals → the `TERMINALS` list: `("Name", "light/path", "dark/path", "fmt", "terminal")`
+   - Use `None` for the dark path if the editor does not ship a dark variant yet
+     (the report will mark it *not yet shipped* rather than faking a result).
+3. If the format needs special parsing, add a handler in `editor_contrast.py`:
+   - `block_for()` — split light vs dark (e.g. a `.theme-dark {` block or a `light=`/`dark=` table).
+   - `resolve_bg()` — resolve the page background the file declares.
+   - `extract_tokens()` — return `{token_name: "#hex"}` for the text colors.
+   - `classify()` — ensure foreground/text tokens are tagged `"text"` and surfaces
+     (backgrounds, borders, accents) are tagged `"surface"` so only real text is scored.
+   Supported `fmt` values today: `json` (VS Code/Positron/Zed), `toml` (Helix/WezTerm/
+   Cosmic), `yaml` (Yen/Warp), `kak`, `xml` (Notepad++), `css` (Obsidian), `elisp`
+   (Emacs), `neovim`, `ghostty`, `tmux`.
+4. Run the validator and confirm **zero essential text-token FAILs**:
+
+   ```bash
+   python3 scripts/contrast_report.py     # regenerates CONTRAST.md
+   python3 scripts/editor_contrast.py     # prints a per-file console summary
+   ```
+
+**Rules that must hold for a new editor to pass:**
+
+- Light-theme *text* (syntax, UI labels, semantic status) must use the **700/800
+  stops**, not the 500 stops, so it clears AA (≥ 4.5:1) on `#F8FAFC`. The 500
+  stops are for fills / large UI only.
+- Warning / conflict / escape *text* on light uses the documented 800 stop
+  `#9E5E00`.
+- White text (`#FFFFFF`) belongs only on accent/cursor surfaces, never on the page.
+- Borders, guides, and the 16-color terminal ANSI palette are decorative/reference
+  and are excluded from the FAIL count by design.
+
 ---
 
 ## Data Visualization Palettes
@@ -215,6 +258,8 @@ Before submitting a theme:
 - [ ] Light and dark variants both implemented
 - [ ] All required semantic roles covered
 - [ ] Tested in target environment
+- [ ] `python3 scripts/contrast_report.py` regenerates `CONTRAST.md` with **zero**
+      essential text-token FAILs for the new editor (see "Contrast validation")
 - [ ] Installation instructions added to README
 - [ ] No pastel colors used for UI chrome
 - [ ] Contrast ratios verified (WCAG AA minimum)

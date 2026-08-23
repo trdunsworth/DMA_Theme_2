@@ -27,11 +27,18 @@ DMA Theme provides a consistent visual language across different development env
 
 ## Accessibility & WCAG Compliance
 
-DMA Theme is built to WCAG 2.1 contrast guidelines. Every editor body-text,
-syntax, UI, and semantic-status token meets **AA (≥ 4.5:1)** against the surface it
-renders on, in both light and dark variants. De-emphasized tokens (comments, line
-numbers, subtle foreground) intentionally sit in the AA-Large band, which is
-appropriate for non-essential text. No text or UI token falls below AA-Large.
+DMA Theme is built to WCAG 2.1 contrast guidelines. The canonical `palette.json`
+meets **AA (≥ 4.5:1)** for every body-text, syntax, UI, and semantic-status token in
+both light and dark variants. De-emphasized tokens (comments, line numbers, subtle
+foreground) intentionally sit in the AA-Large band, which is appropriate for
+non-essential text. No text or UI token in `palette.json` falls below AA-Large.
+
+Beyond the canonical palette, every shipped editor/terminal file is parsed directly
+and checked against the background *it declares* — see the **Per-editor /
+per-terminal validation** section of [CONTRAST.md](CONTRAST.md). That per-file check
+confirms consistent backgrounds and most text tokens, and tracks the few remaining
+light-theme *syntax* colors (500-stop teal/green/orange) that should move to the
+700/800 stops for AA on `#F8FAFC`. The dark variants pass.
 
 | Scope | Tokens | AA+ | AAA | AA Large | FAIL |
 |-------|-------:|----:|----:|---------:|-----:|

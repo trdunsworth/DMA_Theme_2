@@ -8,6 +8,8 @@ from pathlib import Path
 
 import json
 
+import editor_contrast as ec
+
 ROOT = Path(__file__).resolve().parent.parent
 P = json.loads((ROOT / "palette.json").read_text())
 
@@ -163,6 +165,19 @@ saa, saaa, sl, sf = tally(sem_rows)
 # Overall text/UI compliance: any text token below AA-Large is a real problem.
 text_real_fail = lf + df
 
+# --- Per-shipped-file validation --------------------------------------------
+editor_pairs = 0
+editor_text_fail = 0
+for grp in (ec.EDITORS, ec.TERMINALS):
+    for _n, light, dark, _f, _k in grp:
+        for _v, path in (("light", light), ("dark", dark)):
+            if path is None:
+                continue
+            editor_pairs += 1
+            _, _, _, _, rf = ec.validate_file(path, _f, _k, _v)
+            editor_text_fail += rf
+editor_section = ec.build_section()
+
 md = f"""# DMA Theme — WCAG 2.1 Contrast Report
 
 Generated from `palette.json` (the shipped source of truth) by
@@ -180,15 +195,26 @@ AA Large (≥ 18pt or ≥ 14pt bold) ≥ 3.0:1.
 | Dark theme — text/UI tokens | {len(dark_text)} | {daa} | {daaa} | {dl} | {df} |
 | Semantic status colors | {len(sem_rows)} | {saa} | {saaa} | {sl} | {sf} |
 | Terminal ANSI palette (reference) | {len(light_term) + len(dark_term)} | — | — | — | — |
+| Shipped editor/terminal files — essential text | {editor_pairs} | — | — | — | {editor_text_fail} |
 
-**Verdict:** Every editor body-text, syntax, UI, and semantic-status token meets
-WCAG AA (≥ 4.5:1) against the surface it renders on, in **both** themes. The only
-deliberate exceptions are de-emphasized tokens (comments, line numbers, subtle
-foreground), which sit in the AA-Large band — appropriate for non-essential text.
-Semantic *status text* on light surfaces uses the documented 800 stop, which
-passes AA; the brighter 500 stops are reserved for fills / large UI. No text or UI
-token falls below AA-Large. The 16-color terminal ANSI palette is reported for
-reference only — ANSI palettes are not bound by WCAG text minimums.
+**Canonical-palette verdict:** the source-of-truth `palette.json` meets WCAG AA
+(≥ 4.5:1) for every body-text, syntax, UI, and semantic-status token in **both**
+themes. The only deliberate exceptions are de-emphasized tokens (comments, line
+numbers, subtle foreground), which sit in the AA-Large band — appropriate for
+non-essential text. Semantic *status text* on light surfaces uses the documented
+800 stop (`#9E5E00`), which passes AA; the brighter 500 stops are reserved for
+fills / large UI. The 16-color terminal ANSI palette is reported for reference
+only — ANSI palettes are not bound by WCAG text minimums.
+
+**Per-file verdict:** the per-editor / per-terminal validation (section below)
+parses the files the repo actually ships and confirms the *backgrounds* and most
+text tokens are consistent with `palette.json`. It also surfaces **{editor_text_fail}
+essential text-token pairs** that fall below AA in shipped editor files — almost
+all are 500-stop syntax/warning colors (teal/green/orange) on the light background
+that should be moved to the 700/800 stops for light-theme text. These are tracked
+as open items, not blockers for the dark theme (which passes). The VS Code light
+theme's `#E88800` warning/conflict/escape *text* drift has already been corrected
+to `#9E5E00`.
 
 > Note: borders, guides, and other UI chrome are decorative and have no WCAG
 > minimum; they are excluded from the tables below.
@@ -197,7 +223,9 @@ reference only — ANSI palettes are not bound by WCAG text minimums.
 > warning / conflict / escape *text* tokens so they meet AA on the near-white
 > background. The 16-color terminal ANSI `yellow` (`#E88800`), decorative
 > borders, and background fills retain the brighter value by design and are out
-> of WCAG text scope.
+> of WCAG text scope. White-on-accent chrome (badges, buttons, status bar) and
+> text on the cursor surface are rendered on their own colored background and
+> are excluded from the FAIL count.
 
 ## Light theme — background `{bg_light}`
 
@@ -237,6 +265,8 @@ so they are shown for reference and excluded from the compliance verdict.
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
 {dark_term and fmt(dark_term)}
+
+{editor_section}
 
 ## How to reproduce
 
