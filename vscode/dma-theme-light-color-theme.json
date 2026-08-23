@@ -27,7 +27,7 @@
     "editorError.foreground": "#E80000",
     "editorWarning.foreground": "#9E5E00",
     "editorInfo.foreground": "#0077CC",
-    "editorHint.foreground": "#00B3B3",
+    "editorHint.foreground": "#007F7F",
     "editorUnnecessaryCode.opacity": "#6E89A0",
     "editorGhostText.foreground": "#8FABBE",
     "editorLink.activeForeground": "#1A91E6",

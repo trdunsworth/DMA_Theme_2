@@ -200,8 +200,8 @@ so they always match the shipped themes.
 # Create theme directory
 mkdir -p ~/.emacs.d/themes/dma-theme
 
-# Copy theme files
-cp themes/emacs/dma-theme-theme.el ~/.emacs.d/themes/dma-theme/
+# Copy theme files (light and dark variants)
+cp themes/emacs/dma-theme-theme.el themes/emacs/dma-theme-dark.el ~/.emacs.d/themes/dma-theme/
 ```
 
 Add to your `init.el` or `.doom.d/config.el`:

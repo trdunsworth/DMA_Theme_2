@@ -1,4 +1,4 @@
-;;; dma-theme-theme.el --- DMA Theme for Emacs -*- lexical-binding: t; -*-
+;;; dma-theme-dark.el --- DMA Theme (Dark) for Emacs -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2024 Dunsworth-Mann Analytics LLC
 ;; Author: Dunsworth-Mann Analytics LLC
@@ -16,19 +16,19 @@
 ;;
 ;; To use:
 ;;   (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/dma-theme")
-;;   (load-theme 'dma-theme-light t)  ;; or 'dma-theme-dark
+;;   (load-theme 'dma-theme-dark t)  ;; or 'dma-theme-dark
 ;;
 ;; For Doom Emacs:
 ;;   (package! dma-theme :recipe (:host github :repo "trdunsworth/DMA_Theme_2"))
-;;   (setq doom-theme 'dma-theme-light)
+;;   (setq doom-theme 'dma-theme-dark)
 ;;
 ;; For Spacemacs:
-;;   dotspacemacs-themes '(dma-theme-light)
+;;   dotspacemacs-themes '(dma-theme-dark)
 
 ;;; Code:
 
-(deftheme dma-theme-light
-  "DMA Theme Light - A semantic color theme focused on blues, teals, turquoises, and greens with warm error/warning colors."
+(deftheme dma-theme-dark
+  "DMA Theme Dark - A semantic color theme focused on blues, teals, turquoises, and greens with warm error/warning colors."
   :author "Dunsworth-Mann Analytics LLC"
   :maintainer "Dunsworth-Mann Analytics LLC"
   :version "1.0.0"
@@ -128,79 +128,79 @@
   (dma-success-50 "#E6F8E6")
 
   ;; Neutral colors
-  (dma-bg "#F8FAFC")
-  (dma-bg-alt "#F0F4F8")
-  (dma-bg-elevated "#FFFFFF")
-  (dma-fg "#1A2A35")
-  (dma-fg-muted "#485C6E")
+  (dma-bg "#0A0F14")
+  (dma-bg-alt "#14202B")
+  (dma-bg-elevated "#1A2A35")
+  (dma-fg "#E0E8EF")
+  (dma-fg-muted "#93ABC3")
   (dma-fg-subtle "#6E89A0")
-  (dma-border "#A8C0D8")
-  (dma-border-focus "#0077CC")
-  (dma-selection "#A8D0F0")
-  (dma-selection-fg "#002B5C")
+  (dma-border "#2D4058")
+  (dma-border-focus "#1A91E6")
+  (dma-selection "#16334F")
+  (dma-selection-fg "#E0E8EF")
 
   ;; UI colors
-  (dma-cursor "#0077CC")
-  (dma-line-number "#6E89A0")
-  (dma-line-number-active "#005A9E")
-  (dma-highlight-line "#D0E8F8")
-  (dma-region "#A8D0F0")
+  (dma-cursor "#1A91E6")
+  (dma-line-number "#5A7488")
+  (dma-line-number-active "#8FC3F5")
+  (dma-highlight-line "#16242F")
+  (dma-region "#16334F")
 
   ;; Syntax colors - BRIGHTER for light theme (300-400 range)
-  (dma-comment "#5A7D96")
-  (dma-string "#009933")
-  (dma-number "#0077CC")
-  (dma-keyword "#007F7F")
-  (dma-keyword-control "#007F7F")
-  (dma-storage "#007F7F")
-  (dma-function "#0077CC")
-  (dma-variable "#1A2A35")
-  (dma-parameter "#485C6E")
-  (dma-property "#1A2A35")
-  (dma-type "#009999")
-  (dma-class "#009999")
-  (dma-interface "#009999")
-  (dma-namespace "#00B3B3")
-  (dma-constant "#D47800")
-  (dma-operator "#007F7F")
-  (dma-punctuation "#485C6E")
-  (dma-bracket "#5A7D96")
-  (dma-tag "#007F7F")
-  (dma-attribute "#009999")
-  (dma-regex "#D47800")
-  (dma-escape "#9E5E00")
-  (dma-annotation "#009999")
-  (dma-decorator "#009999")
+  (dma-comment "#7FA0B5")
+  (dma-string "#33CC5A")
+  (dma-number "#4DA8EE")
+  (dma-keyword "#4DE5E5")
+  (dma-keyword-control "#4DE5E5")
+  (dma-storage "#4DE5E5")
+  (dma-function "#4DA8EE")
+  (dma-variable "#E0E8EF")
+  (dma-parameter "#93ABC3")
+  (dma-property "#E0E8EF")
+  (dma-type "#4DDDDD")
+  (dma-class "#4DDDDD")
+  (dma-interface "#4DDDDD")
+  (dma-namespace "#4DE5E5")
+  (dma-constant "#FFAD33")
+  (dma-operator "#4DE5E5")
+  (dma-punctuation "#93ABC3")
+  (dma-bracket "#7FA0B5")
+  (dma-tag "#4DE5E5")
+  (dma-attribute "#4DDDDD")
+  (dma-regex "#FFAD33")
+  (dma-escape "#FFC466")
+  (dma-annotation "#4DDDDD")
+  (dma-decorator "#4DDDDD")
 
   ;; Git colors
-  (dma-git-add "#009933")
-  (dma-git-modified "#0077CC")
-  (dma-git-deleted "#E80000")
-  (dma-git-untracked "#009933")
-  (dma-git-ignored "#6E89A0")
-  (dma-git-conflict "#E88800")
+  (dma-git-add "#33CC5A")
+  (dma-git-modified "#4DA8EE")
+  (dma-git-deleted "#FF4D4D")
+  (dma-git-untracked "#33CC5A")
+  (dma-git-ignored "#5A7488")
+  (dma-git-conflict "#FFAD33")
 
   ;; Terminal ANSI colors
   (dma-term-black "#1A2A35")
-  (dma-term-red "#E80000")
-  (dma-term-green "#009933")
-  (dma-term-yellow "#E88800")
-  (dma-term-blue "#0077CC")
-  (dma-term-magenta "#007F7F")
-  (dma-term-cyan "#00B3B3")
-  (dma-term-white "#A8C0D8")
-  (dma-term-bright-black "#485C6E")
-  (dma-term-bright-red "#FF1A1A")
-  (dma-term-bright-green "#00B33B")
-  (dma-term-bright-yellow "#FF9F00")
-  (dma-term-bright-blue "#1A91E6")
-  (dma-term-bright-magenta "#1ACECE")
-  (dma-term-bright-cyan "#4DDDDD")
-  (dma-term-bright-white "#F0F4F8")
+  (dma-term-red "#FF4D4D")
+  (dma-term-green "#33CC5A")
+  (dma-term-yellow "#FFAD33")
+  (dma-term-blue "#4DA8EE")
+  (dma-term-magenta "#4DE5E5")
+  (dma-term-cyan "#4DDDDD")
+  (dma-term-white "#E0E8EF")
+  (dma-term-bright-black "#5A7488")
+  (dma-term-bright-red "#FF7A7A")
+  (dma-term-bright-green "#66D97A")
+  (dma-term-bright-yellow "#FFC466")
+  (dma-term-bright-blue "#8FC3F5")
+  (dma-term-bright-magenta "#99EDED")
+  (dma-term-bright-cyan "#99F0F0")
+  (dma-term-bright-white "#FFFFFF")
 )
 
 (custom-theme-set-faces
- 'dma-theme-light
+ 'dma-theme-dark
 
  ;; Core faces
  `(default ((t (:foreground ,dma-fg :background ,dma-bg))))
@@ -680,7 +680,7 @@
 )
 
 (custom-theme-set-variables
- 'dma-theme-light
+ 'dma-theme-dark
  '(ansi-color-names-vector
    [,dma-term-black ,dma-term-red ,dma-term-green ,dma-term-yellow
     ,dma-term-blue ,dma-term-magenta ,dma-term-cyan ,dma-term-white
@@ -715,6 +715,6 @@
  '(add-log-full-name "Dunsworth-Mann Analytics LLC")
  '(add-log-mailing-address "https://dunsworth-mann.com"))
 
-(provide-theme 'dma-theme-light)
+(provide-theme 'dma-theme-dark)
 
 ;;; dma-theme-theme.el ends here

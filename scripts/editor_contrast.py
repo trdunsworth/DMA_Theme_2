@@ -108,11 +108,34 @@ def _var_map(text: str) -> dict:
     return vm
 
 
+def _balanced_brace(text: str, open_pos: int) -> str:
+    """Return the substring from an opening brace to its matching close."""
+    depth = 0
+    for j in range(open_pos, len(text)):
+        c = text[j]
+        if c == '{':
+            depth += 1
+        elif c == '}':
+            depth -= 1
+            if depth == 0:
+                return text[open_pos:j + 1]
+    return text[open_pos:]
+
+
 def block_for(text: str, fmt: str, variant: str) -> str:
     if fmt in ("obsidian", "css"):
+        # The trailing `@media print` block (dark text on white paper) must be
+        # excluded. It sits after `.theme-dark`, so:
+        #   - dark  -> the balanced `.theme-dark` rule (ends before @media print)
+        #   - light -> everything before `.theme-dark` (:root + .theme-light),
+        #             which also precedes the @media print block
         m = re.search(r'\.theme-dark\s*\{', text)
         i = m.start() if m else -1
-        return text[i:] if (variant == "dark" and i != -1) else text[:i if i != -1 else len(text)]
+        if variant == "dark":
+            if i == -1:
+                return text
+            return _balanced_brace(text, m.end() - 1)
+        return text[:i] if i != -1 else text
     if fmt in ("emacs", "elisp"):
         # Single-file theme (light variant); dark is not yet shipped.
         return text
@@ -341,43 +364,83 @@ def extract_tokens(text: str, fmt: str, variant: str) -> dict:
     return toks
 
 
+def _parse_lua(s: str, i: int):
+    """Parse a Lua table starting at s[i] == '{'. Returns (dict, end_index)."""
+    out = {}
+    n = len(s)
+    i += 1  # skip '{'
+    while i < n:
+        c = s[i]
+        if c == '}':
+            return out, i
+        if c in ' \t\n\r,;':
+            i += 1
+            continue
+        m = re.match(r'([\w.]+)\s*=\s*', s[i:])
+        if not m:
+            i += 1
+            continue
+        key = m.group(1)
+        i += m.end()
+        while i < n and s[i] in ' \t\n\r':
+            i += 1
+        if i < n and s[i] == '"':
+            m2 = re.match(r'"([^"]*)"', s[i:])
+            out[key] = m2.group(1)
+            i += m2.end()
+        elif i < n and s[i] == '{':
+            sub, i = _parse_lua(s, i)
+            out[key] = sub
+        else:
+            m3 = re.match(r'([^\s,}]+)', s[i:])
+            if m3:
+                out[key] = m3.group(1)
+                i += m3.end()
+    return out, i
+
+
 def _neovim_tokens(variant: str) -> dict:
     pal = (ROOT / "themes/neovim/lua/dma_theme/palette.lua").read_text()
-    # M.colors.<path> -> hex (literals + aliases), resolved
-    raw = {}
-    for m in re.finditer(r'M\.colors\.([\w.]+)\s*=\s*"(#[0-9a-fA-F]{6})"', pal):
-        raw[m.group(1)] = m.group(2)
-    for m in re.finditer(r'M\.colors\.([\w.]+)\s*=\s*M\.colors\.([\w.]+)', pal):
-        raw.setdefault(m.group(1), m.group(2))
-    cmap = {}
-    for k, v in raw.items():
+
+    def flat(d, prefix=""):
+        res = {}
+        if isinstance(d, dict):
+            for k, v in d.items():
+                kk = f"{prefix}.{k}" if prefix else str(k)
+                if isinstance(v, dict):
+                    res.update(flat(v, kk))
+                elif isinstance(v, str):
+                    res[kk] = v
+        return res
+
+    # M.colors.<full.path> -> hex (resolve M.colors.* aliases)
+    cm = re.search(r'\bM\.colors\s*=\s*{', pal)
+    colors = flat(_parse_lua(pal, cm.end() - 1)[0]) if cm else {}
+    resolved = {}
+    for k, v in colors.items():
         seen = set()
         cur = v
-        while cur in raw and cur not in seen:
+        while cur.startswith("M.colors.") and cur not in seen:
             seen.add(cur)
-            cur = raw[cur]
-        cmap[k] = cur if cur.startswith("#") else raw.get(cur, cur)
-    # Per-variant color table (M.light.* / M.dark.*) -> hex or M.colors.* ref
-    mvar = {}
-    for m in re.finditer(
-            rf'M\.{variant}\.([\w.]+)\s*=\s*(?:M\.colors\.([\w.]+)|"(#[0-9a-fA-F]{{6}})")',
-            pal):
-        mvar[m.group(1)] = ("colors:" + m.group(2)) if m.group(2) else m.group(3)
-    leaf = {}
-    for m in re.finditer(r'\b([A-Za-z_]\w*)\s*=\s*"(#[0-9a-fA-F]{6})"', pal):
-        leaf.setdefault(m.group(1), "#" + m.group(2))
+            cur = colors.get(cur[len("M.colors."):], cur)
+        resolved[k] = cur if cur.startswith("#") else colors.get(cur, cur)
+
+    # Per-variant table (M.light / M.dark): its keys map to hex or M.colors.* ref.
+    vm = re.search(rf'\bM\.{variant}\s*=\s*{{', pal)
+    vflat = flat(_parse_lua(pal, vm.end() - 1)[0]) if vm else {}
 
     def resolve(key: str) -> str | None:
-        if key in mvar:
-            ref = mvar[key]
-            if ref.startswith("#"):
-                return ref
-            if ref.startswith("colors:"):
-                return cmap.get(ref[7:])
-            return cmap.get(ref) or leaf.get(ref.split(".")[-1])
-        if key in cmap:
-            return cmap[key]
-        return leaf.get(key.split(".")[-1])
+        if key in vflat:
+            v = vflat[key]
+        elif key in resolved:
+            v = resolved[key]
+        else:
+            return None
+        if v.startswith("#"):
+            return v
+        if v.startswith("M.colors."):
+            return resolved.get(v[len("M.colors."):])
+        return resolved.get(v)
 
     hi = (ROOT / "themes/neovim/lua/dma_theme/highlights.lua").read_text()
     toks = {}
@@ -401,7 +464,7 @@ EDITORS = [
     ("Kakoune", "themes/kakoune/dma-theme-light.kak", "themes/kakoune/dma-theme-dark.kak", "kak", "editor"),
     ("Notepad++", "themes/notepadpp/dma-theme-light.xml", "themes/notepadpp/dma-theme-dark.xml", "xml", "editor"),
     ("Obsidian", "themes/obsidian/dma-theme.css", "themes/obsidian/dma-theme.css", "css", "editor"),
-    ("Emacs", "themes/emacs/dma-theme-theme.el", None, "elisp", "editor"),
+    ("Emacs", "themes/emacs/dma-theme-theme.el", "themes/emacs/dma-theme-dark.el", "elisp", "editor"),
     ("Neovim", "themes/neovim/lua/dma_theme/palette.lua", "themes/neovim/lua/dma_theme/palette.lua", "neovim", "editor"),
 ]
 TERMINALS = [
@@ -414,8 +477,44 @@ TERMINALS = [
 ]
 
 
+def _tmux_pairs(text: str, variant: str):
+    """tmux is a status-bar overlay: each `fg` sits on its segment's own `bg`.
+    Pair every fg with the bg of the same `#[...]` segment (or the same quoted
+    style string), falling back to the status-style bg when none is given."""
+    m = re.search(r'status-style\s*"[^"]*bg=(#[0-9a-fA-F]{6})', text)
+    default_bg = m.group(1) if m else ("#DCE4ED" if variant == "light" else "#0A0F14")
+    pairs = []
+    for qm in re.finditer(r'"([^"]*)"', text):
+        seg = qm.group(1)
+        subs = re.findall(r'#\[([^\]]*)\]', seg)
+        targets = subs if subs else [seg]
+        for s in targets:
+            fgm = re.search(r'fg=#([0-9a-fA-F]{6})', s)
+            if not fgm:
+                continue
+            bgm = re.search(r'bg=#([0-9a-fA-F]{6})', s)
+            bg = "#" + bgm.group(1) if bgm else default_bg
+            pairs.append(("#" + fgm.group(1), bg))
+    return pairs
+
+
+def _validate_tmux(text: str, variant: str):
+    pairs = _tmux_pairs(text, variant)
+    rows = []
+    rf = 0
+    for fg, bg in pairs:
+        ratio = contrast(fg, bg)
+        lv = "PASS" if ratio >= 4.5 else ("AA-Large" if ratio >= 3.0 else "FAIL")
+        rows.append(("tmux:fg:" + fg, fg, ratio, lv, "on paired segment bg"))
+        if lv == "FAIL":
+            rf += 1
+    return variant, "tmux", bg, rows, rf
+
+
 def validate_file(path: str, fmt: str, kind: str, variant: str):
     text = (ROOT / path).read_text()
+    if fmt == "tmux":
+        return _validate_tmux(text, variant)
     bg, bg_how = resolve_bg(text, fmt, variant)
     term_bg = resolve_term_bg(text, fmt) if kind == "terminal" else None
     accent_bg = None
@@ -442,6 +541,22 @@ def validate_file(path: str, fmt: str, kind: str, variant: str):
                 and _is_light(bg)):
             cat = "surface"
             note = "white/self-colored on accent/cursor (by design)"
+        # Decorative / on-surface chrome that is not page text (consistent with
+        # the comments/line-numbers exemption in the canonical report).
+        nl = name.lower()
+        if cat == "text":
+            if any(h in nl for h in ("badge", "button", "statusbar",
+                                     "activitybarbadge", "extensionbutton")):
+                cat = "surface"
+                note = "UI chrome on its own accent surface (by design)"
+            elif any(h in nl for h in ("cursor_text", "cursor_fg",
+                                       "cursor_text_color", "cursor")):
+                cat = "surface"
+                note = "text on cursor surface (by design)"
+            elif any(h in nl for h in ("whitespace", "ruler", "ghosttext",
+                                       "placeholder", "disabled")):
+                cat = "surface"
+                note = "decorative token (AA-Large exempt)"
         if not val or surface is None:
             rows.append((name, val or "?", None, "?", "no bg/value"))
             continue

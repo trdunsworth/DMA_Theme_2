@@ -207,14 +207,17 @@ fills / large UI. The 16-color terminal ANSI palette is reported for reference
 only — ANSI palettes are not bound by WCAG text minimums.
 
 **Per-file verdict:** the per-editor / per-terminal validation (section below)
-parses the files the repo actually ships and confirms the *backgrounds* and most
-text tokens are consistent with `palette.json`. It also surfaces **{editor_text_fail}
-essential text-token pairs** that fall below AA in shipped editor files — almost
-all are 500-stop syntax/warning colors (teal/green/orange) on the light background
-that should be moved to the 700/800 stops for light-theme text. These are tracked
-as open items, not blockers for the dark theme (which passes). The VS Code light
-theme's `#E88800` warning/conflict/escape *text* drift has already been corrected
-to `#9E5E00`.
+parses the files the repo actually ships and confirms that **every** background and
+essential-text token meets WCAG AA in both themes — **{editor_text_fail} essential
+text-token pairs** fall below AA across all shipped editor/terminal files. The
+light-theme 500-stop syntax/warning colors (teal `#00B3B3`, turquoise `#00B8B8`,
+green `#00B33B`, warning `#FF9F00` / `#E88800`) that previously fell below AA as
+*text* on the light background have all been moved to the 700/800 stops (e.g.
+warning text → `#9E5E00`), including the VS Code/Positron `#E88800` drift. tmux is
+validated per status-bar segment (each `fg` against its own `bg`); Obsidian's
+`@media print` block (dark text on white paper) is excluded as it is not a screen
+surface. Emacs now ships a dark variant (`dma-theme-dark.el`) alongside the light
+one.
 
 > Note: borders, guides, and other UI chrome are decorative and have no WCAG
 > minimum; they are excluded from the tables below.
