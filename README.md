@@ -25,6 +25,31 @@ DMA Theme provides a consistent visual language across different development env
 
 ![DMA Theme Dark preview](assets/preview-dark.png)
 
+## Accessibility & WCAG Compliance
+
+DMA Theme is built to WCAG 2.1 contrast guidelines. Every editor body-text,
+syntax, UI, and semantic-status token meets **AA (≥ 4.5:1)** against the surface it
+renders on, in both light and dark variants. De-emphasized tokens (comments, line
+numbers, subtle foreground) intentionally sit in the AA-Large band, which is
+appropriate for non-essential text. No text or UI token falls below AA-Large.
+
+| Scope | Tokens | AA+ | AAA | AA Large | FAIL |
+|-------|-------:|----:|----:|---------:|-----:|
+| Light theme — text/UI | 56 | 34 | 20 | 22 | 0 |
+| Dark theme — text/UI | 56 | 53 | 44 | 3 | 0 |
+| Semantic status colors | 12 | 8 | 4 | 2 | 2* |
+
+\* The two "FAIL" rows are the semantic **500** stops evaluated as text on white.
+Those brighter stops are reserved for fills / large UI; status *text* on light
+surfaces uses the documented **800** stop (`#9E5E00`), which passes AA.
+
+The full, reproducible report (generated from `palette.json`) lives in
+[CONTRAST.md](CONTRAST.md). Regenerate it any time with:
+
+```bash
+python3 scripts/contrast_report.py
+```
+
 ## Color Palette
 
 ### Primary Colors
@@ -144,14 +169,14 @@ so they always match the shipped themes.
 #### Local Installation (from this repository)
 1. Clone or download this repository
 2. Copy the theme files to your VS Code extensions directory:
-   - **Linux/macOS**: `~/.vscode/extensions/dma-theme-1.0.0/`
-   - **Windows**: `%USERPROFILE%\.vscode\extensions\dma-theme-1.0.0\`
+   - **Linux/macOS**: `~/.vscode/extensions/dma-theme-1.1.0/`
+   - **Windows**: `%USERPROFILE%\.vscode\extensions\dma-theme-1.1.0\`
 3. Or package as VSIX:
    ```bash
    npm install -g vsce
    cd themes/positron
    vsce package
-   code --install-extension dma-theme-1.0.0.vsix
+   code --install-extension dma-theme-1.1.0.vsix
    ```
 
 #### Manual Theme Selection
@@ -184,7 +209,7 @@ Add to your `init.el` or `.doom.d/config.el`:
 #### Doom Emacs
 ```elisp
 ;; In packages.el
-(package! dma-theme :recipe (:host github :repo "dunsworth-mann-analytics/dma-theme"))
+(package! dma-theme :recipe (:host github :repo "trdunsworth/DMA_Theme_2"))
 
 ;; In config.el
 (setq doom-theme 'dma-theme-light)  ;; or 'dma-theme-dark
@@ -203,7 +228,7 @@ dotspacemacs-themes '(dma-theme-light)  ;; or 'dma-theme-dark
 #### Using lazy.nvim (recommended)
 ```lua
 {
-  "dunsworth-mann-analytics/dma-theme",
+  "trdunsworth/DMA_Theme_2",
   priority = 1000,
   config = function()
     require("dma_theme").setup({ variant = "light" }) -- or "dark"
@@ -215,7 +240,7 @@ dotspacemacs-themes '(dma-theme-light)  ;; or 'dma-theme-dark
 #### Using packer.nvim
 ```lua
 use {
-  "dunsworth-mann-analytics/dma-theme",
+  "trdunsworth/DMA_Theme_2",
   config = function()
     require("dma_theme").setup({ variant = "light" })
     vim.cmd.colorscheme("dma_theme")
@@ -226,7 +251,7 @@ use {
 #### Manual Installation
 ```bash
 # Clone to packpath
-git clone https://github.com/dunsworth-mann-analytics/dma-theme.git \
+git clone https://github.com/trdunsworth/DMA_Theme_2.git \
   ~/.local/share/nvim/site/pack/themes/start/dma-theme
 
 # Or with lazy.nvim's local plugin support
@@ -554,5 +579,5 @@ MIT License — see [LICENSE](LICENSE) for details.
 ## Links
 
 - [Website](https://dunsworth-mann.com)
-- [GitHub Repository](https://github.com/dunsworth-mann-analytics/dma-theme)
-- [Issues](https://github.com/dunsworth-mann-analytics/dma-theme/issues)
+- [GitHub Repository](https://github.com/trdunsworth/DMA_Theme_2)
+- [Issues](https://github.com/trdunsworth/DMA_Theme_2/issues)

@@ -3,7 +3,7 @@
   "displayName": "DMA Theme",
   "description": "A semantic color theme for VS Code focused on blues, teals, turquoises, and greens with warm error/warning colors. Created by Dunsworth-Mann Analytics LLC.",
   "version": "1.1.0",
-  "publisher": "dunsworth-mann-analytics",
+  "publisher": "trdunsworth",
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -24,12 +24,12 @@
   "icon": "icon.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dunsworth-mann-analytics/dma-theme"
+    "url": "https://github.com/trdunsworth/DMA_Theme_2"
   },
   "bugs": {
-    "url": "https://github.com/dunsworth-mann-analytics/dma-theme/issues"
+    "url": "https://github.com/trdunsworth/DMA_Theme_2/issues"
   },
-  "homepage": "https://github.com/dunsworth-mann-analytics/dma-theme/blob/main/README.md",
+  "homepage": "https://github.com/trdunsworth/DMA_Theme_2/blob/main/README.md",
   "license": "MIT",
   "contributes": {
     "themes": [

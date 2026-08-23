@@ -178,7 +178,7 @@ Add to your `init.el` or `.doom.d/config.el`:
 #### Doom Emacs
 ```elisp
 ;; In packages.el
-(package! dma-theme :recipe (:host github :repo "dunsworth-mann-analytics/dma-theme"))
+(package! dma-theme :recipe (:host github :repo "trdunsworth/DMA_Theme_2"))
 
 ;; In config.el
 (setq doom-theme 'dma-theme-light)  ;; or 'dma-theme-dark
@@ -197,7 +197,7 @@ dotspacemacs-themes '(dma-theme-light)  ;; or 'dma-theme-dark
 #### Using lazy.nvim (recommended)
 ```lua
 {
-  "dunsworth-mann-analytics/dma-theme",
+  "trdunsworth/DMA_Theme_2",
   priority = 1000,
   config = function()
     require("dma_theme").setup({ variant = "light" }) -- or "dark"
@@ -209,7 +209,7 @@ dotspacemacs-themes '(dma-theme-light)  ;; or 'dma-theme-dark
 #### Using packer.nvim
 ```lua
 use {
-  "dunsworth-mann-analytics/dma-theme",
+  "trdunsworth/DMA_Theme_2",
   config = function()
     require("dma_theme").setup({ variant = "light" })
     vim.cmd.colorscheme("dma_theme")
@@ -220,7 +220,7 @@ use {
 #### Manual Installation
 ```bash
 # Clone to packpath
-git clone https://github.com/dunsworth-mann-analytics/dma-theme.git \
+git clone https://github.com/trdunsworth/DMA_Theme_2.git \
   ~/.local/share/nvim/site/pack/themes/start/dma-theme
 
 # Or with lazy.nvim's local plugin support
@@ -489,5 +489,5 @@ MIT License — see [LICENSE](LICENSE) for details.
 ## Links
 
 - [Website](https://dunsworth-mann.com)
-- [GitHub Repository](https://github.com/dunsworth-mann-analytics/dma-theme)
-- [Issues](https://github.com/dunsworth-mann-analytics/dma-theme/issues)
+- [GitHub Repository](https://github.com/trdunsworth/DMA_Theme_2)
+- [Issues](https://github.com/trdunsworth/DMA_Theme_2/issues)

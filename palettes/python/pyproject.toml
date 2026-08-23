@@ -37,8 +37,8 @@ optional-dependencies.all = ["seaborn>=0.11", "plotnine>=0.10"]
 
 [project.urls]
 Homepage = "https://dunsworth-mann.com"
-Repository = "https://github.com/dunsworth-mann-analytics/dma-theme"
-Issues = "https://github.com/dunsworth-mann-analytics/dma-theme/issues"
+Repository = "https://github.com/trdunsworth/DMA_Theme_2"
+Issues = "https://github.com/trdunsworth/DMA_Theme_2/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]

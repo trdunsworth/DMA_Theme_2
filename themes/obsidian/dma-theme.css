@@ -179,7 +179,7 @@ body:not(.theme-dark) {
   --git-delete: #E80000;
   --git-untracked: #009933;
   --git-ignored: #6E89A0;
-  --git-conflict: #E88800;
+  --git-conflict: #9E5E00;
 
   /* Table */
   --table-border: #A8C0D8;

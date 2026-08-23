@@ -25,7 +25,7 @@
     "editorGutter.addedBackground": "#009933",
     "editorGutter.deletedBackground": "#E80000",
     "editorError.foreground": "#E80000",
-    "editorWarning.foreground": "#E88800",
+    "editorWarning.foreground": "#9E5E00",
     "editorInfo.foreground": "#0077CC",
     "editorHint.foreground": "#00B3B3",
     "editorUnnecessaryCode.opacity": "#6E89A0",
@@ -117,7 +117,7 @@
     "notificationCenterHeader.background": "#F0F4F8",
     "notificationCenterHeader.foreground": "#1A2A35",
     "notificationsErrorIcon.foreground": "#E80000",
-    "notificationsWarningIcon.foreground": "#E88800",
+    "notificationsWarningIcon.foreground": "#9E5E00",
     "notificationsInfoIcon.foreground": "#0077CC",
     "notificationLink.foreground": "#0077CC",
     "extensionButton.prominentBackground": "#0077CC",
@@ -200,7 +200,7 @@
     "gitDecoration.deletedResourceForeground": "#E80000",
     "gitDecoration.untrackedResourceForeground": "#008F33",
     "gitDecoration.ignoredResourceForeground": "#6E89A0",
-    "gitDecoration.conflictingResourceForeground": "#E88800",
+    "gitDecoration.conflictingResourceForeground": "#9E5E00",
     "gitDecoration.submoduleResourceForeground": "#6E89A0",
     "terminal.background": "#F8FAFC",
     "terminal.foreground": "#1A2A35",
@@ -272,7 +272,7 @@
       "name": "String - Escape",
       "scope": ["constant.character.escape", "string constant.character.escape"],
       "settings": {
-        "foreground": "#E88800",
+        "foreground": "#9E5E00",
         "fontStyle": "bold"
       }
     },

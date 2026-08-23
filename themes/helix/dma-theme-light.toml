@@ -29,7 +29,7 @@ statusline-center = { bg = "#DCE4ED", fg = "#6E89A0" }
 statusline-right = { bg = "#DCE4ED", fg = "#1A2A35", modifiers = ["bold"] }
 statusline-right-separator = { bg = "#DCE4ED", fg = "#A8C0D8" }
 diagnostic-error = "#E80000"
-diagnostic-warning = "#E88800"
+diagnostic-warning = "#9E5E00"
 diagnostic-info = "#0077CC"
 diagnostic-hint = "#00B3B3"
 diff-added = "#009933"

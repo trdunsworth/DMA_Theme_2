@@ -2,7 +2,7 @@
 
 ;; Copyright (C) 2024 Dunsworth-Mann Analytics LLC
 ;; Author: Dunsworth-Mann Analytics LLC
-;; URL: https://github.com/dunsworth-mann-analytics/dma-theme
+;; URL: https://github.com/trdunsworth/DMA_Theme_2
 ;; Package-Requires: ((emacs "27.1"))
 ;; Version: 1.0.0
 ;; Keywords: faces, themes
@@ -19,7 +19,7 @@
 ;;   (load-theme 'dma-theme-light t)  ;; or 'dma-theme-dark
 ;;
 ;; For Doom Emacs:
-;;   (package! dma-theme :recipe (:host github :repo "dunsworth-mann-analytics/dma-theme"))
+;;   (package! dma-theme :recipe (:host github :repo "trdunsworth/DMA_Theme_2"))
 ;;   (setq doom-theme 'dma-theme-light)
 ;;
 ;; For Spacemacs:
@@ -32,7 +32,7 @@
   :author "Dunsworth-Mann Analytics LLC"
   :maintainer "Dunsworth-Mann Analytics LLC"
   :version "1.0.0"
-  :url "https://github.com/dunsworth-mann-analytics/dma-theme"
+  :url "https://github.com/trdunsworth/DMA_Theme_2"
   :package-version '(dma-theme . "1.0.0"))
 
 ;; Color palette for light theme

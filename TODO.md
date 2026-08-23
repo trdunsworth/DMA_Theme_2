@@ -154,7 +154,9 @@
 - [x] Verify generated images programmatically (`scripts/verify_swatches.py`) — confirmed light bg lum ≈245, dark bg lum ≈18, all strips color-rich
 - [ ] Add support for more editors (Sublime Text, Nova, Lapce, etc.)
 - [ ] Create web-based theme preview
-- [x] Generate color contrast report (WCAG compliance) — see TODO "Data Visualization Palettes" (semantic status colors ≥4.5:1 on white)
+- [x] Generate color contrast report (WCAG compliance) — `scripts/contrast_report.py` → `CONTRAST.md`; 0 text/UI FAILs in both themes; semantic status text uses 800 stop on light
+- [x] Fix stale GitHub repo links repo-wide (`dunsworth-mann-analytics/dma-theme` → `trdunsworth/DMA_Theme_2`): README, vscode/README+package.json, Emacs header, Python pyproject/setup/__init__, R DESCRIPTION, Neovim manifest
+- [x] Sync light-variant warning/conflict/escape *text* tokens to `#9E5E00` (800 stop) across Positron, Zed, Helix, Kakoune, Notepad++, tmux, Neovim, Obsidian (palette.json `gitConflicting` too); terminal ANSI yellow / borders / fills retain `#E88800` by design
 - [ ] Create npm package for web/CSS variables
 
 ---

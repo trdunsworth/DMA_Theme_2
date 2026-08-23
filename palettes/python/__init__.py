@@ -132,7 +132,7 @@ from .seaborn_dma import (
 __version__ = "1.0.0"
 __author__ = "Dunsworth-Mann Analytics LLC"
 __email__ = "contact@dunsworth-mann.com"
-__url__ = "https://github.com/dunsworth-mann-analytics/dma-theme"
+__url__ = "https://github.com/trdunsworth/DMA_Theme_2"
 
 # Auto-register on import
 try:

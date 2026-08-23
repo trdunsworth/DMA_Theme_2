@@ -11,9 +11,9 @@ setup(
     description="DMA Theme - Semantic color palettes for data visualization in Python",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/dunsworth-mann-analytics/dma-theme",
+    url="https://github.com/trdunsworth/DMA_Theme_2",
     project_urls={
-        "Bug Tracker": "https://github.com/dunsworth-mann-analytics/dma-theme/issues",
+        "Bug Tracker": "https://github.com/trdunsworth/DMA_Theme_2/issues",
     },
     classifiers=[
         "Development Status :: 4 - Beta",

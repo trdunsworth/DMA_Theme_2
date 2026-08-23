@@ -200,7 +200,7 @@ set-face global GitModified $colorscheme_dma_blue_500 $colorscheme_dma_bg
 set-face global GitDeleted $colorscheme_dma_error_500 $colorscheme_dma_bg
 set-face global GitUntracked $colorscheme_dma_green_600 $colorscheme_dma_bg
 set-face global GitIgnored $colorscheme_dma_fg_subtle $colorscheme_dma_bg
-set-face global GitConflicting $colorscheme_dma_warning_600 $colorscheme_dma_bg
+set-face global GitConflicting #9E5E00 $colorscheme_dma_bg
 
 # LSP faces
 set-face global LspError $colorscheme_dma_error_500 $colorscheme_dma_bg
