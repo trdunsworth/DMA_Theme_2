@@ -6,25 +6,25 @@
 
 # Basic colors
 background = #F8FAFC
-foreground = #1E282D
+foreground = #1A2A35
 
 # Cursor colors
-cursor-color = #007BDB
+cursor-color = #0077CC
 cursor-text = #F8FAFC
 
 # Selection colors
-selection-foreground = #1E282D
-selection-background = #C5DEF9
+selection-foreground = #1A2A35
+selection-background = #A8D0F0
 
 # Palette (0-15: ANSI colors)
-palette = 0=#1E282D
+palette = 0=#1A2A35
 palette = 1=#E80000
 palette = 2=#009933
 palette = 3=#E88800
-palette = 4=#007BDB
+palette = 4=#0077CC
 palette = 5=#007F7F
 palette = 6=#00B3B3
-palette = 7=#C8D6E3
+palette = 7=#A8C0D8
 palette = 8=#485C6E
 palette = 9=#FF1A1A
 palette = 10=#00B33B
@@ -35,7 +35,7 @@ palette = 14=#4DDDDD
 palette = 15=#F0F4F8
 
 # Extended palette (16-255)
-# Grayscale
+# Grayscale (lighter for light theme)
 palette = 16=#0A0F14
 palette = 17=#101820
 palette = 18=#182430
@@ -44,10 +44,10 @@ palette = 20=#2D4058
 palette = 21=#3D526E
 palette = 22=#526D85
 palette = 23=#6E89A0
-palette = 24=#93ABC3
-palette = 25=#B8CDE0
-palette = 26=#DCE8F0
-palette = 27=#E8F4FC
+palette = 24=#8FABBE
+palette = 25=#A8C0D8
+palette = 26=#DCE4ED
+palette = 27=#D0E8F8
 palette = 28=#F0F4F8
 palette = 29=#F8FAFC
 palette = 30=#FFFFFF
@@ -83,8 +83,8 @@ palette = 52=#002B5C
 palette = 53=#003D7A
 palette = 54=#00529E
 palette = 55=#0069C0
-palette = 56=#007BDB
-palette = 57=#0091E6
+palette = 56=#0077CC
+palette = 57=#1A91E6
 palette = 58=#33A8EE
 palette = 59=#66BFFF
 palette = 60=#99D4FF
@@ -108,7 +108,7 @@ palette = 73=#002B5C
 palette = 74=#003D7A
 palette = 75=#00529E
 palette = 76=#0069C0
-palette = 77=#007BDB
+palette = 77=#0077CC
 palette = 78=#1A91E6
 palette = 79=#4DA8EE
 palette = 80=#8FC3F5
@@ -152,9 +152,9 @@ palette = 111=#CCF0CC
 palette = 112=#E6F8E6
 
 # UI colors
-# Borders
-palette = 240=#C8D6E3
-palette = 241=#93ABC3
+# Borders (lighter for light theme)
+palette = 240=#A8C0D8
+palette = 241=#8FABBE
 palette = 242=#6E89A0
 palette = 243=#485C6E
 palette = 244=#2D4058
@@ -163,12 +163,12 @@ palette = 246=#101820
 palette = 247=#0A0F14
 
 # Selection
-palette = 248=#C5DEF9
+palette = 248=#A8D0F0
 palette = 249=#8FC3F5
 palette = 250=#4DA8EE
 
 # Cursor
-palette = 251=#007BDB
+palette = 251=#0077CC
 palette = 252=#1A91E6
 palette = 253=#4DA8EE
 palette = 254=#8FC3F5

@@ -9,22 +9,22 @@ description: "A semantic color theme focused on blues, teals, turquoises, and gr
 author: "Dunsworth-Mann Analytics LLC"
 
 background: "#F8FAFC"
-foreground: "#1E282D"
-cursor_color: "#007BDB"
+foreground: "#1A2A35"
+cursor_color: "#0077CC"
 cursor_text_color: "#F8FAFC"
-selection_background: "#C5DEF9"
+selection_background: "#A8D0F0"
 selection_foreground: "#002B5C"
 
 # ANSI colors
 ansi_colors:
-  - "#1E282D"  # black
+  - "#1A2A35"  # black
   - "#E80000"  # red
   - "#009933"  # green
   - "#E88800"  # yellow
-  - "#007BDB"  # blue
+  - "#0077CC"  # blue
   - "#007F7F"  # magenta
   - "#00B3B3"  # cyan
-  - "#C8D6E3"  # white
+  - "#A8C0D8"  # white
 
 # Bright ANSI colors
 bright_ansi_colors:
@@ -68,8 +68,8 @@ indexed_colors:
   37: "#003D7A"
   38: "#00529E"
   39: "#0069C0"
-  40: "#007BDB"
-  41: "#0091E6"
+  40: "#0077CC"
+  41: "#1A91E6"
   42: "#33A8EE"
   43: "#66BFFF"
   44: "#99D4FF"
@@ -93,7 +93,7 @@ indexed_colors:
   58: "#003D7A"
   59: "#00529E"
   60: "#0069C0"
-  61: "#007BDB"
+  61: "#0077CC"
   62: "#1A91E6"
   63: "#4DA8EE"
   64: "#8FC3F5"
@@ -136,9 +136,9 @@ indexed_colors:
   95: "#CCF0CC"
   96: "#E6F8E6"
 
-  # Grayscale
-  240: "#C8D6E3"
-  241: "#93ABC3"
+  # Grayscale (lighter for light theme)
+  240: "#A8C0D8"
+  241: "#8FABBE"
   242: "#6E89A0"
   243: "#485C6E"
   244: "#2D4058"
@@ -147,12 +147,12 @@ indexed_colors:
   247: "#0A0F14"
 
   # Selection
-  248: "#C5DEF9"
+  248: "#A8D0F0"
   249: "#8FC3F5"
   250: "#4DA8EE"
 
   # Cursor
-  251: "#007BDB"
+  251: "#0077CC"
   252: "#1A91E6"
   253: "#4DA8EE"
   254: "#8FC3F5"
@@ -162,25 +162,25 @@ indexed_colors:
 ui:
   tab_bar:
     background: "#F0F4F8"
-    border: "#C8D6E3"
+    border: "#A8C0D8"
     active_tab:
       background: "#F8FAFC"
-      foreground: "#1E282D"
-      border: "#007BDB"
+      foreground: "#1A2A35"
+      border: "#0077CC"
     inactive_tab:
-      background: "#E0E8EF"
+      background: "#DCE4ED"
       foreground: "#6E89A0"
     hover_tab:
-      background: "#E8F4FC"
+      background: "#D0E8F8"
 
   scrollbar:
-    thumb: "#C8D6E3"
+    thumb: "#A8C0D8"
     track: "transparent"
-    thumb_hover: "#93ABC3"
+    thumb_hover: "#8FABBE"
 
   pane:
-    border: "#C8D6E3"
-    border_focus: "#007BDB"
+    border: "#A8C0D8"
+    border_focus: "#0077CC"
 
   search:
     match_background: "#FFF0CC"

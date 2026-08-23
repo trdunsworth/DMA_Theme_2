@@ -9,7 +9,7 @@ declare-option -hidden colorscheme_dma_blue_900 "#002B5C"
 declare-option -hidden colorscheme_dma_blue_800 "#003D7A"
 declare-option -hidden colorscheme_dma_blue_700 "#00529E"
 declare-option -hidden colorscheme_dma_blue_600 "#0069C0"
-declare-option -hidden colorscheme_dma_blue_500 "#007BDB"
+declare-option -hidden colorscheme_dma_blue_500 "#0077CC"
 declare-option -hidden colorscheme_dma_blue_400 "#1A91E6"
 declare-option -hidden colorscheme_dma_blue_300 "#4DA8EE"
 declare-option -hidden colorscheme_dma_blue_200 "#8FC3F5"
@@ -74,7 +74,7 @@ declare-option -hidden colorscheme_dma_warning_50 "#FFF8E6"
 declare-option -hidden colorscheme_dma_info_900 "#003D7A"
 declare-option -hidden colorscheme_dma_info_800 "#00529E"
 declare-option -hidden colorscheme_dma_info_700 "#0069C0"
-declare-option -hidden colorscheme_dma_info_600 "#007BDB"
+declare-option -hidden colorscheme_dma_info_600 "#0077CC"
 declare-option -hidden colorscheme_dma_info_500 "#0091E6"
 declare-option -hidden colorscheme_dma_info_400 "#33A8EE"
 declare-option -hidden colorscheme_dma_info_300 "#66BFFF"
@@ -96,16 +96,16 @@ declare-option -hidden colorscheme_dma_success_50 "#E6F8E6"
 declare-option -hidden colorscheme_dma_bg "#F8FAFC"
 declare-option -hidden colorscheme_dma_bg_alt "#F0F4F8"
 declare-option -hidden colorscheme_dma_bg_elevated "#FFFFFF"
-declare-option -hidden colorscheme_dma_fg "#1E282D"
+declare-option -hidden colorscheme_dma_fg "#1A2A35"
 declare-option -hidden colorscheme_dma_fg_muted "#485C6E"
 declare-option -hidden colorscheme_dma_fg_subtle "#6E89A0"
-declare-option -hidden colorscheme_dma_border "#C8D6E3"
-declare-option -hidden colorscheme_dma_border_focus "#007BDB"
-declare-option -hidden colorscheme_dma_selection "#C5DEF9"
+declare-option -hidden colorscheme_dma_border "#A8C0D8"
+declare-option -hidden colorscheme_dma_border_focus "#0077CC"
+declare-option -hidden colorscheme_dma_selection "#A8D0F0"
 declare-option -hidden colorscheme_dma_selection_fg "#002B5C"
-declare-option -hidden colorscheme_dma_cursor "#007BDB"
+declare-option -hidden colorscheme_dma_cursor "#0077CC"
 declare-option -hidden colorscheme_dma_line_nr "#6E89A0"
-declare-option -hidden colorscheme_dma_line_nr_active "#00529E"
+declare-option -hidden colorscheme_dma_line_nr_active "#005A9E"
 
 # Face definitions
 set-face global Default $colorscheme_dma_fg $colorscheme_dma_bg
@@ -146,39 +146,39 @@ set-face global Comment $colorscheme_dma_fg_subtle $colorscheme_dma_bg italic
 set-face global CommentSpecial $colorscheme_dma_warning_500 $colorscheme_dma_bg bold
 set-face global CommentDocumentation $colorscheme_dma_fg_subtle $colorscheme_dma_bg italic
 
-set-face global Constant $colorscheme_dma_warning_700 $colorscheme_dma_bg
-set-face global String $colorscheme_dma_green_700 $colorscheme_dma_bg
-set-face global Character $colorscheme_dma_green_700 $colorscheme_dma_bg
-set-face global Number $colorscheme_dma_blue_700 $colorscheme_dma_bg
-set-face global Boolean $colorscheme_dma_blue_700 $colorscheme_dma_bg
-set-face global Float $colorscheme_dma_blue_700 $colorscheme_dma_bg
+set-face global Constant $colorscheme_dma_warning_600 $colorscheme_dma_bg
+set-face global String $colorscheme_dma_green_500 $colorscheme_dma_bg
+set-face global Character $colorscheme_dma_green_500 $colorscheme_dma_bg
+set-face global Number $colorscheme_dma_blue_500 $colorscheme_dma_bg
+set-face global Boolean $colorscheme_dma_blue_500 $colorscheme_dma_bg
+set-face global Float $colorscheme_dma_blue_500 $colorscheme_dma_bg
 
 set-face global Identifier $colorscheme_dma_fg $colorscheme_dma_bg
-set-face global Function $colorscheme_dma_blue_700 $colorscheme_dma_bg
-set-face global Method $colorscheme_dma_blue_700 $colorscheme_dma_bg
+set-face global Function $colorscheme_dma_blue_500 $colorscheme_dma_bg
+set-face global Method $colorscheme_dma_blue_500 $colorscheme_dma_bg
 
-set-face global Statement $colorscheme_dma_teal_900 $colorscheme_dma_bg bold
-set-face global Conditional $colorscheme_dma_teal_900 $colorscheme_dma_bg bold
-set-face global Repeat $colorscheme_dma_teal_900 $colorscheme_dma_bg bold
-set-face global Label $colorscheme_dma_teal_900 $colorscheme_dma_bg
-set-face global Operator $colorscheme_dma_teal_900 $colorscheme_dma_bg
-set-face global Keyword $colorscheme_dma_teal_900 $colorscheme_dma_bg bold
-set-face global Exception $colorscheme_dma_teal_900 $colorscheme_dma_bg
+set-face global Statement $colorscheme_dma_teal_600 $colorscheme_dma_bg bold
+set-face global Conditional $colorscheme_dma_teal_600 $colorscheme_dma_bg bold
+set-face global Repeat $colorscheme_dma_teal_600 $colorscheme_dma_bg bold
+set-face global Label $colorscheme_dma_teal_600 $colorscheme_dma_bg
+set-face global Operator $colorscheme_dma_teal_600 $colorscheme_dma_bg
+set-face global Keyword $colorscheme_dma_teal_600 $colorscheme_dma_bg bold
+set-face global Exception $colorscheme_dma_teal_600 $colorscheme_dma_bg
 
-set-face global PreProc $colorscheme_dma_turquoise_700 $colorscheme_dma_bg
-set-face global Include $colorscheme_dma_turquoise_700 $colorscheme_dma_bg
-set-face global Define $colorscheme_dma_turquoise_700 $colorscheme_dma_bg
-set-face global Macro $colorscheme_dma_turquoise_700 $colorscheme_dma_bg
-set-face global PreCondit $colorscheme_dma_turquoise_700 $colorscheme_dma_bg
+set-face global PreProc $colorscheme_dma_turquoise_500 $colorscheme_dma_bg
+set-face global Include $colorscheme_dma_turquoise_500 $colorscheme_dma_bg
+set-face global Define $colorscheme_dma_turquoise_500 $colorscheme_dma_bg
+set-face global Macro $colorscheme_dma_turquoise_500 $colorscheme_dma_bg
+set-face global PreCondit $colorscheme_dma_turquoise_500 $colorscheme_dma_bg
 
-set-face global Type $colorscheme_dma_teal_800 $colorscheme_dma_bg bold
-set-face global StorageClass $colorscheme_dma_teal_900 $colorscheme_dma_bg
-set-face global Structure $colorscheme_dma_teal_800 $colorscheme_dma_bg bold
-set-face global Typedef $colorscheme_dma_teal_800 $colorscheme_dma_bg bold
+set-face global Type $colorscheme_dma_teal_500 $colorscheme_dma_bg bold
+set-face global StorageClass $colorscheme_dma_teal_600 $colorscheme_dma_bg
+set-face global Structure $colorscheme_dma_teal_500 $colorscheme_dma_bg bold
+set-face global Typedef $colorscheme_dma_teal_500 $colorscheme_dma_bg bold
 
-set-face global Special $colorscheme_dma_warning_600 $colorscheme_dma_bg
-set-face global SpecialChar $colorscheme_dma_warning_600 $colorscheme_dma_bg bold
-set-face global Tag $colorscheme_dma_teal_900 $colorscheme_dma_bg
+set-face global Special $colorscheme_dma_warning_500 $colorscheme_dma_bg
+set-face global SpecialChar $colorscheme_dma_warning_500 $colorscheme_dma_bg bold
+set-face global Tag $colorscheme_dma_teal_600 $colorscheme_dma_bg
 set-face global Delimiter $colorscheme_dma_fg_muted $colorscheme_dma_bg
 set-face global SpecialComment $colorscheme_dma_fg_subtle $colorscheme_dma_bg
 set-face global Debug $colorscheme_dma_error_500 $colorscheme_dma_bg
@@ -230,38 +230,38 @@ set-face global CompletionScrollbar $colorscheme_dma_fg_subtle $colorscheme_dma_
 
 # Tree-sitter specific faces
 set-face global TSComment $colorscheme_dma_fg_subtle $colorscheme_dma_bg italic
-set-face global TSString $colorscheme_dma_green_700 $colorscheme_dma_bg
-set-face global TSNumber $colorscheme_dma_blue_700 $colorscheme_dma_bg
-set-face global TSBoolean $colorscheme_dma_blue_700 $colorscheme_dma_bg
-set-face global TSConstant $colorscheme_dma_warning_700 $colorscheme_dma_bg
-set-face global TSFunction $colorscheme_dma_blue_700 $colorscheme_dma_bg
-set-face global TSMethod $colorscheme_dma_blue_700 $colorscheme_dma_bg
-set-face global TSKeyword $colorscheme_dma_teal_900 $colorscheme_dma_bg bold
-set-face global TSKeywordFunction $colorscheme_dma_teal_900 $colorscheme_dma_bg
-set-face global TSKeywordOperator $colorscheme_dma_teal_900 $colorscheme_dma_bg
-set-face global TSKeywordReturn $colorscheme_dma_teal_900 $colorscheme_dma_bg
-set-face global TSConditional $colorscheme_dma_teal_900 $colorscheme_dma_bg bold
-set-face global TSRepeat $colorscheme_dma_teal_900 $colorscheme_dma_bg bold
-set-face global TSOperator $colorscheme_dma_teal_900 $colorscheme_dma_bg
-set-face global TSType $colorscheme_dma_teal_800 $colorscheme_dma_bg bold
-set-face global TSTypeBuiltin $colorscheme_dma_teal_800 $colorscheme_dma_bg
+set-face global TSString $colorscheme_dma_green_500 $colorscheme_dma_bg
+set-face global TSNumber $colorscheme_dma_blue_500 $colorscheme_dma_bg
+set-face global TSBoolean $colorscheme_dma_blue_500 $colorscheme_dma_bg
+set-face global TSConstant $colorscheme_dma_warning_600 $colorscheme_dma_bg
+set-face global TSFunction $colorscheme_dma_blue_500 $colorscheme_dma_bg
+set-face global TSMethod $colorscheme_dma_blue_500 $colorscheme_dma_bg
+set-face global TSKeyword $colorscheme_dma_teal_600 $colorscheme_dma_bg bold
+set-face global TSKeywordFunction $colorscheme_dma_teal_600 $colorscheme_dma_bg
+set-face global TSKeywordOperator $colorscheme_dma_teal_600 $colorscheme_dma_bg
+set-face global TSKeywordReturn $colorscheme_dma_teal_600 $colorscheme_dma_bg
+set-face global TSConditional $colorscheme_dma_teal_600 $colorscheme_dma_bg bold
+set-face global TSRepeat $colorscheme_dma_teal_600 $colorscheme_dma_bg bold
+set-face global TSOperator $colorscheme_dma_teal_600 $colorscheme_dma_bg
+set-face global TSType $colorscheme_dma_teal_500 $colorscheme_dma_bg bold
+set-face global TSTypeBuiltin $colorscheme_dma_teal_500 $colorscheme_dma_bg
 set-face global TSVariable $colorscheme_dma_fg $colorscheme_dma_bg
 set-face global TSVariableBuiltin $colorscheme_dma_fg $colorscheme_dma_bg italic
 set-face global TSParameter $colorscheme_dma_fg_muted $colorscheme_dma_bg
 set-face global TSProperty $colorscheme_dma_fg $colorscheme_dma_bg
 set-face global TSField $colorscheme_dma_fg $colorscheme_dma_bg
-set-face global TSAttribute $colorscheme_dma_turquoise_700 $colorscheme_dma_bg
-set-face global TSTag $colorscheme_dma_teal_900 $colorscheme_dma_bg
+set-face global TSAttribute $colorscheme_dma_turquoise_500 $colorscheme_dma_bg
+set-face global TSTag $colorscheme_dma_teal_600 $colorscheme_dma_bg
 set-face global TSTagDelimiter $colorscheme_dma_fg_muted $colorscheme_dma_bg
-set-face global TSNamespace $colorscheme_dma_turquoise_700 $colorscheme_dma_bg
-set-face global TSModule $colorscheme_dma_turquoise_700 $colorscheme_dma_bg
+set-face global TSNamespace $colorscheme_dma_turquoise_500 $colorscheme_dma_bg
+set-face global TSModule $colorscheme_dma_turquoise_500 $colorscheme_dma_bg
 set-face global TSLabel $colorscheme_dma_fg_subtle $colorscheme_dma_bg
 set-face global TSPunctuation $colorscheme_dma_fg_muted $colorscheme_dma_bg
 set-face global TSBracket $colorscheme_dma_fg_subtle $colorscheme_dma_bg
-set-face global TSRegex $colorscheme_dma_warning_700 $colorscheme_dma_bg
-set-face global TSEscape $colorscheme_dma_warning_600 $colorscheme_dma_bg bold
-set-face global TSAnnotation $colorscheme_dma_turquoise_700 $colorscheme_dma_bg
-set-face global TSDecorator $colorscheme_dma_turquoise_700 $colorscheme_dma_bg
+set-face global TSRegex $colorscheme_dma_warning_600 $colorscheme_dma_bg
+set-face global TSEscape $colorscheme_dma_warning_500 $colorscheme_dma_bg bold
+set-face global TSAnnotation $colorscheme_dma_turquoise_500 $colorscheme_dma_bg
+set-face global TSDecorator $colorscheme_dma_turquoise_500 $colorscheme_dma_bg
 
 # Markup
 set-face global TSMarkupHeading $colorscheme_dma_teal_900 $colorscheme_dma_bg bold

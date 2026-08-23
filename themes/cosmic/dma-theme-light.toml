@@ -7,25 +7,25 @@
 [colors]
 # Primary colors
 background = "#F8FAFC"
-foreground = "#1E282D"
+foreground = "#1A2A35"
 
 # Cursor
-cursor = "#007BDB"
+cursor = "#0077CC"
 cursor_text = "#F8FAFC"
 
 # Selection
-selection_background = "#C5DEF9"
+selection_background = "#A8D0F0"
 selection_foreground = "#002B5C"
 
 # ANSI colors (0-15)
-ansi_0 = "#1E282D"   # black
+ansi_0 = "#1A2A35"   # black
 ansi_1 = "#E80000"   # red
 ansi_2 = "#009933"   # green
 ansi_3 = "#E88800"   # yellow
-ansi_4 = "#007BDB"   # blue
+ansi_4 = "#0077CC"   # blue
 ansi_5 = "#007F7F"   # magenta
 ansi_6 = "#00B3B3"   # cyan
-ansi_7 = "#C8D6E3"   # white
+ansi_7 = "#A8C0D8"   # white
 
 # Bright ANSI colors (8-15)
 ansi_8 = "#485C6E"   # bright black
@@ -38,7 +38,7 @@ ansi_14 = "#4DDDDD"  # bright cyan
 ansi_15 = "#F0F4F8"  # bright white
 
 # Extended 256-color palette (16-255)
-# Grayscale
+# Grayscale (lighter for light theme)
 palette_16 = "#0A0F14"
 palette_17 = "#101820"
 palette_18 = "#182430"
@@ -47,10 +47,10 @@ palette_20 = "#2D4058"
 palette_21 = "#3D526E"
 palette_22 = "#526D85"
 palette_23 = "#6E89A0"
-palette_24 = "#93ABC3"
-palette_25 = "#B8CDE0"
-palette_26 = "#DCE8F0"
-palette_27 = "#E8F4FC"
+palette_24 = "#8FABBE"
+palette_25 = "#A8C0D8"
+palette_26 = "#DCE4ED"
+palette_27 = "#D0E8F8"
 palette_28 = "#F0F4F8"
 palette_29 = "#F8FAFC"
 palette_30 = "#FFFFFF"
@@ -85,8 +85,8 @@ palette_52 = "#002B5C"
 palette_53 = "#003D7A"
 palette_54 = "#00529E"
 palette_55 = "#0069C0"
-palette_56 = "#007BDB"
-palette_57 = "#0091E6"
+palette_56 = "#0077CC"
+palette_57 = "#1A91E6"
 palette_58 = "#33A8EE"
 palette_59 = "#66BFFF"
 palette_60 = "#99D4FF"
@@ -110,7 +110,7 @@ palette_73 = "#002B5C"
 palette_74 = "#003D7A"
 palette_75 = "#00529E"
 palette_76 = "#0069C0"
-palette_77 = "#007BDB"
+palette_77 = "#0077CC"
 palette_78 = "#1A91E6"
 palette_79 = "#4DA8EE"
 palette_80 = "#8FC3F5"
@@ -153,9 +153,9 @@ palette_110 = "#99E599"
 palette_111 = "#CCF0CC"
 palette_112 = "#E6F8E6"
 
-# UI colors - Borders
-palette_240 = "#C8D6E3"
-palette_241 = "#93ABC3"
+# UI colors - Borders (lighter for light theme)
+palette_240 = "#A8C0D8"
+palette_241 = "#8FABBE"
 palette_242 = "#6E89A0"
 palette_243 = "#485C6E"
 palette_244 = "#2D4058"
@@ -164,12 +164,12 @@ palette_246 = "#101820"
 palette_247 = "#0A0F14"
 
 # UI colors - Selection
-palette_248 = "#C5DEF9"
+palette_248 = "#A8D0F0"
 palette_249 = "#8FC3F5"
 palette_250 = "#4DA8EE"
 
 # UI colors - Cursor
-palette_251 = "#007BDB"
+palette_251 = "#0077CC"
 palette_252 = "#1A91E6"
 palette_253 = "#4DA8EE"
 palette_254 = "#8FC3F5"
@@ -178,19 +178,19 @@ palette_255 = "#C5DEF9"
 # Terminal UI
 [ui]
 tab_bar_background = "#F0F4F8"
-tab_bar_border = "#C8D6E3"
+tab_bar_border = "#A8C0D8"
 tab_active_background = "#F8FAFC"
-tab_inactive_background = "#E0E8EF"
-tab_active_foreground = "#1E282D"
-tab_inactive_foreground = "#6E89A0
-tab_active_border = "#007BDB"
-tab_hover_background = "#E8F4FC"
+tab_inactive_background = "#DCE4ED"
+tab_active_foreground = "#1A2A35"
+tab_inactive_foreground = "#6E89A0"
+tab_active_border = "#0077CC"
+tab_hover_background = "#D0E8F8"
 
-scrollbar_thumb = "#C8D6E3"
+scrollbar_thumb = "#A8C0D8"
 scrollbar_track = "transparent"
-scrollbar_thumb_hover = "#93ABC3"
+scrollbar_thumb_hover = "#8FABBE"
 
-split_pane_border = "#C8D6E3"
-split_pane_border_focus = "#007BDB"
+split_pane_border = "#A8C0D8"
+split_pane_border_focus = "#0077CC"
 
 bell_visual_flash = "#FFF0CC"

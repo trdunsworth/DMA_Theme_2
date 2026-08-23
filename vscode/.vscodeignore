@@ -1,0 +1,8 @@
+.vscode/**
+src/**
+node_modules/**
+.gitignore
+company-logo.jpg
+convert_icon.ps1
+icon.svg
+**/*.map

@@ -1,93 +1,156 @@
+"""plotnine ("ggplot2 for Python") integration for DMA Theme palettes.
+
+Provides ggplot2-style scale functions::
+
+    from plotnine import ggplot, aes, geom_point
+    import plotnine_dma
+
+    (ggplot(df, aes("x", "y", color="group"))
+        + geom_point()
+        + plotnine_dma.scale_color_dma())               # categorical
+
+    (ggplot(df, aes("x", "y", fill="value"))
+        + geom_tile()
+        + plotnine_dma.scale_fill_dma_c("DMA Cool"))     # continuous
+
+Scales:
+    scale_color_dma()   / scale_fill_dma()      categorical (qualitative)
+    scale_color_dma_b() / scale_fill_dma_b()    binned sequential
+    scale_color_dma_c() / scale_fill_dma_c()    continuous gradient
+    scale_colour_* aliases match R spelling.
+
+Requires: plotnine >= 0.10
 """
-DMA Theme - plotnine Integration
-=================================
 
-plotnine-specific utilities and theme registration.
+from __future__ import annotations
 
-Author: Dunsworth-Mann Analytics LLC
-https://dunsworth-mann.com
-"""
+from typing import Dict, Iterable, Optional
 
-from .ggplot2_dma import (
-    scale_color_dma,
-    scale_fill_dma,
-    scale_color_dma_c,
-    scale_fill_dma_c,
-    scale_color_dma_d,
-    scale_fill_dma_d,
-    scale_color_dma_brewer,
-    scale_fill_dma_brewer,
-    theme_dma,
-    theme_dma_dark,
-)
+import dma_palette as dma
 
-# Alias for ggplot2 compatibility
+try:
+    from plotnine.scales import (
+        scale_color_manual,
+        scale_fill_manual,
+        scale_color_gradientn,
+        scale_fill_gradientn,
+        scale_color_steps,
+        scale_fill_steps,
+    )
+except ImportError as exc:  # pragma: no cover
+    raise ImportError(
+        "plotnine is required for plotnine_dma. "
+        "Install with: pip install plotnine"
+    ) from exc
+
+
+def _resolve(palette: Optional[str], n: Optional[int]) -> list:
+    """Colors for a discrete scale."""
+    if palette is None or palette.lower() in ("qualitative", "categorical"):
+        return dma.qualitative(n or 8)
+    if palette in dma.SEQUENTIAL_SCHEMES:
+        # Discrete sampling of a sequential scheme (Brewer-style usage)
+        return dma.sequential(palette, n or 5)
+    if palette in dma.DIVERGING_SCHEMES:
+        return dma.diverging(palette, n or 7)
+    raise KeyError(f"Unknown DMA palette {palette!r}")
+
+
+def _discrete_scale(factory, palette, n, name, **kwargs):
+    values = _resolve(palette, n)
+    label = name or (f"DMA {palette}" if palette else "DMA")
+    return factory(values=values, name=label, **kwargs)
+
+
+def scale_color_dma(
+    palette: Optional[str] = None,
+    n: Optional[int] = None,
+    name: Optional[str] = None,
+    **kwargs,
+):
+    """Categorical color scale (DMA qualitative by default)."""
+    return _discrete_scale(scale_color_manual, palette, n, name, **kwargs)
+
+
+def scale_fill_dma(
+    palette: Optional[str] = None,
+    n: Optional[int] = None,
+    name: Optional[str] = None,
+    **kwargs,
+):
+    """Categorical fill scale (DMA qualitative by default)."""
+    return _discrete_scale(scale_fill_manual, palette, n, name, **kwargs)
+
+
+# R-spelling aliases
 scale_colour_dma = scale_color_dma
+scale_colour_dma.__doc__ = scale_color_dma.__doc__
+
+
+def scale_color_dma_c(
+    palette: str = "Cool",
+    name: Optional[str] = None,
+    **kwargs,
+):
+    """Continuous color gradient over a DMA sequential scheme."""
+    anchors = (_anchors_seq(palette) if palette in dma.SEQUENTIAL_SCHEMES
+               else dma.SEQUENTIAL_SCHEMES["Cool"])
+    label = name or f"DMA {palette}"
+    # anchors are light -> dark; plotnine maps first color to lowest value
+    return scale_color_gradientn(colors=anchors, name=label, **kwargs)
+
+
+def scale_fill_dma_c(
+    palette: str = "Cool",
+    name: Optional[str] = None,
+    **kwargs,
+):
+    """Continuous fill gradient over a DMA sequential scheme."""
+    anchors = (_anchors_seq(palette) if palette in dma.SEQUENTIAL_SCHEMES
+               else dma.SEQUENTIAL_SCHEMES["Cool"])
+    label = name or f"DMA {palette}"
+    return scale_fill_gradientn(colors=anchors, name=label, **kwargs)
+
+
+def _anchors_seq(scheme: str) -> list:
+    if scheme in {"Blues", "Teals", "Turquoises", "Greens", "Oranges"}:
+        alias = {
+            "Blues": dma.BLUE, "Teals": dma.TEAL,
+            "Turquoises": dma.TURQUOISE, "Greens": dma.GREEN,
+            "Oranges": dma.WARNING,
+        }
+        keys = ("50", "100", "200", "300", "400",
+                "500", "600", "700", "800", "900")
+        return [alias[scheme][k] for k in keys]
+    return dma.SEQUENTIAL_SCHEMES[scheme]
+
+
+def scale_color_dma_b(
+    palette: str = "Blues",
+    n: int = 5,
+    name: Optional[str] = None,
+    **kwargs,
+):
+    """Binned color scale over a DMA sequential scheme."""
+    values = dma.sequential(palette, n)
+    label = name or f"DMA {palette}"
+    return scale_color_steps(colors=values, name=label, **kwargs)
+
+
+def scale_fill_dma_b(
+    palette: str = "Blues",
+    n: int = 5,
+    name: Optional[str] = None,
+    **kwargs,
+):
+    """Binned fill scale over a DMA sequential scheme."""
+    values = dma.sequential(palette, n)
+    label = name or f"DMA {palette}"
+    return scale_fill_steps(colors=values, name=label, **kwargs)
+
+
+# R-spelling aliases for continuous/binned
 scale_colour_dma_c = scale_color_dma_c
-scale_colour_dma_d = scale_color_dma_d
-scale_colour_dma_brewer = scale_color_dma_brewer
-
-__all__ = [
-    "scale_color_dma",
-    "scale_fill_dma",
-    "scale_color_dma_c",
-    "scale_fill_dma_c",
-    "scale_color_dma_d",
-    "scale_fill_dma_d",
-    "scale_color_dma_brewer",
-    "scale_fill_dma_brewer",
-    "scale_colour_dma",
-    "scale_colour_dma_c",
-    "scale_colour_dma_d",
-    "scale_colour_dma_brewer",
-    "theme_dma",
-    "theme_dma_dark",
-]
-
-
-# Optional: Register scales with plotnine
-def register_scales():
-    """
-    Register DMA scales with plotnine's scale registry.
-    This allows using them as string names in aes().
-    
-    Example:
-        aes(color='dma_bold')  # After registration
-    """
-    try:
-        from plotnine.scales import scale_registry
-        from plotnine.scales.scale_discrete import ScaleDiscrete
-        from plotnine.scales.scale_continuous import ScaleContinuous
-        
-        # Register discrete scales
-        scale_registry.register('dma_bold', scale_color_dma, 'color', {'palette': 'bold'})
-        scale_registry.register('dma_bold', scale_fill_dma, 'fill', {'palette': 'bold'})
-        scale_registry.register('dma_light', scale_color_dma, 'color', {'palette': 'light'})
-        scale_registry.register('dma_light', scale_fill_dma, 'fill', {'palette': 'light'})
-        scale_registry.register('dma_dark', scale_color_dma, 'color', {'palette': 'dark'})
-        scale_registry.register('dma_dark', scale_fill_dma, 'fill', {'palette': 'dark'})
-        scale_registry.register('dma_semantic', scale_color_dma, 'color', {'palette': 'semantic'})
-        scale_registry.register('dma_semantic', scale_fill_dma, 'fill', {'palette': 'semantic'})
-        
-        # Register continuous scales
-        scale_registry.register('dma_blue', scale_color_dma_c, 'color', {'palette': 'blue'})
-        scale_registry.register('dma_blue', scale_fill_dma_c, 'fill', {'palette': 'blue'})
-        scale_registry.register('dma_teal', scale_color_dma_c, 'color', {'palette': 'teal'})
-        scale_registry.register('dma_teal', scale_fill_dma_c, 'fill', {'palette': 'teal'})
-        scale_registry.register('dma_turquoise', scale_color_dma_c, 'color', {'palette': 'turquoise'})
-        scale_registry.register('dma_turquoise', scale_fill_dma_c, 'fill', {'palette': 'turquoise'})
-        scale_registry.register('dma_green', scale_color_dma_c, 'color', {'palette': 'green'})
-        scale_registry.register('dma_green', scale_fill_dma_c, 'fill', {'palette': 'green'})
-        
-        # Register diverging scales
-        scale_registry.register('dma_blue_orange', scale_color_dma_d, 'color', {'palette': 'blue_orange'})
-        scale_registry.register('dma_blue_orange', scale_fill_dma_d, 'fill', {'palette': 'blue_orange'})
-        scale_registry.register('dma_teal_red', scale_color_dma_d, 'color', {'palette': 'teal_red'})
-        scale_registry.register('dma_teal_red', scale_fill_dma_d, 'fill', {'palette': 'teal_red'})
-        
-    except ImportError:
-        pass  # plotnine not available
-
-
-# Optional: Auto-register on import
-# register_scales()
+scale_fill_dma_c = scale_fill_dma_c
+scale_colour_dma_b = scale_color_dma_b
+scale_fill_dma_b = scale_fill_dma_b

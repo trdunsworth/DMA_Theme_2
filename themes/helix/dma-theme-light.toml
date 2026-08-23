@@ -7,46 +7,46 @@
 [theme]
 background = "#F8FAFC"
 ui-background = "#F0F4F8"
-ui-text = "#1E282D"
-ui-text-focus = "#1E282D"
+ui-text = "#1A2A35"
+ui-text-focus = "#1A2A35"
 ui-text-dimmed = "#6E89A0"
 ui-popup = "#FFFFFF"
-ui-popup-selected = "#E8F4FC"
+ui-popup-selected = "#D0E8F8"
 ui-help = "#6E89A0"
-ui-help-key = "#007BDB"
-ui-window = "#C8D6E3"
+ui-help-key = "#0077CC"
+ui-window = "#A8C0D8"
 ui-linenr = "#6E89A0"
-ui-cursor = "#007BDB"
-ui-cursor-match = "#C5DEF9"
+ui-cursor = "#0077CC"
+ui-cursor-match = "#A8D0F0"
 ui-cursor-match-background = "#002B5C"
-ui-cursorline = "#E8F4FC"
-ui-selection = "#C5DEF9"
-ui-selection-primary = "#C5DEF9"
-ui-virtual = "#93ABC3"
-statusline-left = { bg = "#E0E8EF", fg = "#1E282D", modifiers = ["bold"] }
-statusline-left-separator = { bg = "#E0E8EF", fg = "#C8D6E3" }
-statusline-center = { bg = "#E0E8EF", fg = "#6E89A0" }
-statusline-right = { bg = "#E0E8EF", fg = "#1E282D", modifiers = ["bold"] }
-statusline-right-separator = { bg = "#E0E8EF", fg = "#C8D6E3" }
+ui-cursorline = "#D0E8F8"
+ui-selection = "#A8D0F0"
+ui-selection-primary = "#A8D0F0"
+ui-virtual = "#8FABBE"
+statusline-left = { bg = "#DCE4ED", fg = "#1A2A35", modifiers = ["bold"] }
+statusline-left-separator = { bg = "#DCE4ED", fg = "#A8C0D8" }
+statusline-center = { bg = "#DCE4ED", fg = "#6E89A0" }
+statusline-right = { bg = "#DCE4ED", fg = "#1A2A35", modifiers = ["bold"] }
+statusline-right-separator = { bg = "#DCE4ED", fg = "#A8C0D8" }
 diagnostic-error = "#E80000"
 diagnostic-warning = "#E88800"
-diagnostic-info = "#007BDB"
+diagnostic-info = "#0077CC"
 diagnostic-hint = "#00B3B3"
 diff-added = "#009933"
 diff-deleted = "#E80000"
-diff-changed = "#007BDB"
-matching-bracket = { fg = "#007BDB", modifiers = ["bold", "underline"] }
+diff-changed = "#0077CC"
+matching-bracket = { fg = "#0077CC", modifiers = ["bold", "underline"] }
 
 [palette]
 # Normal colors (0-7)
 red = "#E80000"
 green = "#009933"
 yellow = "#E88800"
-blue = "#007BDB"
+blue = "#0077CC"
 magenta = "#007F7F"
 cyan = "#00B3B3"
-white = "#C8D6E3"
-black = "#1E282D"
+white = "#A8C0D8"
+black = "#1A2A35"
 
 # Bright colors (8-15)
 bright-red = "#FF1A1A"
@@ -86,8 +86,8 @@ bright-black = "#485C6E"
 "37" = "#003D7A"
 "38" = "#00529E"
 "39" = "#0069C0"
-"40" = "#007BDB"
-"41" = "#0091E6"   # info base
+"40" = "#0077CC"
+"41" = "#1A91E6"   # info base
 "42" = "#33A8EE"
 "43" = "#66BFFF"
 "44" = "#99D4FF"
@@ -105,19 +105,19 @@ bright-black = "#485C6E"
 "55" = "#CCF0CC"
 "56" = "#E6F8E6"   # success lightest
 
-# Primary Blue variants
+# Primary Blue variants (brighter for light theme)
 "57" = "#002B5C"
 "58" = "#003D7A"
 "59" = "#00529E"
 "60" = "#0069C0"
-"61" = "#007BDB"
+"61" = "#0077CC"
 "62" = "#1A91E6"
 "63" = "#4DA8EE"
 "64" = "#8FC3F5"
 "65" = "#C5DEF9"
 "66" = "#E8F4FC"
 
-# Teal variants
+# Teal variants (brighter for light theme)
 "67" = "#004D4D"
 "68" = "#006666"
 "69" = "#007F7F"
@@ -129,7 +129,7 @@ bright-black = "#485C6E"
 "75" = "#CCF7F7"
 "76" = "#E6FBFB"
 
-# Turquoise variants
+# Turquoise variants (brighter for light theme)
 "77" = "#005C5C"
 "78" = "#007373"
 "79" = "#008A8A"
@@ -141,7 +141,7 @@ bright-black = "#485C6E"
 "85" = "#CCF6F6"
 "86" = "#E6FBFB"
 
-# Green variants
+# Green variants (brighter for light theme)
 "87" = "#004D1A"
 "88" = "#006622"
 "89" = "#007F2A"
@@ -153,9 +153,9 @@ bright-black = "#485C6E"
 "95" = "#CCF0CC"
 "96" = "#E6F8E6"
 
-# Grayscale
-"240" = "#C8D6E3"
-"241" = "#93ABC3"
+# Grayscale (lighter for light theme)
+"240" = "#A8C0D8"
+"241" = "#8FABBE"
 "242" = "#6E89A0"
 "243" = "#485C6E"
 "244" = "#2D4058"
@@ -169,26 +169,26 @@ Comment = { fg = "$palette.242", modifiers = ["italic"] }
 Comment.Doc = { fg = "$palette.242", modifiers = ["italic"] }
 
 # Constants
-Constant = { fg = "$palette.26" }
-String = { fg = "$palette.89" }
-Character = { fg = "$palette.89" }
-Number = { fg = "$palette.59" }
-Boolean = { fg = "$palette.59" }
-Float = { fg = "$palette.59" }
+Constant = { fg = "$palette.29" }
+String = { fg = "$palette.91" }
+Character = { fg = "$palette.91" }
+Number = { fg = "$palette.61" }
+Boolean = { fg = "$palette.61" }
+Float = { fg = "$palette.61" }
 
 # Identifiers
 Identifier = { fg = "$palette.134" }
-Function = { fg = "$palette.59" }
-Method = { fg = "$palette.59" }
+Function = { fg = "$palette.61" }
+Method = { fg = "$palette.61" }
 
 # Statements
-Statement = { fg = "$palette.67", modifiers = ["bold"] }
-Conditional = { fg = "$palette.67", modifiers = ["bold"] }
-Repeat = { fg = "$palette.67", modifiers = ["bold"] }
-Label = { fg = "$palette.67" }
-Operator = { fg = "$palette.67" }
-Keyword = { fg = "$palette.67", modifiers = ["bold"] }
-Exception = { fg = "$palette.67" }
+Statement = { fg = "$palette.71", modifiers = ["bold"] }
+Conditional = { fg = "$palette.71", modifiers = ["bold"] }
+Repeat = { fg = "$palette.71", modifiers = ["bold"] }
+Label = { fg = "$palette.71" }
+Operator = { fg = "$palette.71" }
+Keyword = { fg = "$palette.71", modifiers = ["bold"] }
+Exception = { fg = "$palette.71" }
 
 # Preprocessor
 PreProc = { fg = "$palette.72" }
@@ -198,15 +198,15 @@ Macro = { fg = "$palette.72" }
 PreCondit = { fg = "$palette.72" }
 
 # Types
-Type = { fg = "$palette.68", modifiers = ["bold"] }
-StorageClass = { fg = "$palette.67" }
-Structure = { fg = "$palette.68", modifiers = ["bold"] }
-Typedef = { fg = "$palette.68", modifiers = ["bold"] }
+Type = { fg = "$palette.71", modifiers = ["bold"] }
+StorageClass = { fg = "$palette.71" }
+Structure = { fg = "$palette.71", modifiers = ["bold"] }
+Typedef = { fg = "$palette.71", modifiers = ["bold"] }
 
 # Special
-Special = { fg = "$palette.32" }
-SpecialChar = { fg = "$palette.32", modifiers = ["bold"] }
-Tag = { fg = "$palette.67" }
+Special = { fg = "$palette.31" }
+SpecialChar = { fg = "$palette.31", modifiers = ["bold"] }
+Tag = { fg = "$palette.71" }
 Delimiter = { fg = "$palette.243" }
 SpecialComment = { fg = "$palette.242" }
 Debug = { fg = "$palette.20" }
@@ -297,11 +297,11 @@ LspInlayHint = { fg = "$palette.242", bg = "$palette.133" }
 
 "@string" = { link = "String" }
 "@string.documentation" = { link = "String" }
-"@string.regexp" = { fg = "$palette.26" }
+"@string.regexp" = { fg = "$palette.29" }
 "@string.escape" = { fg = "$palette.29", modifiers = ["bold"] }
-"@string.special" = { fg = "$palette.26" }
-"@string.special.symbol" = { fg = "$palette.26" }
-"@string.special.url" = { fg = "$palette.40", modifiers = ["underline"] }
+"@string.special" = { fg = "$palette.29" }
+"@string.special.symbol" = { fg = "$palette.29" }
+"@string.special.url" = { fg = "$palette.41", modifiers = ["underline"] }
 
 "@character" = { link = "Character" }
 "@character.special" = { link = "SpecialChar" }
@@ -312,8 +312,8 @@ LspInlayHint = { fg = "$palette.242", bg = "$palette.133" }
 "@boolean" = { link = "Boolean" }
 
 "@constant" = { link = "Constant" }
-"@constant.builtin" = { fg = "$palette.26" }
-"@constant.macro" = { fg = "$palette.26" }
+"@constant.builtin" = { fg = "$palette.29" }
+"@constant.macro" = { fg = "$palette.29" }
 
 "@variable" = { link = "Identifier" }
 "@variable.builtin" = { fg = "$palette.134", modifiers = ["italic"] }
@@ -322,25 +322,25 @@ LspInlayHint = { fg = "$palette.242", bg = "$palette.133" }
 "@variable.member" = { fg = "$palette.134" }
 
 "@function" = { link = "Function" }
-"@function.builtin" = { fg = "$palette.59" }
-"@function.call" = { fg = "$palette.59" }
+"@function.builtin" = { fg = "$palette.61" }
+"@function.call" = { fg = "$palette.61" }
 "@function.macro" = { fg = "$palette.72" }
-"@function.method" = { fg = "$palette.59" }
-"@function.method.call" = { fg = "$palette.59" }
+"@function.method" = { fg = "$palette.61" }
+"@function.method.call" = { fg = "$palette.61" }
 
 "@keyword" = { link = "Keyword" }
-"@keyword.coroutine" = { fg = "$palette.67" }
-"@keyword.function" = { fg = "$palette.67" }
-"@keyword.operator" = { fg = "$palette.67" }
+"@keyword.coroutine" = { fg = "$palette.71" }
+"@keyword.function" = { fg = "$palette.71" }
+"@keyword.operator" = { fg = "$palette.71" }
 "@keyword.import" = { fg = "$palette.72" }
-"@keyword.type" = { fg = "$palette.67" }
-"@keyword.modifier" = { fg = "$palette.67" }
-"@keyword.repeat" = { fg = "$palette.67" }
-"@keyword.return" = { fg = "$palette.67" }
+"@keyword.type" = { fg = "$palette.71" }
+"@keyword.modifier" = { fg = "$palette.71" }
+"@keyword.repeat" = { fg = "$palette.71" }
+"@keyword.return" = { fg = "$palette.71" }
 "@keyword.debug" = { fg = "$palette.20" }
-"@keyword.exception" = { fg = "$palette.67" }
-"@keyword.conditional" = { fg = "$palette.67" }
-"@keyword.conditional.ternary" = { fg = "$palette.67" }
+"@keyword.exception" = { fg = "$palette.71" }
+"@keyword.conditional" = { fg = "$palette.71" }
+"@keyword.conditional.ternary" = { fg = "$palette.71" }
 
 "@operator" = { link = "Operator" }
 
@@ -350,9 +350,9 @@ LspInlayHint = { fg = "$palette.242", bg = "$palette.133" }
 "@punctuation.special" = { fg = "$palette.243" }
 
 "@type" = { link = "Type" }
-"@type.builtin" = { fg = "$palette.68" }
-"@type.definition" = { fg = "$palette.68", modifiers = ["bold"] }
-"@type.qualifier" = { fg = "$palette.67" }
+"@type.builtin" = { fg = "$palette.71" }
+"@type.definition" = { fg = "$palette.71", modifiers = ["bold"] }
+"@type.qualifier" = { fg = "$palette.71" }
 
 "@attribute" = { fg = "$palette.72" }
 "@attribute.builtin" = { fg = "$palette.72" }
@@ -372,20 +372,20 @@ LspInlayHint = { fg = "$palette.242", bg = "$palette.133" }
 "@markup.emphasis" = { fg = "$palette.134", modifiers = ["italic"] }
 "@markup.strikethrough" = { fg = "$palette.242", modifiers = ["crossed_out"] }
 "@markup.underline" = { modifiers = ["underline"] }
-"@markup.heading" = { fg = "$palette.67", modifiers = ["bold"] }
-"@markup.heading.1" = { fg = "$palette.67", modifiers = ["bold"] }
-"@markup.heading.2" = { fg = "$palette.67", modifiers = ["bold"] }
-"@markup.heading.3" = { fg = "$palette.67", modifiers = ["bold"] }
-"@markup.heading.4" = { fg = "$palette.67", modifiers = ["bold"] }
-"@markup.heading.5" = { fg = "$palette.67", modifiers = ["bold"] }
-"@markup.heading.6" = { fg = "$palette.67", modifiers = ["bold"] }
+"@markup.heading" = { fg = "$palette.71", modifiers = ["bold"] }
+"@markup.heading.1" = { fg = "$palette.71", modifiers = ["bold"] }
+"@markup.heading.2" = { fg = "$palette.71", modifiers = ["bold"] }
+"@markup.heading.3" = { fg = "$palette.71", modifiers = ["bold"] }
+"@markup.heading.4" = { fg = "$palette.71", modifiers = ["bold"] }
+"@markup.heading.5" = { fg = "$palette.71", modifiers = ["bold"] }
+"@markup.heading.6" = { fg = "$palette.71", modifiers = ["bold"] }
 "@markup.quote" = { fg = "$palette.242", modifiers = ["italic"] }
-"@markup.link" = { fg = "$palette.40", modifiers = ["underline"] }
-"@markup.link.label" = { fg = "$palette.40" }
-"@markup.link.url" = { fg = "$palette.40", modifiers = ["underline"] }
-"@markup.raw" = { fg = "$palette.89", bg = "$palette.133" }
-"@markup.raw.block" = { fg = "$palette.89", bg = "$palette.133" }
-"@markup.list" = { fg = "$palette.67" }
+"@markup.link" = { fg = "$palette.41", modifiers = ["underline"] }
+"@markup.link.label" = { fg = "$palette.41" }
+"@markup.link.url" = { fg = "$palette.41", modifiers = ["underline"] }
+"@markup.raw" = { fg = "$palette.91", bg = "$palette.133" }
+"@markup.raw.block" = { fg = "$palette.91", bg = "$palette.133" }
+"@markup.list" = { fg = "$palette.71" }
 "@markup.list.checked" = { fg = "$palette.51" }
 "@markup.list.unchecked" = { fg = "$palette.242" }
 
@@ -393,9 +393,9 @@ LspInlayHint = { fg = "$palette.242", bg = "$palette.133" }
 "@diff.minus" = { fg = "$palette.20", bg = "$palette.25" }
 "@diff.delta" = { fg = "$palette.61", bg = "$palette.65" }
 
-"@tag.tsx" = { fg = "$palette.67" }
-"@tag.javascript" = { fg = "$palette.67" }
-"@tag.typescript" = { fg = "$palette.67" }
+"@tag.tsx" = { fg = "$palette.71" }
+"@tag.javascript" = { fg = "$palette.71" }
+"@tag.typescript" = { fg = "$palette.71" }
 
 "@none" = {}
 "@conceal" = { fg = "$palette.242" }

@@ -6,24 +6,24 @@
 
 [colors]
 # Basic colors
-foreground = "#1E282D"
+foreground = "#1A2A35"
 background = "#F8FAFC"
-cursor_bg = "#007BDB"
+cursor_bg = "#0077CC"
 cursor_fg = "#F8FAFC"
-cursor_border = "#007BDB"
-selection_fg = "#1E282D"
-selection_bg = "#C5DEF9"
+cursor_border = "#0077CC"
+selection_fg = "#1A2A35"
+selection_bg = "#A8D0F0"
 
 # ANSI colors
 ansi = [
-  "#1E282D",  # black
+  "#1A2A35",  # black
   "#E80000",  # red
   "#009933",  # green
   "#E88800",  # yellow
-  "#007BDB",  # blue
+  "#0077CC",  # blue
   "#007F7F",  # magenta
   "#00B3B3",  # cyan
-  "#C8D6E3",  # white
+  "#A8C0D8",  # white
 ]
 
 brights = [
@@ -38,7 +38,7 @@ brights = [
 ]
 
 # Indexed colors (16-255)
-# Grayscale
+# Grayscale (lighter for light theme)
 indexed = {
   16 = "#0A0F14"
   17 = "#101820"
@@ -48,10 +48,10 @@ indexed = {
   21 = "#3D526E"
   22 = "#526D85"
   23 = "#6E89A0"
-  24 = "#93ABC3"
-  25 = "#B8CDE0"
-  26 = "#DCE8F0"
-  27 = "#E8F4FC"
+  24 = "#8FABBE"
+  25 = "#A8C0D8"
+  26 = "#DCE4ED"
+  27 = "#D0E8F8"
   28 = "#F0F4F8"
   29 = "#F8FAFC"
   30 = "#FFFFFF"
@@ -87,8 +87,8 @@ indexed[52] = "#002B5C"
 indexed[53] = "#003D7A"
 indexed[54] = "#00529E"
 indexed[55] = "#0069C0"
-indexed[56] = "#007BDB"
-indexed[57] = "#0091E6"
+indexed[56] = "#0077CC"
+indexed[57] = "#1A91E6"
 indexed[58] = "#33A8EE"
 indexed[59] = "#66BFFF"
 indexed[60] = "#99D4FF"
@@ -112,7 +112,7 @@ indexed[73] = "#002B5C"
 indexed[74] = "#003D7A"
 indexed[75] = "#00529E"
 indexed[76] = "#0069C0"
-indexed[77] = "#007BDB"
+indexed[77] = "#0077CC"
 indexed[78] = "#1A91E6"
 indexed[79] = "#4DA8EE"
 indexed[80] = "#8FC3F5"
@@ -155,9 +155,9 @@ indexed[110] = "#99E599"
 indexed[111] = "#CCF0CC"
 indexed[112] = "#E6F8E6"
 
-# UI colors - Borders
-indexed[240] = "#C8D6E3"
-indexed[241] = "#93ABC3"
+# UI colors - Borders (lighter for light theme)
+indexed[240] = "#A8C0D8"
+indexed[241] = "#8FABBE"
 indexed[242] = "#6E89A0"
 indexed[243] = "#485C6E"
 indexed[244] = "#2D4058"
@@ -166,29 +166,29 @@ indexed[246] = "#101820"
 indexed[247] = "#0A0F14"
 
 # UI colors - Selection
-indexed[248] = "#C5DEF9"
+indexed[248] = "#A8D0F0"
 indexed[249] = "#8FC3F5"
 indexed[250] = "#4DA8EE"
 
 # UI colors - Cursor
-indexed[251] = "#007BDB"
+indexed[251] = "#0077CC"
 indexed[252] = "#1A91E6"
 indexed[253] = "#4DA8EE"
 indexed[254] = "#8FC3F5"
 indexed[255] = "#C5DEF9"
 
 # Additional UI colors
-scrollbar_thumb = "#C8D6E3"
-split = "#C8D6E3"
+scrollbar_thumb = "#A8C0D8"
+split = "#A8C0D8"
 
 # Copy mode colors
-copy_mode_active_highlight_bg = { Color = "#007BDB" }
+copy_mode_active_highlight_bg = { Color = "#0077CC" }
 copy_mode_active_highlight_fg = { AnsiColor = "Black" }
-copy_mode_inactive_highlight_bg = { Color = "#C8D6E3" }
+copy_mode_inactive_highlight_bg = { Color = "#A8C0D8" }
 copy_mode_inactive_highlight_fg = { AnsiColor = "White" }
 
 # Quick select colors
-quick_select_label_bg = { Color = "#007BDB" }
+quick_select_label_bg = { Color = "#0077CC" }
 quick_select_label_fg = { Color = "#FFFFFF" }
 quick_select_match_bg = { AnsiColor = "Blue" }
 quick_select_match_fg = { Color = "#FFFFFF" }

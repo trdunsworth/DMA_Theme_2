@@ -20,7 +20,7 @@
 
 The primary palette spans a contiguous region of color space from blue (220°) through teal (180°) to green (140°). This creates natural harmony:
 
-- **Blue** (`#007BDB` base) — Primary actions, links, keywords, functions
+- **Blue** (`#0077CC` light base / `#007BDB` dark base) — Primary actions, links, keywords, functions
 - **Teal** (`#00B3B3` base) — Types, classes, interfaces, namespaces
 - **Turquoise** (`#00B8B8` base) — Attributes, decorators, annotations
 - **Green** (`#00B33B` base) — Strings, success states, git additions
@@ -42,6 +42,15 @@ Two neutral scales (light/dark) with 11 steps each (950-50), designed for:
 - Borders and dividers
 - Selection and highlight states
 
+### Light Theme Contrast Strategy
+
+The light background (`#F8FAFC`, ~97% lightness) compresses perceived differences between dark colors — anything in the 700–900 range reads as "black" to the eye. To keep tokens distinct:
+
+1. **Syntax colors live in the 400–600 stops** of each scale. Keywords are teal-600 `#009999`, not teal-900 `#004D4D`; strings are green-500/600, functions and numbers are blue-500 `#0077CC`.
+2. **The foreground stays near-black** (`#1A2A35`) for default text; every colored token must be visibly lighter or hue-shifted from it.
+3. **WCAG AA still applies.** Each syntax color was checked against `#F8FAFC` at ≥ 4.5:1. Brighter stops (300s) are reserved for accents on tinted backgrounds (tags, callouts), never for body-size text.
+4. **Warm colors stay saturated**, not pastel: constants use orange `#D47800`, errors stay `#E80000`.
+
 ### Semantic Mapping Rules
 
 | Semantic Role | Light Theme | Dark Theme | Usage |
@@ -61,23 +70,23 @@ Two neutral scales (light/dark) with 11 steps each (950-50), designed for:
 
 ### Syntax Highlighting Semantics
 
-| Scope | Color | Rationale |
-|-------|-------|-----------|
-| Comments | Neutral Subtle | Recede, italic for distinction |
-| Strings | Green Dark | Data content, success-adjacent |
-| Numbers | Blue Dark | Constants, precision |
-| Keywords | Teal Darkest | Control flow, structure |
-| Functions | Blue Dark | Actions, callable |
-| Types/Classes | Teal Darker | Definitions, contracts |
-| Variables | Text Primary | Default, readable |
-| Parameters | Text Muted | Distinct from variables |
-| Constants | Warning Darker | Immutable, attention |
-| Operators | Teal Darkest | Structural |
-| Punctuation | Text Muted | Structural, low emphasis |
-| Tags | Teal Darkest | Markup structure |
-| Attributes | Teal Dark | HTML/XML attributes |
-| Regex | Warning Darker | Complex, error-prone |
-| Escape | Warning Dark | Special sequences |
+| Scope | Light Theme | Dark Theme | Rationale |
+|-------|-------------|------------|-----------|
+| Comments | Neutral Subtle | Neutral Subtle | Recede, italic for distinction |
+| Strings | Green 500–600 | Green Lighter | Data content, success-adjacent |
+| Numbers | Blue 500 | Blue Lighter | Constants, precision |
+| Keywords | Teal 600 | Teal Lighter | Control flow, structure |
+| Functions | Blue 500 | Blue Lighter | Actions, callable |
+| Types/Classes | Teal 500 | Teal Light | Definitions, contracts |
+| Variables | Text Primary | Text Primary | Default, readable |
+| Parameters | Text Muted | Text Muted | Distinct from variables |
+| Constants | Warning (orange `#D47800`) | Warning Light | Immutable, attention |
+| Operators | Teal 600 | Teal Lighter | Structural |
+| Punctuation | Text Muted | Text Muted | Structural, low emphasis |
+| Tags | Teal 600 | Teal Lighter | Markup structure |
+| Attributes | Turquoise 500 | Turquoise Lighter | HTML/XML attributes |
+| Regex | Warning (`#D47800`) | Warning Light | Complex, error-prone |
+| Escape | Warning 600 | Warning Lighter | Special sequences |
 
 ---
 

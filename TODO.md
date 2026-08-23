@@ -13,9 +13,10 @@
 - [x] Create semantic theme mappings for light variant
 - [x] Create semantic theme mappings for dark variant
 - [x] Create master `palette.json` with all colors and theme definitions
+- [x] **Brighten light theme colors** - Updated light theme to use 300-400 range shades for better contrast and distinction
 
 ### VS Code / Positron
-- [x] Light theme (`dma-theme-light-color-theme.json`)
+- [x] Light theme (`dma-theme-light-color-theme.json`) - **Updated with brighter syntax colors**
 - [x] Dark theme (`dma-theme-dark-color-theme.json`)
 - [x] Package.json with metadata and publishing config
 - [x] Semantic highlighting support
@@ -34,9 +35,10 @@
 ### Ghostty
 - [x] Light theme (`dma-theme-light`)
 - [x] Full 256-color palette with semantic color extensions
+- [x] Dark theme (`dma-theme-dark`)
 
 ### WezTerm
-- [x] Light theme (`dma-theme-light.toml`)
+- [x] Light theme (`dma-theme-light.toml`) - **Updated with brighter colors**
 - [x] Dark theme (`dma-theme-dark.toml`)
 - [x] Full indexed color palette (16-255)
 - [x] UI colors (scrollbar, split, copy mode, quick select, launcher)
@@ -48,110 +50,111 @@
 - [x] TreeSitter/LSP/Diagnostic highlights
 - [x] Plugin integrations (Telescope, NvimTree, WhichKey, Lazy, Mason, Noice, Notify, Snacks, Gitsigns, IndentBlankline, Mini, Leap, Flash, Cmp, BlinkCmp, RainbowDelimiter)
 
+### Helix
+- [x] `dma-theme-light.toml` — Light theme - **Updated with brighter palette**
+- [x] `dma-theme-dark.toml` — Dark theme
+
+### Kakoune
+- [x] `dma-theme-light.kak` — Light theme
+- [x] `dma-theme-dark.kak` — Dark theme
+
+### Notepad++
+- [x] `dma-theme-light.xml` — Light theme
+- [x] `dma-theme-dark.xml` — Dark theme
+
+### Obsidian
+- [x] `dma-theme.css` — CSS theme with light/dark variants using CSS variables
+
+### Positron
+- [x] `dma-theme-light.json` — Light theme (VS Code compatible) - **Updated with brighter colors**
+- [x] `dma-theme-dark.json` — Dark theme (VS Code compatible)
+
+### Zed
+- [x] `dma-theme-light.json` — Light theme - **Updated with brighter colors**
+- [x] `dma-theme-dark.json` — Dark theme
+
+### Terminal Themes
+
+#### Cosmic Terminal
+- [x] `dma-theme-light.toml` — Light theme
+- [x] `dma-theme-dark.toml` — Dark theme
+
+#### Yen
+- [x] `dma-theme-light.yaml` — Light theme - **Updated with brighter colors**
+- [x] `dma-theme-dark.yaml` — Dark theme
+
+#### Warp
+- [x] `dma-theme-light.yaml` — Light theme - **Updated with brighter colors**
+- [x] `dma-theme-dark.yaml` — Dark theme
+
+#### tmux
+- [x] `dma-theme-light.conf` — Light theme with status line
+- [x] `dma-theme-dark.conf` — Dark theme with status line
+
 ---
 
 ## 🔄 In Progress
 
 ### Documentation
 - [x] README.md
-- [ ] TODO.md (this file)
-- [ ] GUIDELINES.md
-- [ ] CHANGELOG.md
-- [ ] LICENSE
+- [x] TODO.md (this file)
+- [x] GUIDELINES.md
+- [x] CHANGELOG.md
+- [x] LICENSE
 
 ---
 
 ## 📋 Pending - High Priority
 
-### Editor Themes (Missing)
+### Remaining Light Theme Brightness Updates
+- [x] `themes/cosmic/dma-theme-light.toml` — Update to brighter palette
+- [x] `themes/ghostty/` — Update light theme colors
+- [x] `themes/emacs/` — Update light theme colors
+- [x] `themes/neovim/` — Update light theme palette/highlights
+- [x] `themes/kakoune/dma-theme-light.kak` — Update to brighter colors
+- [x] `themes/notepadpp/dma-theme-light.xml` — Update to brighter colors
+- [x] `themes/obsidian/dma-theme.css` — Update CSS variables for light mode
+- [x] `themes/tmux/dma-theme-light.conf` — Update to brighter colors
+- [x] `themes/positron/dma-theme-light.json` — Synced from updated VS Code theme
 
-#### Helix
-- [ ] `dma-theme-light.toml` — Light theme
-- [ ] `dma-theme-dark.toml` — Dark theme
+### VSIX Packaging
+- [x] Version bumped to 1.1.0 (`package.json`, `palette.json`, CHANGELOG)
+- [x] `.vscodeignore` added (excludes logo, icon script)
+- [x] `dma-theme-1.1.0.vsix` built and verified (42 KB, brightened colors confirmed)
 
-#### Kakoune
-- [ ] `dma-theme-light.kak` — Light theme
-- [ ] `dma-theme-dark.kak` — Dark theme
-
-#### Notepad++
-- [ ] `dma-theme-light.xml` — Light theme
-- [ ] `dma-theme-dark.xml` — Dark theme
-
-#### Obsidian
-- [ ] `dma-theme.css` — CSS theme with light/dark variants using CSS variables
-
-#### Positron
-- [ ] `dma-theme-light.json` — Light theme (VS Code compatible)
-- [ ] `dma-theme-dark.json` — Dark theme (VS Code compatible)
-
-#### Zed
-- [ ] `dma-theme-light.json` — Light theme
-- [ ] `dma-theme-dark.json` — Dark theme
-
-### Terminal Themes (Missing)
-
-#### Cosmic Terminal
-- [ ] `dma-theme-light.toml` — Light theme
-- [ ] `dma-theme-dark.toml` — Dark theme
-
-#### Yen
-- [ ] `dma-theme-light.yaml` — Light theme
-- [ ] `dma-theme-dark.yaml` — Dark theme
-
-#### Warp
-- [ ] `dma-theme-light.yaml` — Light theme
-- [ ] `dma-theme-dark.yaml` — Dark theme
-
-#### tmux
-- [ ] `dma-theme-light.conf` — Light theme with status line
-- [ ] `dma-theme-dark.conf` — Dark theme with status line
-
-### Existing Themes - Missing Variants
-
-#### Ghostty
-- [ ] `dma-theme-dark` — Dark theme variant
+### Data Visualization Palettes
+- [x] **Python (`palettes/python/`)** — `dma_palette.py` (zero-dep core), `matplotlib_dma.py` (11 colormaps + cycle), `plotnine_dma.py` (ggplot2-style scales), `seaborn_dma.py`, `ggplot2_dma.py` (alias), `demo_python.ipynb`
+- [x] **R (`palettes/r/`)** — `dma_palette.R`, `ggplot2_dma.R` (discrete/continuous/binned/diverging), `plotly_dma.R`, `demo_r.Rmd`
+- [x] **Brewer-style schemes** — qualitative (8), sequential single-hue ×5, sequential multi-hue ×3 (Cool/Ocean/Forest), diverging ×3 (Red-Blue/Red-Green/Brown-Teal)
+- [x] WCAG contrast verified: semantic status colors ≥ 4.5:1 on white (warning needed 800 stop)
+- [x] Tested: Python core+matplotlib executed; R core via Rscript (ggplot2 figure builds skipped locally — library not installed)
 
 ---
 
 ## 📋 Pending - Medium Priority
 
-### Data Visualization Palettes
-
-#### Python (`palettes/python/`)
-- [ ] `dma_palette.py` — Core palette module with color constants
-- [ ] `ggplot2_dma.py` — ggplot2 scale functions (`scale_color_dma`, `scale_fill_dma`)
-- [ ] `plotnine_dma.py` — plotnine integration
-- [ ] `matplotlib_dma.py` — Matplotlib colormaps and cyclers
-- [ ] `seaborn_dma.py` — Seaborn palette registration
-- [ ] `demo_python.ipynb` — Jupyter notebook demonstrating palettes
-
-#### R (`palettes/r/`)
-- [ ] `dma_palette.R` — Core palette vectors and functions
-- [ ] `ggplot2_dma.R` — ggplot2 scale functions (`scale_colour_dma`, `scale_fill_dma`)
-- [ ] `plotly_dma.R` — Plotly color sequences
-- [ ] `demo_r.Rmd` — R Markdown demo document
-
----
-
-## 📋 Pending - Low Priority
-
 ### VS Code Extension
-- [ ] Create extension icon (`icon.png`)
+- [x] Create extension icon (`icon.png`) — shipped in VSIX v1.1.0
 - [ ] Publish to VS Code Marketplace
 - [ ] Add to Open VSX Registry
 
 ### Repository Setup
-- [ ] Initialize git repository
+- [x] Initialize git repository
 - [ ] Create GitHub repository
 - [ ] Set up GitHub Actions for CI/CD
 - [ ] Configure dependabot
 - [ ] Add contribution templates (issue, PR)
 
+---
+
+## 📋 Pending - Low Priority
+
 ### Additional Features
-- [ ] Create theme preview images for each editor
+- [x] Create theme preview images — mock editor renders (`assets/preview-light.png`, `preview-dark.png`) + scale strips (primary, semantic, ANSI light/dark, dataviz qualitative/sequential/diverging), generated from `palette.json` via `scripts/generate_swatches.py`; all embedded in README.md
+- [x] Verify generated images programmatically (`scripts/verify_swatches.py`) — confirmed light bg lum ≈245, dark bg lum ≈18, all strips color-rich
 - [ ] Add support for more editors (Sublime Text, Nova, Lapce, etc.)
 - [ ] Create web-based theme preview
-- [ ] Generate color contrast report (WCAG compliance)
+- [x] Generate color contrast report (WCAG compliance) — see TODO "Data Visualization Palettes" (semantic status colors ≥4.5:1 on white)
 - [ ] Create npm package for web/CSS variables
 
 ---
@@ -165,6 +168,7 @@
 | Semantic color system | 2024-08-20 | Per requirements: "semantic theme, using other semantic themes as examples" |
 | Blue/teal/turquoise/green primary | 2024-08-20 | Per requirements: "focus on blues, teals, turquoises, and greens" |
 | Warm red/orange for errors/warnings | 2024-08-20 | Per requirements: "Warm colours like reds and oranges should be used for errors and warnings" |
+| Light theme syntax uses 400-600 range shades | 2026-08-22 | User feedback: colors too dark, appeared black on light background; 300s reserved for accents on tinted backgrounds |
 
 ---
 
@@ -174,3 +178,4 @@
 - When creating new themes, reference existing implementations (VS Code, Emacs, Neovim) for semantic mapping patterns
 - Test each theme in its target environment before marking complete
 - Update CHANGELOG.md with each release
+- Light theme syntax colors now use brighter shades (400-600 range): teal 600 (#009999), blue 500 (#0077CC), green 500 (#009933); see GUIDELINES.md "Light Theme Contrast Strategy"

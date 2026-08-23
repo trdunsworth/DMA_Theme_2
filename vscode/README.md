@@ -11,27 +11,13 @@ DMA Theme provides a consistent visual language across different development env
 - **Bold, non-pastel palette** — Deep, saturated colors for better readability and reduced eye strain
 - **Cross-platform support** — VS Code, Positron, Emacs, Neovim, Kakoune, Helix, Zed, Notepad++, Ghostty, WezTerm, Cosmic Terminal, Yen, Warp, tmux, Obsidian
 
-## Themes in Action
-
-> Mock editor renderings generated from the shipped theme tokens. This is a
-> self-contained image preview — open `assets/preview-light.png` /
-> `assets/preview-dark.png` to inspect at full resolution.
-
-**Light (default)**
-
-![DMA Theme Light preview](assets/preview-light.png)
-
-**Dark**
-
-![DMA Theme Dark preview](assets/preview-dark.png)
-
 ## Color Palette
 
 ### Primary Colors
 
 | Color | 900 | 800 | 700 | 600 | 500 | 400 | 300 | 200 | 100 | 50 |
 |-------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-| **Blue** | `#002B5C` | `#003D7A` | `#00529E` | `#0069C0` | `#0077CC` | `#1A91E6` | `#4DA8EE` | `#8FC3F5` | `#C5DEF9` | `#E8F4FC` |
+| **Blue** | `#002B5C` | `#003D7A` | `#00529E` | `#0069C0` | `#007BDB` | `#1A91E6` | `#4DA8EE` | `#8FC3F5` | `#C5DEF9` | `#E8F4FC` |
 | **Teal** | `#004D4D` | `#006666` | `#007F7F` | `#009999` | `#00B3B3` | `#1ACCCC` | `#4DE5E5` | `#99F0F0` | `#CCF7F7` | `#E6FBFB` |
 | **Turquoise** | `#005C5C` | `#007373` | `#008A8A` | `#00A1A1` | `#00B8B8` | `#1ACECE` | `#4DDDDD` | `#99EDED` | `#CCF6F6` | `#E6FBFB` |
 | **Green** | `#004D1A` | `#006622` | `#007F2A` | `#009933` | `#00B33B` | `#1ACC4D` | `#4DD966` | `#99E599` | `#CCF0CC` | `#E6F8E6` |
@@ -69,17 +55,33 @@ DMA Theme provides a consistent visual language across different development env
 
 ### Visual Color Reference
 
-The tables above are the canonical reference. The rendered scale strips below
-are generated directly from `palette.json` (see `scripts/generate_swatches.py`),
-so they always match the shipped themes.
-
 #### Primary Color Scales
 
-![DMA primary color scales](assets/palette-primary.png)
+**Blue Scale**
+`#002B5C` `#003D7A` `#00529E` `#0069C0` `#007BDB` `#1A91E6` `#4DA8EE` `#8FC3F5` `#C5DEF9` `#E8F4FC`
+
+**Teal Scale**
+`#004D4D` `#006666` `#007F7F` `#009999` `#00B3B3` `#1ACCCC` `#4DE5E5` `#99F0F0` `#CCF7F7` `#E6FBFB`
+
+**Turquoise Scale**
+`#005C5C` `#007373` `#008A8A` `#00A1A1` `#00B8B8` `#1ACECE` `#4DDDDD` `#99EDED` `#CCF6F6` `#E6FBFB`
+
+**Green Scale**
+`#004D1A` `#006622` `#007F2A` `#009933` `#00B33B` `#1ACC4D` `#4DD966` `#99E599` `#CCF0CC` `#E6F8E6`
 
 #### Semantic Color Scales
 
-![DMA semantic color scales](assets/palette-semantic.png)
+**Error (Red)**
+`#7A0000` `#9E0000` `#C40000` `#E80000` `#FF1A1A` `#FF4D4D` `#FF7A7A` `#FFA8A8` `#FFD4D4` `#FFEAEA`
+
+**Warning (Orange)**
+`#7A4A00` `#9E5E00` `#C47300` `#E88800` `#FF9F00` `#FFAD33` `#FFC466` `#FFDB99` `#FFF0CC` `#FFF8E6`
+
+**Info (Blue)**
+`#003D7A` `#00529E` `#0069C0` `#007BDB` `#0091E6` `#33A8EE` `#66BFFF` `#99D4FF` `#CCE9FF` `#E6F4FF`
+
+**Success (Green)**
+`#004D1A` `#006622` `#007F2A` `#009933` `#00B33B` `#33CC5A` `#66D97A` `#99E599` `#CCF0CC` `#E6F8E6`
 
 #### ANSI Terminal Colors (16-color)
 
@@ -101,14 +103,6 @@ so they always match the shipped themes.
 | 13 | Bright Magenta | `#1ACECE` | `#4DE5E5` |
 | 14 | Bright Cyan | `#4DDDDD` | `#99F0F0` |
 | 15 | Bright White | `#F0F4F8` | `#E6FBFB` |
-
-**Light theme ANSI**
-
-![DMA light ANSI palette](assets/ansi-light.png)
-
-**Dark theme ANSI**
-
-![DMA dark ANSI palette](assets/ansi-dark.png)
 
 ## Supported Environments
 
@@ -466,82 +460,23 @@ The theme provides semantic token colors for all major languages, ensuring consi
 
 ## Palettes for Data Visualization
 
-Brewer-style schemes (qualitative / sequential / diverging) synthesized from DMA brand colors — the scheme *taxonomy* follows ColorBrewer conventions, but every color comes from the DMA palette.
+See `palettes/python/` and `palettes/r/` for ggplot2, plotnine, and matplotlib color palettes.
 
-Rendered from `palette.json` via `scripts/generate_swatches.py`:
+- **Python**: `palettes/python/dma_palette.py` — matplotlib, seaborn, plotnine compatible
+- **R**: `palettes/r/dma_palette.R` — ggplot2 scale functions
 
-![DMA qualitative palette](assets/dv-qualitative.png)
-
-![DMA sequential palettes](assets/dv-sequential.png)
-
-![DMA diverging palettes](assets/dv-diverging.png)
-
-### Schemes
-
-| Type | Names | Notes |
-|------|-------|-------|
-| Qualitative | `qualitative` | 8 categorical colors, hue/lightness alternated |
-| Sequential | `Blues` `Teals` `Turquoises` `Greens` `Oranges` | single-hue, light → dark |
-| Sequential | `Cool` `Ocean` `Forest` | multi-hue |
-| Diverging | `Red-Blue` `Red-Green` `Brown-Teal` | pale neutral center |
-| Semantic | `error` `warning` `info` `success` | all ≥ 4.5:1 on white |
-
-### Python (`palettes/python/`)
-
-Zero-dependency core (`dma_palette.py`) plus integration modules:
-
+Example usage:
 ```python
-import dma_palette as dma
-dma.qualitative(6)                    # 6 categorical colors
-dma.sequential("Teals", 7)            # light -> dark ramp
-dma.diverging("Red-Green", 9)         # end -> neutral -> end
-dma.semantic()                        # status colors dict
+# Python (plotnine)
+from dma_palette import dma_colors
+ggplot(data) + geom_point(aes(color=category)) + scale_color_manual(values=dma_colors)
 ```
-
-```python
-# matplotlib — colormaps register on import
-import matplotlib_dma
-plt.imshow(z, cmap="DMA Blues")       # also "DMA Cool", "DMA Div Red-Blue"
-matplotlib_dma.use_dma_cycle()        # qualitative as default cycle
-
-# plotnine / ggplot2-style scales (requires plotnine)
-from ggplot2_dma import scale_color_dma, scale_fill_dma_c
-gg + scale_color_dma()
-gg + scale_fill_dma_c("Cool")
-
-# seaborn
-import seaborn_dma
-sns.set_palette(seaborn_dma.qualitative())
-```
-
-See `demo_python.ipynb` for rendered examples of every scheme.
-
-### R (`palettes/r/`)
-
-Base-R core plus ggplot2/plotly helpers:
 
 ```r
+# R (ggplot2)
 source("dma_palette.R")
-dma_qualitative(4)
-dma_sequential("Teals", 7)   # Teals, Blues, Greens, Turquoises,
-dma_diverging("Red-Blue", 9) # Oranges, Cool, Ocean, Forest
+ggplot(data) + geom_point(aes(color=category)) + scale_color_dma()
 ```
-
-```r
-source("ggplot2_dma.R")
-ggplot(df, aes(x, y, colour = grp)) + geom_point() +
-  scale_colour_dma()                          # categorical
-ggplot(df, aes(x, y, fill = z)) +
-  scale_fill_dma_continuous("Cool")           # gradient
-  # or: scale_fill_dma_binned("Blues", 5), scale_fill_dma_diverging(...)
-```
-
-```r
-source("plotly_dma.R")                        # plotly colorscales & layout defaults
-plot_ly(df, x = ~x, y = ~y, color = ~z, colorscale = dma_colorscale("Ocean"))
-```
-
-See `demo_r.Rmd` for a knittable walkthrough.
 
 ## Contributing
 
