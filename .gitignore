@@ -4,9 +4,6 @@ package-lock.json
 yarn.lock
 pnpm-lock.yaml
 
-# VS Code Extension
-*.vsix
-
 # Python
 __pycache__/
 *.py[cod]
