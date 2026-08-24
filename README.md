@@ -9,7 +9,7 @@ DMA Theme provides a consistent visual language across different development env
 - **Semantic color system** — Colors have meaning (error, warning, info, success) rather than just syntax roles
 - **Light and dark variants** — Defaults to light theme with softer white backgrounds and black text
 - **Bold, non-pastel palette** — Deep, saturated colors for better readability and reduced eye strain
-- **Cross-platform support** — VS Code, Positron, Emacs, Neovim, Kakoune, Helix, Zed, Notepad++, Ghostty, WezTerm, Cosmic Terminal, Yen, Warp, tmux, Obsidian
+- **Cross-platform support** — VS Code, Positron, Emacs, Neovim, Kakoune, Helix, Zed, Notepad++, Ghostty, WezTerm, Cosmic Terminal, Yen, Warp, tmux, Microsoft Terminal, Obsidian
 
 ## Themes in Action
 
@@ -160,6 +160,7 @@ so they always match the shipped themes.
 - **Yen** — YAML theme configuration
 - **Warp** — YAML theme configuration
 - **tmux** — Configuration with status line
+- **Microsoft Terminal (Windows Terminal)** — JSON theme configuration
 
 ### Other
 - **Obsidian** — CSS theme with light/dark variants
@@ -456,6 +457,110 @@ Add to `~/.tmux.conf` for keybinding:
 ```bash
 bind-key T run-shell "tmux source-file ~/.config/tmux/dma-theme-light.conf"
 bind-key t run-shell "tmux source-file ~/.config/tmux/dma-theme-dark.conf"
+```
+
+---
+
+### Microsoft Terminal (Windows Terminal)
+
+Windows Terminal themes are installed by adding the color scheme to the `schemes` array in your `settings.json`. Windows Terminal uses **named color properties** (not a `colors` array).
+
+#### Option 1: Via Settings UI (Recommended)
+
+1. Open Windows Terminal
+2. Press `Ctrl+,` to open Settings
+3. Click **Open JSON file** at the bottom left (or use `Ctrl+Shift+,`)
+4. Add the theme to the `schemes` array in your `settings.json`:
+
+```json
+"schemes": [
+  {
+    "name": "DMA Theme Light",
+    "background": "#F8FAFC",
+    "foreground": "#1A2A35",
+    "cursorColor": "#0077CC",
+    "selectionBackground": "#A8D0F0",
+    "black": "#1A2A35",
+    "red": "#E80000",
+    "green": "#009933",
+    "yellow": "#E88800",
+    "blue": "#0077CC",
+    "purple": "#007F7F",
+    "cyan": "#00B3B3",
+    "white": "#A8C0D8",
+    "brightBlack": "#485C6E",
+    "brightRed": "#FF1A1A",
+    "brightGreen": "#00B33B",
+    "brightYellow": "#FF9F00",
+    "brightBlue": "#1A91E6",
+    "brightPurple": "#1ACECE",
+    "brightCyan": "#4DDDDD",
+    "brightWhite": "#F0F4F8"
+  },
+  {
+    "name": "DMA Theme Dark",
+    "background": "#0A0F14",
+    "foreground": "#E0E8EF",
+    "cursorColor": "#1A91E6",
+    "selectionBackground": "#003D7A",
+    "black": "#1E282D",
+    "red": "#E80000",
+    "green": "#009933",
+    "yellow": "#E88800",
+    "blue": "#007BDB",
+    "purple": "#007F7F",
+    "cyan": "#00B3B3",
+    "white": "#C8D6E3",
+    "brightBlack": "#485C6E",
+    "brightRed": "#FF1A1A",
+    "brightGreen": "#00B33B",
+    "brightYellow": "#FF9F00",
+    "brightBlue": "#1A91E6",
+    "brightPurple": "#1ACECE",
+    "brightCyan": "#4DDDDD",
+    "brightWhite": "#F0F4F8"
+  }
+]
+```
+
+5. Save the file — changes apply **immediately** to open windows (no restart needed)
+6. In Settings, go to **Profiles** → **Defaults** → **Appearance** → **Color scheme** and select "DMA Theme Light" or "DMA Theme Dark"
+
+#### Option 2: Use the theme JSON files directly
+
+The theme files in `themes/microsoft-terminal/` are already in the correct format. Copy their content into your `settings.json` `schemes` array.
+
+```bash
+# Windows PowerShell
+# View the theme files:
+cat themes/microsoft-terminal/dma-theme-light.json
+cat themes/microsoft-terminal/dma-theme-dark.json
+```
+
+#### Option 3: Apply to a specific profile
+
+To apply a theme to a specific profile (e.g., PowerShell), add `colorScheme` to that profile:
+
+```json
+"profiles": {
+  "list": [
+    {
+      "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+      "name": "PowerShell",
+      "commandline": "pwsh.exe",
+      "colorScheme": "DMA Theme Dark"
+    }
+  ]
+}
+```
+
+To apply to all profiles, add it to `profiles.defaults`:
+```json
+"profiles": {
+  "defaults": {
+    "colorScheme": "DMA Theme Light"
+  }
+}
 ```
 
 ---

@@ -1,39 +1,39 @@
-# DMA Theme â€” WCAG 2.1 Contrast Report
+# DMA Theme — WCAG 2.1 Contrast Report
 
 Generated from `palette.json` (the shipped source of truth) by
 `scripts/contrast_report.py`. Contrast ratios use the WCAG 2.1 relative-luminance
 formula.
 
-**Thresholds:** AAA (normal text) â‰¥ 7.0:1 Â· AA (normal text) â‰¥ 4.5:1 Â·
-AA Large (â‰¥ 18pt or â‰¥ 14pt bold) â‰¥ 3.0:1.
+**Thresholds:** AAA (normal text) >= 7.0:1 · AA (normal text) >= 4.5:1 ·
+AA Large (>= 18pt or >= 14pt bold) >= 3.0:1.
 
 ## Summary
 
 | Scope | Pairs tested | AA+ | AAA | AA Large | FAIL |
 |-------|-------------:|----:|----:|---------:|-----:|
-| Light theme â€” text/UI tokens | 56 | 34 | 20 | 22 | 0 |
-| Dark theme â€” text/UI tokens | 56 | 53 | 44 | 3 | 0 |
+| Light theme — text/UI tokens | 56 | 34 | 20 | 22 | 0 |
+| Dark theme — text/UI tokens | 56 | 53 | 44 | 3 | 0 |
 | Semantic status colors | 12 | 8 | 4 | 2 | 2 |
-| Terminal ANSI palette (reference) | 30 | â€” | â€” | â€” | â€” |
-| Shipped editor/terminal files â€” essential text | 30 | â€” | â€” | â€” | 0 |
+| Terminal ANSI palette (reference) | 30 | — | — | — | — |
+| Shipped editor/terminal files — essential text | 32 | — | — | — | 0 |
 
 **Canonical-palette verdict:** the source-of-truth `palette.json` meets WCAG AA
-(â‰¥ 4.5:1) for every body-text, syntax, UI, and semantic-status token in **both**
+(>= 4.5:1) for every body-text, syntax, UI, and semantic-status token in **both**
 themes. The only deliberate exceptions are de-emphasized tokens (comments, line
-numbers, subtle foreground), which sit in the AA-Large band â€” appropriate for
+numbers, subtle foreground), which sit in the AA-Large band — appropriate for
 non-essential text. Semantic *status text* on light surfaces uses the documented
 800 stop (`#9E5E00`), which passes AA; the brighter 500 stops are reserved for
 fills / large UI. The 16-color terminal ANSI palette is reported for reference
-only â€” ANSI palettes are not bound by WCAG text minimums.
+only — ANSI palettes are not bound by WCAG text minimums.
 
 **Per-file verdict:** the per-editor / per-terminal validation (section below)
 parses the files the repo actually ships and confirms that **every** background and
-essential-text token meets WCAG AA in both themes â€” **0 essential
+essential-text token meets WCAG AA in both themes — **0 essential
 text-token pairs** fall below AA across all shipped editor/terminal files. The
 light-theme 500-stop syntax/warning colors (teal `#00B3B3`, turquoise `#00B8B8`,
 green `#00B33B`, warning `#FF9F00` / `#E88800`) that previously fell below AA as
 *text* on the light background have all been moved to the 700/800 stops (e.g.
-warning text â†’ `#9E5E00`), including the VS Code/Positron `#E88800` drift. tmux is
+warning text -> `#9E5E00`), including the VS Code/Positron `#E88800` drift. tmux is
 validated per status-bar segment (each `fg` against its own `bg`); Obsidian's
 `@media print` block (dark text on white paper) is excluded as it is not a screen
 surface. Emacs now ships a dark variant (`dma-theme-dark.el`) alongside the light
@@ -50,7 +50,7 @@ one.
 > text on the cursor surface are rendered on their own colored background and
 > are excluded from the FAIL count.
 
-## Light theme â€” background `#F8FAFC`
+## Light theme — background `#F8FAFC`
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -111,7 +111,7 @@ one.
 | `markupItalic` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 | `inputForeground` | #1A2A35 | 14.72:1 | AAA | on inputBackground |
 
-## Dark theme â€” background `#0A0F14`
+## Dark theme — background `#0A0F14`
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -240,11 +240,11 @@ so they are shown for reference and excluded from the compliance verdict.
 
 ## Per-editor / per-terminal validation (shipped files)
 
-Each shipped theme file is parsed directly. **Essential text** tokens (editor foreground, semantic status, links, git decorations, UI labels) are checked against the background *that file declares* â€” this catches drift between `palette.json` and the hand-authored environment files. Syntax-highlighting tokens (comments, strings, keywords) are listed for reference but are non-essential under WCAG 1.4.3 and are **not** counted as hard FAILs. UI-chrome foregrounds that sit on their own colored surface (buttons, badges, status bar) and terminal ANSI colors are excluded from the FAIL count.
+Each shipped theme file is parsed directly. **Essential text** tokens (editor foreground, semantic status, links, git decorations, UI labels) are checked against the background *that file declares* — this catches drift between `palette.json` and the hand-authored environment files. Syntax-highlighting tokens (comments, strings, keywords) are listed for reference but are non-essential under WCAG 1.4.3 and are **not** counted as hard FAILs. UI-chrome foregrounds that sit on their own colored surface (buttons, badges, status bar) and terminal ANSI colors are excluded from the FAIL count.
 
 ### Editors
 
-#### VS Code (light) â€” bg `#F8FAFC` <small>(json:colors.editor.background)</small>
+#### VS Code (light) — bg `#F8FAFC` <small>(json:colors.editor.background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -496,7 +496,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `semantictokencolors.variable` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 | `semantictokencolors.variable.property` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 
-#### VS Code (dark) â€” bg `#0A0F14` <small>(json:colors.editor.background)</small>
+#### VS Code (dark) — bg `#0A0F14` <small>(json:colors.editor.background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -748,7 +748,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `colors.button.foreground` | #FFFFFF | 19.24:1 | AAA | UI chrome on its own accent surface (by design) |
 | `colors.badge.foreground` | #FFFFFF | 19.24:1 | AAA | UI chrome on its own accent surface (by design) |
 
-#### Positron (light) â€” bg `#F8FAFC` <small>(json:colors.editor.background)</small>
+#### Positron (light) — bg `#F8FAFC` <small>(json:colors.editor.background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -1000,7 +1000,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `semantictokencolors.variable` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 | `semantictokencolors.variable.property` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 
-#### Positron (dark) â€” bg `#0A0F14` <small>(json:colors.editor.background)</small>
+#### Positron (dark) — bg `#0A0F14` <small>(json:colors.editor.background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -1252,7 +1252,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `colors.button.foreground` | #FFFFFF | 19.24:1 | AAA | UI chrome on its own accent surface (by design) |
 | `colors.badge.foreground` | #FFFFFF | 19.24:1 | AAA | UI chrome on its own accent surface (by design) |
 
-#### Zed (light) â€” bg `#F8FAFC` <small>(json:raw-background)</small>
+#### Zed (light) — bg `#F8FAFC` <small>(json:raw-background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -1373,7 +1373,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `syntax.markup.italic.color` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 | `syntax.text.color` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 
-#### Zed (dark) â€” bg `#0A0F14` <small>(json:raw-background)</small>
+#### Zed (dark) — bg `#0A0F14` <small>(json:raw-background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -1494,7 +1494,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `syntax.markup.italic.color` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 | `syntax.text.color` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 
-#### Helix (light) â€” bg `#F8FAFC` <small>(toml:background)</small>
+#### Helix (light) — bg `#F8FAFC` <small>(toml:background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -1512,7 +1512,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `ui-text` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 | `ui-text-focus` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 
-#### Helix (dark) â€” bg `#0A0F14` <small>(toml:background)</small>
+#### Helix (dark) — bg `#0A0F14` <small>(toml:background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -1530,7 +1530,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `ui-text-focus` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 | `ui-cursor-match-background` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 
-#### Kakoune (light) â€” bg `#F8FAFC` <small>(kak:Default.bg(var))</small>
+#### Kakoune (light) — bg `#F8FAFC` <small>(kak:Default.bg(var))</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -1601,7 +1601,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `kak:TSVariable` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 | `kak:TSVariableBuiltin` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 
-#### Kakoune (dark) â€” bg `#0A0F14` <small>(kak:Default.bg(var))</small>
+#### Kakoune (dark) — bg `#0A0F14` <small>(kak:Default.bg(var))</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -1672,7 +1672,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `kak:TSVariableBuiltin` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 | `kak:DiffText` | #E6F4FF | 17.18:1 | AAA | on editor bg |
 
-#### Notepad++ (light) â€” bg `#F8FAFC` <small>(xml:DEFAULT.bgColor)</small>
+#### Notepad++ (light) — bg `#F8FAFC` <small>(xml:DEFAULT.bgColor)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -1690,7 +1690,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `xml:OPERATORS` | #007F7F |  4.62:1 | AA | on editor bg |
 | `xml:KEYWORDS6` | #9E5E00 |  4.95:1 | AA | on editor bg |
 
-#### Notepad++ (dark) â€” bg `#0A0F14` <small>(xml:DEFAULT.bgColor)</small>
+#### Notepad++ (dark) — bg `#0A0F14` <small>(xml:DEFAULT.bgColor)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -1708,7 +1708,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `xml:OPERATORS` | #4DE5E5 | 12.51:1 | AAA | on editor bg |
 | `xml:KEYWORDS2` | #94E2D5 | 12.92:1 | AAA | on editor bg |
 
-#### Obsidian (light) â€” bg `#F8FAFC` <small>(css:--background-primary)</small>
+#### Obsidian (light) — bg `#F8FAFC` <small>(css:--background-primary)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -1731,7 +1731,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `css:--text-normal` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 | `css:--code-foreground` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 
-#### Obsidian (dark) â€” bg `#0A0F14` <small>(css:--background-primary)</small>
+#### Obsidian (dark) — bg `#0A0F14` <small>(css:--background-primary)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -1754,7 +1754,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `css:--code-foreground` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 | `css:--text-on-accent` | #FFFFFF | 19.24:1 | AAA | on editor bg |
 
-#### Emacs (light) â€” bg `#F8FAFC` <small>(emacs:dma-bg)</small>
+#### Emacs (light) — bg `#F8FAFC` <small>(emacs:dma-bg)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -1927,7 +1927,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `el:makefile-variable-face` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 | `el:sh-variable-face` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 
-#### Emacs (dark) â€” bg `#0A0F14` <small>(emacs:dma-bg)</small>
+#### Emacs (dark) — bg `#0A0F14` <small>(emacs:dma-bg)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2100,7 +2100,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `el:makefile-variable-face` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 | `el:sh-variable-face` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 
-#### Neovim (light) â€” bg `#F8FAFC` <small>(neovim:neutral.dark.background)</small>
+#### Neovim (light) — bg `#F8FAFC` <small>(neovim:neutral.dark.background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2113,7 +2113,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `nv:line_nr_active` | #00529E |  7.43:1 | AAA | on editor bg |
 | `nv:selection_fg` | #002B5C | 13.38:1 | AAA | on editor bg |
 
-#### Neovim (dark) â€” bg `#0A0F14` <small>(neovim:neutral.light.background)</small>
+#### Neovim (dark) — bg `#0A0F14` <small>(neovim:neutral.light.background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2127,7 +2127,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 
 ### Terminals
 
-#### Ghostty (light) â€” bg `#F8FAFC` <small>(ghostty:background)</small>
+#### Ghostty (light) — bg `#F8FAFC` <small>(ghostty:background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2137,7 +2137,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `foreground` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 | `selection-foreground` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 
-#### Ghostty (dark) â€” bg `#0A0F14` <small>(ghostty:background)</small>
+#### Ghostty (dark) — bg `#0A0F14` <small>(ghostty:background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2147,7 +2147,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `foreground` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 | `selection-foreground` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 
-#### WezTerm (light) â€” bg `#F8FAFC` <small>(toml:background)</small>
+#### WezTerm (light) — bg `#F8FAFC` <small>(toml:background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2159,7 +2159,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `foreground` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 | `selection_fg` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 
-#### WezTerm (dark) â€” bg `#0A0F14` <small>(toml:background)</small>
+#### WezTerm (dark) — bg `#0A0F14` <small>(toml:background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2171,7 +2171,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `foreground` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 | `selection_fg` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 
-#### Cosmic (light) â€” bg `#F8FAFC` <small>(toml:background)</small>
+#### Cosmic (light) — bg `#F8FAFC` <small>(toml:background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2193,7 +2193,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `foreground` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 | `tab_active_foreground` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 
-#### Cosmic (dark) â€” bg `#0A0F14` <small>(toml:background)</small>
+#### Cosmic (dark) — bg `#0A0F14` <small>(toml:background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2215,7 +2215,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `selection_foreground` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 | `tab_active_foreground` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 
-#### Yen (light) â€” bg `#F8FAFC` <small>(yaml:background)</small>
+#### Yen (light) — bg `#F8FAFC` <small>(yaml:background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2226,7 +2226,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `foreground` | #6E89A0 |  3.49:1 | AA Large | on editor bg |
 | `border_focus` | #0077CC |  4.45:1 | AA Large | on editor bg |
 
-#### Yen (dark) â€” bg `#0A0F14` <small>(yaml:background)</small>
+#### Yen (dark) — bg `#0A0F14` <small>(yaml:background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2237,7 +2237,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `foreground` | #6E89A0 |  5.27:1 | AA | on editor bg |
 | `border_focus` | #1A91E6 |  5.71:1 | AA | on editor bg |
 
-#### Warp (light) â€” bg `#F8FAFC` <small>(yaml:background)</small>
+#### Warp (light) — bg `#F8FAFC` <small>(yaml:background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2252,7 +2252,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `border_focus` | #0077CC |  4.45:1 | AA Large | on editor bg |
 | `selection_foreground` | #002B5C | 13.38:1 | AAA | on editor bg |
 
-#### Warp (dark) â€” bg `#0A0F14` <small>(yaml:background)</small>
+#### Warp (dark) — bg `#0A0F14` <small>(yaml:background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2267,7 +2267,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `selection_foreground` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 | `current_match_background` | #FFF0CC | 17.03:1 | AAA | on editor bg |
 
-#### tmux (light) â€” bg `light` <small>(tmux)</small>
+#### tmux (light) — bg `light` <small>(tmux)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2299,7 +2299,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `tmux:fg:#F8FAFC` | #F8FAFC |  4.45:1 | AA-Large | on paired segment bg |
 | `tmux:fg:#F8FAFC` | #F8FAFC |  3.58:1 | AA-Large | on paired segment bg |
 
-#### tmux (dark) â€” bg `dark` <small>(tmux)</small>
+#### tmux (dark) — bg `dark` <small>(tmux)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2330,6 +2330,22 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `tmux:fg:#1A91E6` | #1A91E6 |  5.31:1 | PASS | on paired segment bg |
 | `tmux:fg:#0A0F14` | #0A0F14 |  5.71:1 | PASS | on paired segment bg |
 | `tmux:fg:#0A0F14` | #0A0F14 | 10.48:1 | PASS | on paired segment bg |
+
+#### Microsoft Terminal (light) — bg `#F8FAFC` <small>(json:background)</small>
+
+| Token | Color | Contrast | Level | Note |
+|-------|-------|---------:|-------|------|
+| `background` | #F8FAFC |  1.00:1 | FAIL | on editor bg |
+| `selectionbackground` | #A8D0F0 |  1.55:1 | FAIL | on editor bg |
+| `foreground` | #1A2A35 | 14.07:1 | AAA | on editor bg |
+
+#### Microsoft Terminal (dark) — bg `#0A0F14` <small>(json:background)</small>
+
+| Token | Color | Contrast | Level | Note |
+|-------|-------|---------:|-------|------|
+| `background` | #0A0F14 |  1.00:1 | FAIL | on editor bg |
+| `selectionbackground` | #003D7A |  1.79:1 | FAIL | on editor bg |
+| `foreground` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 
 **Essential text-token FAILs (shipped files): 0**  
 **Syntax-highlighting sub-AA tokens (informational, not WCAG-essential): 0**

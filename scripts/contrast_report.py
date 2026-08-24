@@ -184,8 +184,8 @@ Generated from `palette.json` (the shipped source of truth) by
 `scripts/contrast_report.py`. Contrast ratios use the WCAG 2.1 relative-luminance
 formula.
 
-**Thresholds:** AAA (normal text) ≥ 7.0:1 · AA (normal text) ≥ 4.5:1 ·
-AA Large (≥ 18pt or ≥ 14pt bold) ≥ 3.0:1.
+**Thresholds:** AAA (normal text) >= 7.0:1 · AA (normal text) >= 4.5:1 ·
+AA Large (>= 18pt or >= 14pt bold) >= 3.0:1.
 
 ## Summary
 
@@ -198,7 +198,7 @@ AA Large (≥ 18pt or ≥ 14pt bold) ≥ 3.0:1.
 | Shipped editor/terminal files — essential text | {editor_pairs} | — | — | — | {editor_text_fail} |
 
 **Canonical-palette verdict:** the source-of-truth `palette.json` meets WCAG AA
-(≥ 4.5:1) for every body-text, syntax, UI, and semantic-status token in **both**
+(>= 4.5:1) for every body-text, syntax, UI, and semantic-status token in **both**
 themes. The only deliberate exceptions are de-emphasized tokens (comments, line
 numbers, subtle foreground), which sit in the AA-Large band — appropriate for
 non-essential text. Semantic *status text* on light surfaces uses the documented
@@ -213,7 +213,7 @@ text-token pairs** fall below AA across all shipped editor/terminal files. The
 light-theme 500-stop syntax/warning colors (teal `#00B3B3`, turquoise `#00B8B8`,
 green `#00B33B`, warning `#FF9F00` / `#E88800`) that previously fell below AA as
 *text* on the light background have all been moved to the 700/800 stops (e.g.
-warning text → `#9E5E00`), including the VS Code/Positron `#E88800` drift. tmux is
+warning text -> `#9E5E00`), including the VS Code/Positron `#E88800` drift. tmux is
 validated per status-bar segment (each `fg` against its own `bg`); Obsidian's
 `@media print` block (dark text on white paper) is excluded as it is not a screen
 surface. Emacs now ships a dark variant (`dma-theme-dark.el`) alongside the light

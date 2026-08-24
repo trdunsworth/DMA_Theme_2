@@ -91,6 +91,10 @@
 - [x] `dma-theme-light.conf` — Light theme with status line
 - [x] `dma-theme-dark.conf` — Dark theme with status line
 
+#### Microsoft Terminal (Windows Terminal)
+- [x] `dma-theme-light.json` — Light theme
+- [x] `dma-theme-dark.json` — Dark theme
+
 ---
 
 ## 🔄 In Progress

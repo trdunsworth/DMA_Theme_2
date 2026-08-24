@@ -474,6 +474,7 @@ TERMINALS = [
     ("Yen", "themes/yen/dma-theme-light.yaml", "themes/yen/dma-theme-dark.yaml", "yaml", "terminal"),
     ("Warp", "themes/warp/dma-theme-light.yaml", "themes/warp/dma-theme-dark.yaml", "yaml", "terminal"),
     ("tmux", "themes/tmux/dma-theme-light.conf", "themes/tmux/dma-theme-dark.conf", "tmux", "terminal"),
+    ("Microsoft Terminal", "themes/microsoft-terminal/dma-theme-light.json", "themes/microsoft-terminal/dma-theme-dark.json", "json", "terminal"),
 ]
 
 

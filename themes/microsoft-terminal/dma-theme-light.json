@@ -1,0 +1,23 @@
+{
+  "name": "DMA Theme Light",
+  "background": "#F8FAFC",
+  "foreground": "#1A2A35",
+  "cursorColor": "#0077CC",
+  "selectionBackground": "#A8D0F0",
+  "black": "#1A2A35",
+  "red": "#E80000",
+  "green": "#009933",
+  "yellow": "#E88800",
+  "blue": "#0077CC",
+  "purple": "#007F7F",
+  "cyan": "#00B3B3",
+  "white": "#A8C0D8",
+  "brightBlack": "#485C6E",
+  "brightRed": "#FF1A1A",
+  "brightGreen": "#00B33B",
+  "brightYellow": "#FF9F00",
+  "brightBlue": "#1A91E6",
+  "brightPurple": "#1ACECE",
+  "brightCyan": "#4DDDDD",
+  "brightWhite": "#F0F4F8"
+}

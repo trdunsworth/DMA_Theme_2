@@ -1,0 +1,23 @@
+{
+  "name": "DMA Theme Dark",
+  "background": "#0A0F14",
+  "foreground": "#E0E8EF",
+  "cursorColor": "#1A91E6",
+  "selectionBackground": "#003D7A",
+  "black": "#1E282D",
+  "red": "#E80000",
+  "green": "#009933",
+  "yellow": "#E88800",
+  "blue": "#007BDB",
+  "purple": "#007F7F",
+  "cyan": "#00B3B3",
+  "white": "#C8D6E3",
+  "brightBlack": "#485C6E",
+  "brightRed": "#FF1A1A",
+  "brightGreen": "#00B33B",
+  "brightYellow": "#FF9F00",
+  "brightBlue": "#1A91E6",
+  "brightPurple": "#1ACECE",
+  "brightCyan": "#4DDDDD",
+  "brightWhite": "#F0F4F8"
+}
