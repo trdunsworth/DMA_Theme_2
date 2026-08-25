@@ -191,9 +191,9 @@ Every shipped theme file is checked for WCAG 2.1 contrast against the background
    - `extract_tokens()` — return `{token_name: "#hex"}` for the text colors.
    - `classify()` — ensure foreground/text tokens are tagged `"text"` and surfaces
      (backgrounds, borders, accents) are tagged `"surface"` so only real text is scored.
-   Supported `fmt` values today: `json` (VS Code/Positron/Zed), `toml` (Helix/WezTerm/
-   Cosmic), `yaml` (Yen/Warp), `kak`, `xml` (Notepad++), `css` (Obsidian), `elisp`
-   (Emacs), `neovim`, `ghostty`, `tmux`.
+    Supported `fmt` values today: `json` (VS Code/Positron/Zed), `toml` (Helix/WezTerm),
+    `ron` (COSMIC Terminal), `ghostty` (Yen/Ghostty/tmux-style palettes), `yaml`
+    (Warp), `kak`, `xml` (Notepad++), `css` (Obsidian), `elisp` (Emacs), `neovim`.
 4. Run the validator and confirm **zero essential text-token FAILs**:
 
    ```bash

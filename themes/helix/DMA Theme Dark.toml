@@ -1,0 +1,97 @@
+# DMA Theme Dark for Helix
+# Blues, teals, turquoises, and greens; warm error/warning accents.
+# Only canonical Helix scopes (verified against upstream runtime themes).
+# Dunsworth-Mann Analytics LLC - https://dunsworth-mann.com
+
+# --- base surfaces ---
+"ui.background" = { bg = "#0A0F14" }
+"ui.text" = { fg = "#E0E8EF" }
+"ui.text.focus" = { fg = "#1A91E6" }
+"ui.linenr" = { fg = "#485C6E" }
+"ui.linenr.selected" = { fg = "#1A91E6", modifiers = ["bold"] }
+"ui.cursor" = { fg = "#0A0F14", bg = "#1A91E6" }
+"ui.cursor.primary" = { fg = "#0A0F14", bg = "#1A91E6" }
+"ui.cursor.match" = { fg = "#E8F4FC", bg = "#003D7A" }
+"ui.selection" = { bg = "#003D7A" }
+"ui.selection.primary" = { bg = "#003D7A" }
+
+# --- status / UI widgets ---
+"ui.statusline" = { fg = "#E0E8EF", bg = "#182430" }
+"ui.statusline.normal" = { fg = "#E0E8EF", bg = "#182430" }
+"ui.statusline.insert" = { fg = "#0A0F14", bg = "#004D1A" }
+"ui.statusline.select" = { fg = "#0A0F14", bg = "#4D0000" }
+"ui.statusline.inactive" = { fg = "#485C6E", bg = "#0A0F14" }
+"ui.popup" = { fg = "#E0E8EF", bg = "#182430" }
+"ui.menu" = { fg = "#E0E8EF", bg = "#182430" }
+"ui.menu.selected" = { fg = "#0A0F14", bg = "#003D7A" }
+"ui.help" = { fg = "#93ABC3", bg = "#182430" }
+"ui.window" = { fg = "#2D4058" }
+
+# --- virtual decoration ---
+"ui.virtual.whitespace" = { fg = "#2D4058" }
+"ui.virtual.indent-guide" = { fg = "#182430" }
+"ui.virtual.ruler" = { bg = "#182430" }
+"ui.virtual.inlay-hint" = { fg = "#485C6E" }
+"ui.virtual.jump-label" = { fg = "#0A0F14", bg = "#4DA8EE", modifiers = ["bold"] }
+"ui.bufferline" = { fg = "#485C6E", bg = "#0A0F14" }
+"ui.bufferline.active" = { fg = "#E0E8EF", bg = "#0A0F14", modifiers = ["bold"] }
+
+# --- syntax: language primitives ---
+"comment" = { fg = "#93ABC3", modifiers = ["italic"] }
+"comment.block" = { fg = "#93ABC3", modifiers = ["italic"] }
+"comment.documentation" = { fg = "#93ABC3", modifiers = ["italic"] }
+"string" = { fg = "#00B33B" }
+"string.regexp" = { fg = "#FF9F00" }
+"constant" = { fg = "#4DA8EE" }
+"constant.numeric" = { fg = "#FF9F00" }
+"constant.builtin" = { fg = "#1ACECE" }
+"variable" = { fg = "#E0E8EF" }
+"variable.builtin" = { fg = "#00B3B3", modifiers = ["italic"] }
+"variable.parameter" = { fg = "#93ABC3" }
+"variable.other.member" = { fg = "#4DA8EE" }
+"function" = { fg = "#1A91E6" }
+"function.builtin" = { fg = "#4DA8EE" }
+"keyword" = { fg = "#00B3B3", modifiers = ["bold"] }
+"keyword.control" = { fg = "#00B3B3", modifiers = ["bold"] }
+"keyword.directive" = { fg = "#1ACECE" }
+"namespace" = { fg = "#1ACECE" }
+"attribute" = { fg = "#1ACECE" }
+"tag" = { fg = "#66BFFF" }
+"tag.builtin" = { fg = "#4DA8EE" }
+"punctuation" = { fg = "#93ABC3" }
+"punctuation.delimiter" = { fg = "#6E89A0" }
+"operator" = { fg = "#1A91E6", modifiers = ["bold"] }
+"type" = { fg = "#00B3B3", modifiers = ["bold"] }
+"type.builtin" = { fg = "#1ACECE", modifiers = ["bold"] }
+"constructor" = { fg = "#00B3B3" }
+"label" = { fg = "#4DA8EE" }
+"special" = { fg = "#FF9F00" }
+
+# --- markup / embedded content ---
+"markup.heading" = { fg = "#4DA8EE", modifiers = ["bold"] }
+"markup.bold" = { fg = "#E0E8EF", modifiers = ["bold"] }
+"markup.italic" = { fg = "#E0E8EF", modifiers = ["italic"] }
+"markup.strikethrough" = { fg = "#E0E8EF", modifiers = ["crossed_out"] }
+"markup.list" = { fg = "#4DA8EE" }
+"markup.list.checked" = { fg = "#00B33B" }
+"markup.list.unchecked" = { fg = "#93ABC3" }
+"markup.quote" = { fg = "#93ABC3", modifiers = ["italic"] }
+"markup.raw" = { fg = "#1ACECE", bg = "#182430" }
+"markup.link.url" = { fg = "#FF9F00", modifiers = ["underline"] }
+"markup.link.text" = { fg = "#1A91E6" }
+"markup.link.label" = { fg = "#93ABC3" }
+
+# --- diffs / diagnostics ---
+"diff.plus" = { fg = "#00B33B", bg = "#0A1812" }
+"diff.minus" = { fg = "#FF4D4D", bg = "#1A0A0A" }
+"diff.delta" = { fg = "#4DA8EE", bg = "#0A1420" }
+"diagnostic.error" = { fg = "#FF1A1A" }
+"diagnostic.warning" = { fg = "#FF9F00" }
+"diagnostic.info" = { fg = "#1A91E6" }
+"diagnostic.hint" = { fg = "#1ACECE" }
+"diagnostic.unnecessary" = { fg = "#485C6E" }
+"diagnostic.deprecated" = { fg = "#FF9F00", modifiers = ["crossed_out"] }
+"error" = { fg = "#FF1A1A" }
+"warning" = { fg = "#FF9F00" }
+"info" = { fg = "#1A91E6" }
+"hint" = { fg = "#1ACECE" }

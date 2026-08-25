@@ -1,0 +1,41 @@
+// DMA Theme for COSMIC Terminal
+// Blues, teals, turquoises, and greens; warm errors/warnings.
+// Dunsworth-Mann Analytics LLC - https://dunsworth-mann.com
+(
+    name: "DMA Theme Dark",
+    foreground: "#E0E8EF",
+    background: "#0A0F14",
+    cursor: "#1A91E6",
+    bright_foreground: "#F8FAFC",
+    dim_foreground: "#93ABC3",
+    normal: (
+        black: "#1E282D",
+        red: "#E80000",
+        green: "#009933",
+        yellow: "#E88800",
+        blue: "#007BDB",
+        magenta: "#007F7F",
+        cyan: "#00B3B3",
+        white: "#C8D6E3",
+    ),
+    bright: (
+        black: "#485C6E",
+        red: "#FF1A1A",
+        green: "#00B33B",
+        yellow: "#FF9F00",
+        blue: "#1A91E6",
+        magenta: "#1ACECE",
+        cyan: "#4DDDDD",
+        white: "#F0F4F8",
+    ),
+    dim: (
+        black: "#182026",
+        red: "#A50406",
+        green: "#03702A",
+        yellow: "#A56406",
+        blue: "#035B9F",
+        magenta: "#035D5F",
+        cyan: "#038283",
+        white: "#8F9AA5",
+    )
+)

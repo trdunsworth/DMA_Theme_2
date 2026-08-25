@@ -149,14 +149,14 @@ so they always match the shipped themes.
 - **Emacs** — Complete theme with org-mode, magit, lsp, and package support
 - **Neovim** — Lua-based theme with TreeSitter, LSP, and plugin integrations
 - **Kakoune** — kakrc configuration
-- **Helix** — TOML theme configuration
+- **Helix** — flat TOML color scheme
 - **Zed** — JSON theme configuration
 - **Notepad++** — XML theme file
 
 ### Terminals
 - **Ghostty** — Config file with full 256-color palette
 - **WezTerm** — TOML theme with indexed colors
-- **Cosmic Terminal** — TOML theme configuration
+- **Cosmic Terminal** — RON color scheme (`View → Color schemes…` import)
 - **Yen** — YAML theme configuration
 - **Warp** — YAML theme configuration
 - **tmux** — Configuration with status line
@@ -282,35 +282,58 @@ require("dma_theme").setup({
 
 ### Kakoune
 
+Kakoune loads color schemes from `~/.config/kak/colors/` (NOT `themes/`).
+The scheme name is the **filename stem** (no extension), so the file must be
+named `dma-theme-light.kak` and referenced as `colorscheme dma-theme-light`.
+A scheme is a flat `.kak` file of `face global <Name> <spec>` lines using
+kak's canonical color grammar `rgb:RRGGBB` / named colors, e.g.
+`face global Default rgb:1A2A35,rgb:F8FAFC`.
+
 ```bash
 # Copy theme file
 cp themes/kakoune/dma-theme-light.kak ~/.config/kak/colors/
-
-# Or for dark theme
-cp themes/kakoune/dma-theme-dark.kak ~/.config/kak/colors/
+# or
+cp themes/kakoune/dma-theme-dark.kak  ~/.config/kak/colors/
 ```
 
-Add to your `kakrc`:
+Select in Kakoune: `:colorscheme dma-theme-light` (or `… dma-theme-dark`),
+or persist in `~/.config/kak/kakrc`:
 ```kak
-colorscheme dma-theme-light  # or dma-theme-dark
+colorscheme dma-theme-light
 ```
+
+Note: kakoune's color scheme only assigns face colors; it has no concept of
+"cursor shape" or "font" — those come from your terminal.
 
 ---
 
 ### Helix
 
+Helix themes are flat TOML files placed in `~/.config/helix/themes/`.
+The theme name in `config.toml` is the **filename** (without `.toml`).
+
 ```bash
-# Copy theme file
-cp themes/helix/dma-theme-light.toml ~/.config/helix/themes/
-
-# Or for dark theme
-cp themes/helix/dma-theme-dark.toml ~/.config/helix/themes/
+# Copy theme file (note the spaced, capitalized name)
+cp "themes/helix/DMA Theme Light.toml" ~/.config/helix/themes/
+# or
+cp "themes/helix/DMA Theme Dark.toml"  ~/.config/helix/themes/
 ```
 
-Add to your `config.toml`:
+Set in `~/.config/helix/config.toml`:
+
 ```toml
-theme = "dma-theme-light"  # or "dma-theme-dark"
+theme = "DMA Theme Light"   # or "DMA Theme Dark"
 ```
+
+Then reload inside Helix: `Ctrl+a` then `:reload` (or restart).
+Helix is a TUI editor, so the **font comes from your terminal**, not from
+Helix itself. To use CommitMonoDrDMac at 12pt, set it in the terminal
+you run Helix inside (e.g. WezTerm's `font_size = 12`, or Yen's
+`font-size = 12` with `font-family = "CommitMonoDrDMac"`).
+
+Note: the palette covers syntax and core UI colors only. Selection
+background, extended 256-palette, and scrollbar aesthetics follow Helix's
+own rendering and are not themeable per scheme file.
 
 ---
 
@@ -390,29 +413,40 @@ config.colors = {
 
 ### Cosmic Terminal
 
-```bash
-# Copy theme file
-cp themes/cosmic/dma-theme-light.toml ~/.config/cosmic-term/themes/
+COSMIC Terminal uses RON color schemes. There is no themes folder to
+copy into — schemes are imported through the app and stored in its own
+configuration.
 
-# Or for dark theme
-cp themes/cosmic/dma-theme-dark.toml ~/.config/cosmic-term/themes/
+```text
+Menu → View → Color schemes... → Import
+# choose themes/cosmic/DMA Theme Light.ron (or DMA Theme Dark.ron)
 ```
 
-Select in Cosmic Terminal settings → Themes → DMA Theme Light
+Note: cosmic-term color schemes cover the terminal palette only
+(foreground, background, cursor, ANSI 16, dim/bright variants). The
+extended 256-color palette and selection colors are derived by the
+terminal itself and cannot be overridden per scheme.
 
 ---
 
 ### Yen
 
+Yen themes are plain Ghostty-style `key = value` files (no extension).
+
 ```bash
 # Copy theme file
-cp themes/yen/dma-theme-light.yaml ~/.config/yen/themes/
+cp themes/yen/dma-theme-light ~/.config/yen/themes/
 
 # Or for dark theme
-cp themes/yen/dma-theme-dark.yaml ~/.config/yen/themes/
+cp themes/yen/dma-theme-dark ~/.config/yen/themes/
 ```
 
-Select in Yen settings → Themes → DMA Theme Light
+Then set `theme = dma-theme-light` in
+`~/Library/Application Support/com.yenchat.yen/config.yen`
+(macOS) or `$XDG_CONFIG_HOME/yen/config.yen`, or pick it in the
+settings panel (Cmd+,). Note that Yen theme files only cover the
+terminal palette — tab bar, scrollbar, and split borders follow the
+app UI and cannot be themed per theme file.
 
 ---
 
