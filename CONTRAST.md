@@ -15,7 +15,7 @@ AA Large (>= 18pt or >= 14pt bold) >= 3.0:1.
 | Dark theme — text/UI tokens | 56 | 53 | 44 | 3 | 0 |
 | Semantic status colors | 12 | 8 | 4 | 2 | 2 |
 | Terminal ANSI palette (reference) | 30 | — | — | — | — |
-| Shipped editor/terminal files — essential text | 32 | — | — | — | 0 |
+| Shipped editor/terminal files — essential text | 34 | — | — | — | 0 |
 
 **Canonical-palette verdict:** the source-of-truth `palette.json` meets WCAG AA
 (>= 4.5:1) for every body-text, syntax, UI, and semantic-status token in **both**
@@ -395,6 +395,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `tok:Markup - Strikethrough` | #5A7D96 |  4.17:1 | AA Large | on editor bg |
 | `tok:Markup - Quote` | #5A7D96 |  4.17:1 | AA Large | on editor bg |
 | `semantictokencolors.comment` | #5A7D96 |  4.17:1 | AA Large | on editor bg |
+| `semantictokencolors.label` | #5A7D96 |  4.17:1 | AA Large | on editor bg |
 | `tok:Numbers` | #0077CC |  4.45:1 | AA Large | on editor bg |
 | `tok:Functions` | #0077CC |  4.45:1 | AA Large | on editor bg |
 | `tok:Function Call` | #0077CC |  4.45:1 | AA Large | on editor bg |
@@ -636,6 +637,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `colors.gitdecoration.ignoredresourceforeground` | #6E89A0 |  5.27:1 | AA | on editor bg |
 | `colors.gitdecoration.submoduleresourceforeground` | #6E89A0 |  5.27:1 | AA | on editor bg |
 | `semantictokencolors.comment` | #6E89A0 |  5.27:1 | AA | on editor bg |
+| `semantictokencolors.label` | #6E89A0 |  5.27:1 | AA | on editor bg |
 | `colors.editorcursor.foreground` | #1A91E6 |  5.71:1 | AA | text on cursor surface (by design) |
 | `colors.editorindentguide.activebackground` | #1A91E6 |  5.71:1 | AA | on editor bg |
 | `colors.editorbracketmatch.border` | #1A91E6 |  5.71:1 | AA | on editor bg |
@@ -899,6 +901,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `tok:Markup - Strikethrough` | #5A7D96 |  4.17:1 | AA Large | on editor bg |
 | `tok:Markup - Quote` | #5A7D96 |  4.17:1 | AA Large | on editor bg |
 | `semantictokencolors.comment` | #5A7D96 |  4.17:1 | AA Large | on editor bg |
+| `semantictokencolors.label` | #5A7D96 |  4.17:1 | AA Large | on editor bg |
 | `tok:Numbers` | #0077CC |  4.45:1 | AA Large | on editor bg |
 | `tok:Functions` | #0077CC |  4.45:1 | AA Large | on editor bg |
 | `tok:Function Call` | #0077CC |  4.45:1 | AA Large | on editor bg |
@@ -1140,6 +1143,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `colors.gitdecoration.ignoredresourceforeground` | #6E89A0 |  5.27:1 | AA | on editor bg |
 | `colors.gitdecoration.submoduleresourceforeground` | #6E89A0 |  5.27:1 | AA | on editor bg |
 | `semantictokencolors.comment` | #6E89A0 |  5.27:1 | AA | on editor bg |
+| `semantictokencolors.label` | #6E89A0 |  5.27:1 | AA | on editor bg |
 | `colors.editorcursor.foreground` | #1A91E6 |  5.71:1 | AA | text on cursor surface (by design) |
 | `colors.editorindentguide.activebackground` | #1A91E6 |  5.71:1 | AA | on editor bg |
 | `colors.editorbracketmatch.border` | #1A91E6 |  5.71:1 | AA | on editor bg |
@@ -1358,6 +1362,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `syntax.variable.language.color` | #007F7F |  4.62:1 | AA | on editor bg |
 | `syntax.operator.color` | #007F7F |  4.62:1 | AA | on editor bg |
 | `syntax.tag.color` | #007F7F |  4.62:1 | AA | on editor bg |
+| `syntax.label.color` | #007F7F |  4.62:1 | AA | on editor bg |
 | `syntax.markup.heading.color` | #007F7F |  4.62:1 | AA | on editor bg |
 | `syntax.markup.list.color` | #007F7F |  4.62:1 | AA | on editor bg |
 | `conflict` | #9E5E00 |  4.95:1 | AA | on editor bg |
@@ -1487,6 +1492,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `syntax.string.special.color` | #94E2D5 | 12.92:1 | AAA | on editor bg |
 | `syntax.string.special.symbol.color` | #94E2D5 | 12.92:1 | AAA | on editor bg |
 | `syntax.attribute.color` | #94E2D5 | 12.92:1 | AAA | on editor bg |
+| `syntax.label.color` | #94E2D5 | 12.92:1 | AAA | on editor bg |
 | `editor.foreground` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 | `text` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 | `syntax.variable.color` | #E0E8EF | 15.54:1 | AAA | on editor bg |
@@ -1494,183 +1500,25 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `syntax.markup.italic.color` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 | `syntax.text.color` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 
-#### Helix (light) — bg `#F8FAFC` <small>(toml:background)</small>
+#### Helix (light) — bg `None` <small>(UNRESOLVED)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
-| `background` | #F8FAFC |  1.00:1 | FAIL | on editor bg |
-| `ui-background` | #F0F4F8 |  1.06:1 | FAIL | on editor bg |
-| `ui-selection` | #A8D0F0 |  1.55:1 | FAIL | on editor bg |
-| `ui-selection-primary` | #A8D0F0 |  1.55:1 | FAIL | on editor bg |
-| `ui-text-dimmed` | #6E89A0 |  3.49:1 | AA Large | on editor bg |
-| `fg` | #0077CC |  4.45:1 | AA Large | on editor bg |
-| `diagnostic-info` | #0077CC |  4.45:1 | AA Large | on editor bg |
-| `diagnostic-error` | #E80000 |  4.53:1 | AA | on editor bg |
-| `diagnostic-hint` | #007F7F |  4.62:1 | AA | on editor bg |
-| `diagnostic-warning` | #9E5E00 |  4.95:1 | AA | on editor bg |
-| `ui-cursor-match-background` | #002B5C | 13.38:1 | AAA | on editor bg |
-| `ui-text` | #1A2A35 | 14.07:1 | AAA | on editor bg |
-| `ui-text-focus` | #1A2A35 | 14.07:1 | AAA | on editor bg |
+| `fg` | #007F7F | n/a | ? | no bg/value |
 
-#### Helix (dark) — bg `#0A0F14` <small>(toml:background)</small>
+#### Helix (dark) — bg `None` <small>(UNRESOLVED)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
-| `background` | #0A0F14 |  1.00:1 | FAIL | on editor bg |
-| `ui-background` | #101820 |  1.08:1 | FAIL | on editor bg |
-| `ui-selection` | #003D7A |  1.79:1 | FAIL | on editor bg |
-| `ui-selection-primary` | #003D7A |  1.79:1 | FAIL | on editor bg |
-| `diagnostic-error` | #E80000 |  4.06:1 | AA Large | on editor bg |
-| `ui-text-dimmed` | #6E89A0 |  5.27:1 | AA | on editor bg |
-| `fg` | #1A91E6 |  5.71:1 | AA | on editor bg |
-| `diagnostic-info` | #1A91E6 |  5.71:1 | AA | on editor bg |
-| `diagnostic-warning` | #E88800 |  7.29:1 | AAA | on editor bg |
-| `diagnostic-hint` | #1ACECE |  9.86:1 | AAA | on editor bg |
-| `ui-text` | #E0E8EF | 15.54:1 | AAA | on editor bg |
-| `ui-text-focus` | #E0E8EF | 15.54:1 | AAA | on editor bg |
-| `ui-cursor-match-background` | #E0E8EF | 15.54:1 | AAA | on editor bg |
+| `fg` | #1ACECE | n/a | ? | no bg/value |
 
-#### Kakoune (light) — bg `#F8FAFC` <small>(kak:Default.bg(var))</small>
+#### Kakoune (light) — bg `None` <small>(UNRESOLVED)</small>
 
-| Token | Color | Contrast | Level | Note |
-|-------|-------|---------:|-------|------|
-| `kak:Border` | #A8C0D8 |  1.79:1 | FAIL | on editor bg |
-| `kak:Info` | #0091E6 |  3.24:1 | AA Large | on editor bg |
-| `kak:LspInfo` | #0091E6 |  3.24:1 | AA Large | on editor bg |
-| `kak:LspDiagnosticInfo` | #0091E6 |  3.24:1 | AA Large | on editor bg |
-| `kak:Operator` | #009999 |  3.34:1 | AA Large | on editor bg |
-| `kak:Keyword` | #009999 |  3.34:1 | AA Large | on editor bg |
-| `kak:Tag` | #009999 |  3.34:1 | AA Large | on editor bg |
-| `kak:TSKeyword` | #009999 |  3.34:1 | AA Large | on editor bg |
-| `kak:TSKeywordFunction` | #009999 |  3.34:1 | AA Large | on editor bg |
-| `kak:TSKeywordOperator` | #009999 |  3.34:1 | AA Large | on editor bg |
-| `kak:TSKeywordReturn` | #009999 |  3.34:1 | AA Large | on editor bg |
-| `kak:TSOperator` | #009999 |  3.34:1 | AA Large | on editor bg |
-| `kak:TSTag` | #009999 |  3.34:1 | AA Large | on editor bg |
-| `kak:LineNumber` | #6E89A0 |  3.49:1 | AA Large | on editor bg |
-| `kak:ModelineInfo` | #6E89A0 |  3.49:1 | AA Large | on editor bg |
-| `kak:Comment` | #6E89A0 |  3.49:1 | AA Large | on editor bg |
-| `kak:CommentDocumentation` | #6E89A0 |  3.49:1 | AA Large | on editor bg |
-| `kak:SpecialComment` | #6E89A0 |  3.49:1 | AA Large | on editor bg |
-| `kak:GitIgnored` | #6E89A0 |  3.49:1 | AA Large | on editor bg |
-| `kak:CompletionInfo` | #6E89A0 |  3.49:1 | AA Large | on editor bg |
-| `kak:CompletionScrollbar` | #6E89A0 |  3.49:1 | AA Large | on editor bg |
-| `kak:TSComment` | #6E89A0 |  3.49:1 | AA Large | on editor bg |
-| `kak:GitAdded` | #009933 |  3.58:1 | AA Large | on editor bg |
-| `kak:GitUntracked` | #009933 |  3.58:1 | AA Large | on editor bg |
-| `kak:Error` | #FF1A1A |  3.71:1 | AA Large | on editor bg |
-| `kak:GitDeleted` | #FF1A1A |  3.71:1 | AA Large | on editor bg |
-| `kak:LspError` | #FF1A1A |  3.71:1 | AA Large | on editor bg |
-| `kak:LspDiagnosticError` | #FF1A1A |  3.71:1 | AA Large | on editor bg |
-| `kak:BorderFocused` | #0077CC |  4.45:1 | AA Large | on editor bg |
-| `kak:Number` | #0077CC |  4.45:1 | AA Large | on editor bg |
-| `kak:Function` | #0077CC |  4.45:1 | AA Large | on editor bg |
-| `kak:GitModified` | #0077CC |  4.45:1 | AA Large | on editor bg |
-| `kak:TSNumber` | #0077CC |  4.45:1 | AA Large | on editor bg |
-| `kak:TSFunction` | #0077CC |  4.45:1 | AA Large | on editor bg |
-| `kak:TSMarkupLink` | #0077CC |  4.45:1 | AA Large | on editor bg |
-| `kak:TSMarkupLinkUrl` | #0077CC |  4.45:1 | AA Large | on editor bg |
-| `kak:Type` | #007F7F |  4.62:1 | AA | on editor bg |
-| `kak:Typedef` | #007F7F |  4.62:1 | AA | on editor bg |
-| `kak:TSType` | #007F7F |  4.62:1 | AA | on editor bg |
-| `kak:TSTypeBuiltin` | #007F7F |  4.62:1 | AA | on editor bg |
-| `kak:String` | #007F2A |  4.93:1 | AA | on editor bg |
-| `kak:LspHint` | #007F2A |  4.93:1 | AA | on editor bg |
-| `kak:LspDiagnosticHint` | #007F2A |  4.93:1 | AA | on editor bg |
-| `kak:TSString` | #007F2A |  4.93:1 | AA | on editor bg |
-| `kak:TSMarkupRaw` | #007F2A |  4.93:1 | AA | on editor bg |
-| `kak:CommentSpecial` | #9E5E00 |  4.95:1 | AA | on editor bg |
-| `kak:Constant` | #9E5E00 |  4.95:1 | AA | on editor bg |
-| `kak:GitConflicting` | #9E5E00 |  4.95:1 | AA | on editor bg |
-| `kak:LspWarning` | #9E5E00 |  4.95:1 | AA | on editor bg |
-| `kak:LspDiagnosticWarning` | #9E5E00 |  4.95:1 | AA | on editor bg |
-| `kak:TSConstant` | #9E5E00 |  4.95:1 | AA | on editor bg |
-| `kak:TSEscape` | #9E5E00 |  4.95:1 | AA | on editor bg |
-| `kak:TSAttribute` | #007373 |  5.42:1 | AA | on editor bg |
-| `kak:TSTagDelimiter` | #485C6E |  6.62:1 | AA | on editor bg |
-| `kak:CursorLineNumber` | #005A9E |  6.79:1 | AA | text on cursor surface (by design) |
-| `kak:TSMarkupHeading` | #004D4D |  9.25:1 | AAA | on editor bg |
-| `kak:TSMarkupList` | #004D4D |  9.25:1 | AAA | on editor bg |
-| `kak:DiffText` | #003D7A | 10.30:1 | AAA | on editor bg |
-| `kak:Selection` | #002B5C | 13.38:1 | AAA | on editor bg |
-| `kak:PrimarySelection` | #002B5C | 13.38:1 | AAA | on editor bg |
-| `kak:MenuSelected` | #002B5C | 13.38:1 | AAA | on editor bg |
-| `kak:SecondarySelection` | #1A2A35 | 14.07:1 | AAA | on editor bg |
-| `kak:Menu` | #1A2A35 | 14.07:1 | AAA | on editor bg |
-| `kak:CompletionMenu` | #1A2A35 | 14.07:1 | AAA | on editor bg |
-| `kak:TSVariable` | #1A2A35 | 14.07:1 | AAA | on editor bg |
-| `kak:TSVariableBuiltin` | #1A2A35 | 14.07:1 | AAA | on editor bg |
+_No text tokens extracted._
 
-#### Kakoune (dark) — bg `#0A0F14` <small>(kak:Default.bg(var))</small>
+#### Kakoune (dark) — bg `None` <small>(UNRESOLVED)</small>
 
-| Token | Color | Contrast | Level | Note |
-|-------|-------|---------:|-------|------|
-| `kak:Border` | #2D4058 |  1.82:1 | FAIL | on editor bg |
-| `kak:LineNumber` | #526D85 |  3.56:1 | AA Large | on editor bg |
-| `kak:Error` | #FF1A1A |  4.96:1 | AA | on editor bg |
-| `kak:GitDeleted` | #FF1A1A |  4.96:1 | AA | on editor bg |
-| `kak:LspError` | #FF1A1A |  4.96:1 | AA | on editor bg |
-| `kak:LspDiagnosticError` | #FF1A1A |  4.96:1 | AA | on editor bg |
-| `kak:ModelineInfo` | #6E89A0 |  5.27:1 | AA | on editor bg |
-| `kak:Comment` | #6E89A0 |  5.27:1 | AA | on editor bg |
-| `kak:CommentDocumentation` | #6E89A0 |  5.27:1 | AA | on editor bg |
-| `kak:SpecialComment` | #6E89A0 |  5.27:1 | AA | on editor bg |
-| `kak:GitIgnored` | #6E89A0 |  5.27:1 | AA | on editor bg |
-| `kak:CompletionInfo` | #6E89A0 |  5.27:1 | AA | on editor bg |
-| `kak:CompletionScrollbar` | #6E89A0 |  5.27:1 | AA | on editor bg |
-| `kak:TSComment` | #6E89A0 |  5.27:1 | AA | on editor bg |
-| `kak:Info` | #0091E6 |  5.67:1 | AA | on editor bg |
-| `kak:LspInfo` | #0091E6 |  5.67:1 | AA | on editor bg |
-| `kak:LspDiagnosticInfo` | #0091E6 |  5.67:1 | AA | on editor bg |
-| `kak:BorderFocused` | #1A91E6 |  5.71:1 | AA | on editor bg |
-| `kak:LspHint` | #00B33B |  6.88:1 | AA | on editor bg |
-| `kak:LspDiagnosticHint` | #00B33B |  6.88:1 | AA | on editor bg |
-| `kak:CursorLineNumber` | #4DA8EE |  7.47:1 | AAA | text on cursor surface (by design) |
-| `kak:Number` | #4DA8EE |  7.47:1 | AAA | on editor bg |
-| `kak:Function` | #4DA8EE |  7.47:1 | AAA | on editor bg |
-| `kak:GitModified` | #4DA8EE |  7.47:1 | AAA | on editor bg |
-| `kak:TSNumber` | #4DA8EE |  7.47:1 | AAA | on editor bg |
-| `kak:TSFunction` | #4DA8EE |  7.47:1 | AAA | on editor bg |
-| `kak:TSMarkupLink` | #4DA8EE |  7.47:1 | AAA | on editor bg |
-| `kak:TSMarkupLinkUrl` | #4DA8EE |  7.47:1 | AAA | on editor bg |
-| `kak:TSTagDelimiter` | #93ABC3 |  8.11:1 | AAA | on editor bg |
-| `kak:CommentSpecial` | #FF9F00 |  9.36:1 | AAA | on editor bg |
-| `kak:LspWarning` | #FF9F00 |  9.36:1 | AAA | on editor bg |
-| `kak:LspDiagnosticWarning` | #FF9F00 |  9.36:1 | AAA | on editor bg |
-| `kak:String` | #4DD966 | 10.48:1 | AAA | on editor bg |
-| `kak:GitAdded` | #4DD966 | 10.48:1 | AAA | on editor bg |
-| `kak:GitUntracked` | #4DD966 | 10.48:1 | AAA | on editor bg |
-| `kak:TSString` | #4DD966 | 10.48:1 | AAA | on editor bg |
-| `kak:TSMarkupRaw` | #4DD966 | 10.48:1 | AAA | on editor bg |
-| `kak:TSAttribute` | #4DDDDD | 11.64:1 | AAA | on editor bg |
-| `kak:Constant` | #FFC466 | 12.22:1 | AAA | on editor bg |
-| `kak:GitConflicting` | #FFC466 | 12.22:1 | AAA | on editor bg |
-| `kak:TSConstant` | #FFC466 | 12.22:1 | AAA | on editor bg |
-| `kak:TSEscape` | #FFC466 | 12.22:1 | AAA | on editor bg |
-| `kak:Operator` | #4DE5E5 | 12.51:1 | AAA | on editor bg |
-| `kak:Keyword` | #4DE5E5 | 12.51:1 | AAA | on editor bg |
-| `kak:Type` | #4DE5E5 | 12.51:1 | AAA | on editor bg |
-| `kak:Typedef` | #4DE5E5 | 12.51:1 | AAA | on editor bg |
-| `kak:Tag` | #4DE5E5 | 12.51:1 | AAA | on editor bg |
-| `kak:TSKeyword` | #4DE5E5 | 12.51:1 | AAA | on editor bg |
-| `kak:TSKeywordFunction` | #4DE5E5 | 12.51:1 | AAA | on editor bg |
-| `kak:TSKeywordOperator` | #4DE5E5 | 12.51:1 | AAA | on editor bg |
-| `kak:TSKeywordReturn` | #4DE5E5 | 12.51:1 | AAA | on editor bg |
-| `kak:TSOperator` | #4DE5E5 | 12.51:1 | AAA | on editor bg |
-| `kak:TSType` | #4DE5E5 | 12.51:1 | AAA | on editor bg |
-| `kak:TSTypeBuiltin` | #4DE5E5 | 12.51:1 | AAA | on editor bg |
-| `kak:TSTag` | #4DE5E5 | 12.51:1 | AAA | on editor bg |
-| `kak:TSMarkupHeading` | #4DE5E5 | 12.51:1 | AAA | on editor bg |
-| `kak:TSMarkupList` | #4DE5E5 | 12.51:1 | AAA | on editor bg |
-| `kak:Selection` | #E0E8EF | 15.54:1 | AAA | on editor bg |
-| `kak:PrimarySelection` | #E0E8EF | 15.54:1 | AAA | on editor bg |
-| `kak:SecondarySelection` | #E0E8EF | 15.54:1 | AAA | on editor bg |
-| `kak:Menu` | #E0E8EF | 15.54:1 | AAA | on editor bg |
-| `kak:MenuSelected` | #E0E8EF | 15.54:1 | AAA | on editor bg |
-| `kak:CompletionMenu` | #E0E8EF | 15.54:1 | AAA | on editor bg |
-| `kak:TSVariable` | #E0E8EF | 15.54:1 | AAA | on editor bg |
-| `kak:TSVariableBuiltin` | #E0E8EF | 15.54:1 | AAA | on editor bg |
-| `kak:DiffText` | #E6F4FF | 17.18:1 | AAA | on editor bg |
+_No text tokens extracted._
 
 #### Notepad++ (light) — bg `#F8FAFC` <small>(xml:DEFAULT.bgColor)</small>
 
@@ -1753,6 +1601,110 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `css:--text-selection` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 | `css:--code-foreground` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 | `css:--text-on-accent` | #FFFFFF | 19.24:1 | AAA | on editor bg |
+
+#### RStudio (light) — bg `#F8FAFC` <small>(rstheme:ace_editor.background-color)</small>
+
+| Token | Color | Contrast | Level | Note |
+|-------|-------|---------:|-------|------|
+| `rstheme:.rstudio-themes-flat .tooltip-inner.color` | #F8FAFC |  1.00:1 | FAIL | on editor bg |
+| `rstheme:.rstudio-themes-flat .btn-primary.color` | #FFFFFF |  1.05:1 | FAIL | on editor bg |
+| `rstheme:.rstudio-themes-flat .btn-warning.color` | #FFFFFF |  1.05:1 | FAIL | on editor bg |
+| `rstheme:.rstudio-themes-flat .btn-danger.color` | #FFFFFF |  1.05:1 | FAIL | on editor bg |
+| `rstheme:.rstudio-themes-flat .btn-success.color` | #FFFFFF |  1.05:1 | FAIL | on editor bg |
+| `rstheme:.rstudio-themes-flat .list-group-item.active.color` | #FFFFFF |  1.05:1 | FAIL | on editor bg |
+| `rstheme:.rstudio-themes-flat .pagination > .active > a,
+.rstudio-themes-flat .pagination > .active > span.color` | #FFFFFF |  1.05:1 | FAIL | on editor bg |
+| `rstheme:.ace_gutter.color` | #6E89A0 |  3.49:1 | AA Large | on editor bg |
+| `rstheme:.ace_entity.ace_other.ace_attribute-name.color` | #008C8C |  3.91:1 | AA Large | on editor bg |
+| `rstheme:.ace_string.color` | #008F33 |  4.03:1 | AA Large | on editor bg |
+| `rstheme:.ace_comment.color` | #5A7D96 |  4.17:1 | AA Large | on editor bg |
+| `rstheme:.ace_support.ace_function.color` | #0077CC |  4.45:1 | AA Large | on editor bg |
+| `rstheme:.rstudio-themes-flat .pagination > li > a,
+.rstudio-themes-flat .pagination > li > span.color` | #0077CC |  4.45:1 | AA Large | on editor bg |
+| `rstheme:.rstudio-themes-flat .breadcrumb > li > a.color` | #0077CC |  4.45:1 | AA Large | on editor bg |
+| `rstheme:.ace_support.ace_type.color` | #007373 |  5.42:1 | AA | on editor bg |
+| `rstheme:.ace_variable.ace_parameter.color` | #485C6E |  6.62:1 | AA | on editor bg |
+| `rstheme:.rstudio-themes-flat .breadcrumb > .active.color` | #485C6E |  6.62:1 | AA | on editor bg |
+| `rstheme:.ace_constant.color` | #005A9E |  6.79:1 | AA | on editor bg |
+| `rstheme:.ace_constant.ace_language.color` | #005A9E |  6.79:1 | AA | on editor bg |
+| `rstheme:.ace_constant.ace_numeric.color` | #005A9E |  6.79:1 | AA | on editor bg |
+| `rstheme:.ace_entity.ace_name.ace_function.color` | #005A9E |  6.79:1 | AA | on editor bg |
+| `rstheme:.rstudio-themes-flat .alert-warning.color` | #7A4A00 |  7.15:1 | AAA | on editor bg |
+| `rstheme:.ace_gutter-active-line .ace_gutter-cell.color` | #00529E |  7.43:1 | AAA | on editor bg |
+| `rstheme:.ace_keyword.color` | #005A5A |  7.69:1 | AAA | on editor bg |
+| `rstheme:.ace_keyword.ace_operator.color` | #005A5A |  7.69:1 | AAA | on editor bg |
+| `rstheme:.ace_meta.ace_tag.color` | #005A5A |  7.69:1 | AAA | on editor bg |
+| `rstheme:.ace_entity.ace_name.ace_tag.color` | #005A5A |  7.69:1 | AAA | on editor bg |
+| `rstheme:.ace_markup.ace_heading.color` | #005A5A |  7.69:1 | AAA | on editor bg |
+| `rstheme:.ace_markup.ace_list.color` | #005A5A |  7.69:1 | AAA | on editor bg |
+| `rstheme:.rstudio-themes-flat .alert-success.color` | #004D1A |  9.67:1 | AAA | on editor bg |
+| `rstheme:.rstudio-themes-flat .alert-info.color` | #003D7A | 10.30:1 | AAA | on editor bg |
+| `rstheme:.rstudio-themes-flat .alert-danger.color` | #7A0000 | 10.98:1 | AAA | on editor bg |
+| `rstheme:.ace_variable.color` | #1A2A35 | 14.07:1 | AAA | on editor bg |
+| `rstheme:/* RStudio UI */
+.rstudio-themes-flat .rstheme_header,
+.rstudio-themes-flat .rstheme_footer.color` | #1A2A35 | 14.07:1 | AAA | on editor bg |
+| `rstheme:.rstudio-themes-flat .form-control.color` | #1A2A35 | 14.07:1 | AAA | on editor bg |
+| `rstheme:.rstudio-themes-flat .nav-tabs > li.active > a,
+.rstudio-themes-flat .nav-tabs > li.active > a:hover,
+.rstudio-themes-flat .nav-tabs > li.active > a:focus.color` | #1A2A35 | 14.07:1 | AAA | on editor bg |
+| `rstheme:.rstudio-themes-flat .panel-heading.color` | #1A2A35 | 14.07:1 | AAA | on editor bg |
+| `rstheme:.rstudio-themes-flat .table > thead > tr > th.color` | #1A2A35 | 14.07:1 | AAA | on editor bg |
+| `rstheme:.rstudio-themes-flat .dropdown-menu > li > a:hover,
+.rstudio-themes-flat .dropdown-menu > li > a:focus.color` | #1A2A35 | 14.07:1 | AAA | on editor bg |
+| `rstheme:.rstudio-themes-flat .popover-title.color` | #1A2A35 | 14.07:1 | AAA | on editor bg |
+
+#### RStudio (dark) — bg `#0A0F14` <small>(rstheme:ace_editor.background-color)</small>
+
+| Token | Color | Contrast | Level | Note |
+|-------|-------|---------:|-------|------|
+| `rstheme:.rstudio-themes-flat .btn-warning.color` | #0A0F14 |  1.00:1 | FAIL | on editor bg |
+| `rstheme:.rstudio-themes-flat .tooltip-inner.color` | #0A0F14 |  1.00:1 | FAIL | on editor bg |
+| `rstheme:.ace_gutter.color` | #526D85 |  3.56:1 | AA Large | on editor bg |
+| `rstheme:.ace_comment.color` | #6E89A0 |  5.27:1 | AA | on editor bg |
+| `rstheme:.ace_gutter-active-line .ace_gutter-cell.color` | #4DA8EE |  7.47:1 | AAA | on editor bg |
+| `rstheme:.ace_constant.color` | #4DA8EE |  7.47:1 | AAA | on editor bg |
+| `rstheme:.ace_constant.ace_language.color` | #4DA8EE |  7.47:1 | AAA | on editor bg |
+| `rstheme:.ace_constant.ace_numeric.color` | #4DA8EE |  7.47:1 | AAA | on editor bg |
+| `rstheme:.ace_support.ace_function.color` | #4DA8EE |  7.47:1 | AAA | on editor bg |
+| `rstheme:.ace_entity.ace_name.ace_function.color` | #4DA8EE |  7.47:1 | AAA | on editor bg |
+| `rstheme:.rstudio-themes-flat .pagination > li > a,
+.rstudio-themes-flat .pagination > li > span.color` | #4DA8EE |  7.47:1 | AAA | on editor bg |
+| `rstheme:.rstudio-themes-flat .breadcrumb > li > a.color` | #4DA8EE |  7.47:1 | AAA | on editor bg |
+| `rstheme:.ace_variable.ace_parameter.color` | #93ABC3 |  8.11:1 | AAA | on editor bg |
+| `rstheme:.rstudio-themes-flat .breadcrumb > .active.color` | #93ABC3 |  8.11:1 | AAA | on editor bg |
+| `rstheme:.ace_support.ace_type.color` | #81C8BE | 10.02:1 | AAA | on editor bg |
+| `rstheme:.ace_string.color` | #4DD966 | 10.48:1 | AAA | on editor bg |
+| `rstheme:.ace_keyword.color` | #4DE5E5 | 12.51:1 | AAA | on editor bg |
+| `rstheme:.ace_keyword.ace_operator.color` | #4DE5E5 | 12.51:1 | AAA | on editor bg |
+| `rstheme:.ace_meta.ace_tag.color` | #4DE5E5 | 12.51:1 | AAA | on editor bg |
+| `rstheme:.ace_entity.ace_name.ace_tag.color` | #4DE5E5 | 12.51:1 | AAA | on editor bg |
+| `rstheme:.ace_markup.ace_heading.color` | #4DE5E5 | 12.51:1 | AAA | on editor bg |
+| `rstheme:.ace_markup.ace_list.color` | #4DE5E5 | 12.51:1 | AAA | on editor bg |
+| `rstheme:.ace_entity.ace_other.ace_attribute-name.color` | #94E2D5 | 12.92:1 | AAA | on editor bg |
+| `rstheme:.ace_variable.color` | #E0E8EF | 15.54:1 | AAA | on editor bg |
+| `rstheme:/* RStudio UI */
+.rstudio-themes-flat .rstheme_header,
+.rstudio-themes-flat .rstheme_footer.color` | #E0E8EF | 15.54:1 | AAA | on editor bg |
+| `rstheme:.rstudio-themes-flat .form-control.color` | #E0E8EF | 15.54:1 | AAA | on editor bg |
+| `rstheme:.rstudio-themes-flat .nav-tabs > li.active > a,
+.rstudio-themes-flat .nav-tabs > li.active > a:hover,
+.rstudio-themes-flat .nav-tabs > li.active > a:focus.color` | #E0E8EF | 15.54:1 | AAA | on editor bg |
+| `rstheme:.rstudio-themes-flat .panel-heading.color` | #E0E8EF | 15.54:1 | AAA | on editor bg |
+| `rstheme:.rstudio-themes-flat .table > thead > tr > th.color` | #E0E8EF | 15.54:1 | AAA | on editor bg |
+| `rstheme:.rstudio-themes-flat .dropdown-menu > li > a:hover,
+.rstudio-themes-flat .dropdown-menu > li > a:focus.color` | #E0E8EF | 15.54:1 | AAA | on editor bg |
+| `rstheme:.rstudio-themes-flat .popover-title.color` | #E0E8EF | 15.54:1 | AAA | on editor bg |
+| `rstheme:.rstudio-themes-flat .alert-info.color` | #E0E8EF | 15.54:1 | AAA | on editor bg |
+| `rstheme:.rstudio-themes-flat .alert-danger.color` | #FFEAEA | 16.69:1 | AAA | on editor bg |
+| `rstheme:.rstudio-themes-flat .alert-success.color` | #E6F8E6 | 17.35:1 | AAA | on editor bg |
+| `rstheme:.rstudio-themes-flat .alert-warning.color` | #FFF8E6 | 18.16:1 | AAA | on editor bg |
+| `rstheme:.rstudio-themes-flat .btn-primary.color` | #FFFFFF | 19.24:1 | AAA | on editor bg |
+| `rstheme:.rstudio-themes-flat .btn-danger.color` | #FFFFFF | 19.24:1 | AAA | on editor bg |
+| `rstheme:.rstudio-themes-flat .btn-success.color` | #FFFFFF | 19.24:1 | AAA | on editor bg |
+| `rstheme:.rstudio-themes-flat .list-group-item.active.color` | #FFFFFF | 19.24:1 | AAA | on editor bg |
+| `rstheme:.rstudio-themes-flat .pagination > .active > a,
+.rstudio-themes-flat .pagination > .active > span.color` | #FFFFFF | 19.24:1 | AAA | on editor bg |
 
 #### Emacs (light) — bg `#F8FAFC` <small>(emacs:dma-bg)</small>
 
@@ -2171,71 +2123,43 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `foreground` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 | `selection_fg` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 
-#### Cosmic (light) — bg `#F8FAFC` <small>(toml:background)</small>
+#### Cosmic (light) — bg `None` <small>(UNRESOLVED)</small>
+
+| Token | Color | Contrast | Level | Note |
+|-------|-------|---------:|-------|------|
+| `foreground` | #1A2A35 | n/a | ? | no bg/value |
+| `background` | #F8FAFC | n/a | ? | no bg/value |
+| `bright_foreground` | #0A0F14 | n/a | ? | no bg/value |
+| `dim_foreground` | #485C6E | n/a | ? | no bg/value |
+
+#### Cosmic (dark) — bg `None` <small>(UNRESOLVED)</small>
+
+| Token | Color | Contrast | Level | Note |
+|-------|-------|---------:|-------|------|
+| `foreground` | #E0E8EF | n/a | ? | no bg/value |
+| `background` | #0A0F14 | n/a | ? | no bg/value |
+| `bright_foreground` | #F8FAFC | n/a | ? | no bg/value |
+| `dim_foreground` | #93ABC3 | n/a | ? | no bg/value |
+
+#### Yen (light) — bg `#F8FAFC` <small>(ghostty:background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
 | `background` | #F8FAFC |  1.00:1 | FAIL | on editor bg |
-| `cursor_text` | #F8FAFC |  1.00:1 | FAIL | white/self-colored on accent/cursor (by design) |
-| `tab_active_background` | #F8FAFC |  1.00:1 | FAIL | on editor bg |
-| `tab_bar_background` | #F0F4F8 |  1.06:1 | FAIL | on editor bg |
-| `tab_hover_background` | #D0E8F8 |  1.21:1 | FAIL | on editor bg |
-| `tab_inactive_background` | #DCE4ED |  1.23:1 | FAIL | on editor bg |
-| `selection_background` | #A8D0F0 |  1.55:1 | FAIL | on editor bg |
-| `tab_bar_border` | #A8C0D8 |  1.79:1 | FAIL | on editor bg |
-| `scrollbar_thumb` | #A8C0D8 |  1.79:1 | FAIL | on editor bg |
-| `split_pane_border` | #A8C0D8 |  1.79:1 | FAIL | on editor bg |
-| `scrollbar_thumb_hover` | #8FABBE |  2.30:1 | FAIL | on editor bg |
-| `tab_inactive_foreground` | #6E89A0 |  3.49:1 | AA Large | on editor bg |
-| `tab_active_border` | #0077CC |  4.45:1 | AA Large | on editor bg |
-| `split_pane_border_focus` | #0077CC |  4.45:1 | AA Large | on editor bg |
-| `selection_foreground` | #002B5C | 13.38:1 | AAA | on editor bg |
+| `cursor-text` | #F8FAFC |  1.00:1 | FAIL | white/self-colored on accent/cursor (by design) |
+| `selection-background` | #A8D0F0 |  1.55:1 | FAIL | on editor bg |
+| `selection-foreground` | #002B5C | 13.38:1 | AAA | on editor bg |
 | `foreground` | #1A2A35 | 14.07:1 | AAA | on editor bg |
-| `tab_active_foreground` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 
-#### Cosmic (dark) — bg `#0A0F14` <small>(toml:background)</small>
+#### Yen (dark) — bg `#0A0F14` <small>(ghostty:background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
 | `background` | #0A0F14 |  1.00:1 | FAIL | on editor bg |
-| `cursor_text` | #0A0F14 |  1.00:1 | FAIL | text on cursor surface (by design) |
-| `tab_active_background` | #0A0F14 |  1.00:1 | FAIL | on editor bg |
-| `tab_bar_background` | #101820 |  1.08:1 | FAIL | on editor bg |
-| `tab_inactive_background` | #101820 |  1.08:1 | FAIL | on editor bg |
-| `tab_hover_background` | #101820 |  1.08:1 | FAIL | on editor bg |
-| `selection_background` | #003D7A |  1.79:1 | FAIL | on editor bg |
-| `tab_bar_border` | #2D4058 |  1.82:1 | FAIL | on editor bg |
-| `scrollbar_thumb` | #2D4058 |  1.82:1 | FAIL | on editor bg |
-| `split_pane_border` | #2D4058 |  1.82:1 | FAIL | on editor bg |
-| `scrollbar_thumb_hover` | #3D526E |  2.41:1 | FAIL | on editor bg |
-| `tab_inactive_foreground` | #6E89A0 |  5.27:1 | AA | on editor bg |
-| `tab_active_border` | #1A91E6 |  5.71:1 | AA | on editor bg |
-| `split_pane_border_focus` | #1A91E6 |  5.71:1 | AA | on editor bg |
+| `cursor-text` | #0A0F14 |  1.00:1 | FAIL | text on cursor surface (by design) |
+| `selection-background` | #003D7A |  1.79:1 | FAIL | on editor bg |
 | `foreground` | #E0E8EF | 15.54:1 | AAA | on editor bg |
-| `selection_foreground` | #E0E8EF | 15.54:1 | AAA | on editor bg |
-| `tab_active_foreground` | #E0E8EF | 15.54:1 | AAA | on editor bg |
-
-#### Yen (light) — bg `#F8FAFC` <small>(yaml:background)</small>
-
-| Token | Color | Contrast | Level | Note |
-|-------|-------|---------:|-------|------|
-| `cursor_text` | #F8FAFC |  1.00:1 | FAIL | white/self-colored on accent/cursor (by design) |
-| `background` | #D0E8F8 |  1.21:1 | FAIL | on editor bg |
-| `border` | #A8C0D8 |  1.79:1 | FAIL | on editor bg |
-| `thumb_hover` | #8FABBE |  2.30:1 | FAIL | on editor bg |
-| `foreground` | #6E89A0 |  3.49:1 | AA Large | on editor bg |
-| `border_focus` | #0077CC |  4.45:1 | AA Large | on editor bg |
-
-#### Yen (dark) — bg `#0A0F14` <small>(yaml:background)</small>
-
-| Token | Color | Contrast | Level | Note |
-|-------|-------|---------:|-------|------|
-| `cursor_text` | #0A0F14 |  1.00:1 | FAIL | text on cursor surface (by design) |
-| `background` | #101820 |  1.08:1 | FAIL | on editor bg |
-| `border` | #2D4058 |  1.82:1 | FAIL | on editor bg |
-| `thumb_hover` | #3D526E |  2.41:1 | FAIL | on editor bg |
-| `foreground` | #6E89A0 |  5.27:1 | AA | on editor bg |
-| `border_focus` | #1A91E6 |  5.71:1 | AA | on editor bg |
+| `selection-foreground` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 
 #### Warp (light) — bg `#F8FAFC` <small>(yaml:background)</small>
 

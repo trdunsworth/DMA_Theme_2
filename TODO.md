@@ -65,6 +65,10 @@
 ### Obsidian
 - [x] `dma-theme.css` — CSS theme with light/dark variants using CSS variables
 
+### RStudio
+- [x] `dma-theme-light.rstheme` — Light theme (CSS-based .rstheme format)
+- [x] `dma-theme-dark.rstheme` — Dark theme (CSS-based .rstheme format)
+
 ### Positron
 - [x] `dma-theme-light.json` — Light theme (VS Code compatible) - **Updated with brighter colors**
 - [x] `dma-theme-dark.json` — Dark theme (VS Code compatible)

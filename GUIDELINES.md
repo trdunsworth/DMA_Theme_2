@@ -169,6 +169,15 @@ themes/{editor}/
 - Target `.theme-light` and `.theme-dark` classes
 - Style markdown elements, code blocks, UI chrome
 
+### RStudio (CSS/.rstheme)
+- Use CSS-based `.rstheme` format with `rs-theme-name` and `rs-theme-is-dark` comments
+- Target `.ace_editor`, `.ace_gutter`, `.ace_cursor`, `.ace_marker-layer .ace_selection` for editor chrome
+- Syntax highlighting via `.ace_comment`, `.ace_keyword`, `.ace_string`, `.ace_constant`, `.ace_support`, `.ace_variable`, `.ace_entity`, `.ace_markup`, `.ace_invalid`, `.ace_deprecated`
+- Terminal colors via `.terminal`, `.xtermColor0-15`, `.xtermInvertColor`, `.xtermInvertBg`
+- RStudio UI via `.rstudio-themes-flat` selectors (buttons, dialogs, tabs, panels, dropdowns, tooltips, progress bars, alerts, labels, wells, lists, pagination, breadcrumbs)
+- Include rainbow parentheses colors `.ace_paren_color_0-6`
+- Both light and dark variants required
+
 ### Contrast validation (required for every new editor/terminal)
 
 Every shipped theme file is checked for WCAG 2.1 contrast against the background
@@ -193,7 +202,7 @@ Every shipped theme file is checked for WCAG 2.1 contrast against the background
      (backgrounds, borders, accents) are tagged `"surface"` so only real text is scored.
     Supported `fmt` values today: `json` (VS Code/Positron/Zed), `toml` (Helix/WezTerm),
     `ron` (COSMIC Terminal), `ghostty` (Yen/Ghostty/tmux-style palettes), `yaml`
-    (Warp), `kak`, `xml` (Notepad++), `css` (Obsidian), `elisp` (Emacs), `neovim`.
+    (Warp), `kak`, `xml` (Notepad++), `css` (Obsidian), `rstheme` (RStudio), `elisp` (Emacs), `neovim`.
 4. Run the validator and confirm **zero essential text-token FAILs**:
 
    ```bash

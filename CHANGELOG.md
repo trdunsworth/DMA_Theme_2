@@ -55,11 +55,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Types/classes: `#006666`/`#007373` → `#009999` (teal 500)
   - Constants/regex: brown `#8C5A00`/`#7A4A00` → orange `#D47800`
   - Foreground unified on `#1A2A35`; borders lightened to `#A8C0D8`
-- Updated in: VS Code, Positron, Emacs, Neovim, Kakoune, Helix, Zed, Notepad++, Obsidian, Ghostty, WezTerm, Cosmic Terminal, Yen, Warp, tmux, and `palette.json`
+- Updated in: VS Code, Positron, Emacs, Neovim, Kakoune, Helix, Zed, Notepad++, Obsidian, Ghostty, WezTerm, Cosmic Terminal, Yen, Warp, tmux, **RStudio**, and `palette.json`
 - `palette.json`: `primary.blue.500` corrected `#007BDB` → `#0077CC` to match the accent already shipped in all v1.1.0 themes
 - Dark theme unchanged
 
 ### Added
+- **RStudio theme support** — Light and dark `.rstheme` files with full editor syntax highlighting, terminal colors, and RStudio UI theming
 - "Light Theme Contrast Strategy" section in GUIDELINES.md documenting the shade-selection rules
 
 ### Planned

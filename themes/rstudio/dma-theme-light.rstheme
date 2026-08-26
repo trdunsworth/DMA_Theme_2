@@ -1,0 +1,467 @@
+/* rs-theme-name: DMA Theme Light */
+/* rs-theme-is-dark: FALSE */
+
+.rstudio-themes-flat .ace_editor_theme,
+.rstudio-themes-flat .ace_editor_theme .profvis-flamegraph,
+.rstudio-themes-flat .ace_editor_theme,
+.ace_editor {
+  background-color: #F8FAFC;
+  color: #1A2A35;
+}
+
+.ace_gutter {
+  background: #F0F4F8;
+  color: #6E89A0;
+}
+
+.ace_gutter-active-line {
+  background: #D0E8F8;
+}
+
+.ace_gutter-active-line .ace_gutter-cell {
+  color: #00529E;
+  font-weight: bold;
+}
+
+.ace_cursor {
+  color: #0077CC;
+}
+
+.ace_marker-layer .ace_selection {
+  background: #A8D0F0;
+}
+
+.ace_marker-layer .ace_active-debug-line {
+  background: #FFF0CC;
+}
+
+.ace_marker-layer .ace_bracket {
+  border: 1px solid #0077CC;
+}
+
+.ace_invalid {
+  color: #FFFFFF;
+  background-color: #E80000;
+}
+
+.ace_deprecated {
+  color: #FFFFFF;
+  background-color: #C47300;
+}
+
+.ace_fold {
+  background-color: #0077CC;
+  border-color: #A8C0D8;
+}
+
+.ace_comment {
+  color: #5A7D96;
+  font-style: italic;
+}
+
+.ace_constant {
+  color: #005A9E;
+}
+
+.ace_constant.ace_language {
+  color: #005A9E;
+  font-weight: bold;
+}
+
+.ace_constant.ace_numeric {
+  color: #005A9E;
+}
+
+.ace_keyword {
+  color: #005A5A;
+  font-weight: bold;
+}
+
+.ace_keyword.ace_operator {
+  color: #005A5A;
+}
+
+.ace_meta.ace_tag {
+  color: #005A5A;
+}
+
+.ace_storage {
+  color: #005A5A;
+}
+
+.ace_string {
+  color: #008F33;
+}
+
+.ace_support.ace_function {
+  color: #0077CC;
+}
+
+.ace_support.ace_class {
+  color: #007373;
+  font-weight: bold;
+}
+
+.ace_support.ace_type {
+  color: #007373;
+  font-weight: bold;
+}
+
+.ace_variable {
+  color: #1A2A35;
+}
+
+.ace_variable.ace_parameter {
+  color: #485C6E;
+}
+
+.ace_entity.ace_name.ace_function {
+  color: #005A9E;
+}
+
+.ace_entity.ace_name.ace_tag {
+  color: #005A5A;
+}
+
+.ace_entity.ace_other.ace_attribute-name {
+  color: #008C8C;
+}
+
+.ace_markup.ace_heading {
+  color: #005A5A;
+  font-weight: bold;
+}
+
+.ace_markup.ace_list {
+  color: #005A5A;
+}
+
+.ace_indent-guide {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQImWNgYGD4z8DwHwAF7gJl5gAAAABJRU5ErkJggg==') right repeat-y;
+}
+
+.ace_invisible {
+  color: #A8C0D8;
+}
+
+.ace_print-margin {
+  background: #DCE4ED;
+}
+
+.ace_heading {
+  color: #005A5A;
+  font-weight: bold;
+}
+
+.ace_paren_color_0 { color: #0077CC; }
+.ace_paren_color_1 { color: #009999; }
+.ace_paren_color_2 { color: #009933; }
+.ace_paren_color_3 { color: #E88800; }
+.ace_paren_color_4 { color: #E80000; }
+.ace_paren_color_5 { color: #8C5A00; }
+.ace_paren_color_6 { color: #007F7F; }
+
+/* Terminal colors */
+.terminal {
+  background-color: #F8FAFC;
+  color: #1A2A35;
+  font-feature-settings: "liga" 0;
+  position: relative;
+  user-select: none;
+}
+
+.terminal .xterm-viewport {
+  background-color: #F8FAFC;
+  overflow-y: scroll;
+}
+
+.xterm-cursor-style-block.xterm-cursor-blink-on.focus .terminal-cursor,
+.xterm-cursor-style-bar.xterm-cursor-blink-on.focus .terminal-cursor,
+.xterm-cursor-style-underline.xterm-cursor-blink-on.focus .terminal-cursor {
+  background-color: #0077CC;
+}
+
+.xtermInvertColor { color: #F8FAFC !important; }
+.xtermInvertBg { background-color: #1A2A35 !important; }
+
+.xtermColor0 { color: #1A2A35 !important; }
+.xtermColor1 { color: #E80000 !important; }
+.xtermColor2 { color: #009933 !important; }
+.xtermColor3 { color: #E88800 !important; }
+.xtermColor4 { color: #0077CC !important; }
+.xtermColor5 { color: #007F7F !important; }
+.xtermColor6 { color: #00B3B3 !important; }
+.xtermColor7 { color: #A8C0D8 !important; }
+.xtermColor8 { color: #485C6E !important; }
+.xtermColor9 { color: #FF1A1A !important; }
+.xtermColor10 { color: #00B33B !important; }
+.xtermColor11 { color: #FF9F00 !important; }
+.xtermColor12 { color: #1A91E6 !important; }
+.xtermColor13 { color: #1ACECE !important; }
+.xtermColor14 { color: #4DDDDD !important; }
+.xtermColor15 { color: #F0F4F8 !important; }
+
+/* RStudio UI */
+.rstudio-themes-flat .rstheme_header,
+.rstudio-themes-flat .rstheme_footer {
+  background-color: #DCE4ED;
+  color: #1A2A35;
+  border-color: #A8C0D8;
+}
+
+.rstudio-themes-flat .themedPopupPanel {
+  background-color: #FFFFFF;
+  border: 1px solid #A8C0D8;
+}
+
+.rstudio-themes-flat .rstudio-dropdown-menu {
+  background-color: #FFFFFF;
+  border: 1px solid #A8C0D8;
+}
+
+.rstudio-themes-flat .rstudio-dropdown-menu-item:hover {
+  background-color: #D0E8F8;
+}
+
+.rstudio-themes-flat .rstudio-dialog {
+  background-color: #FFFFFF;
+  border: 1px solid #A8C0D8;
+}
+
+.rstudio-themes-flat .rstudio-dialog .modal-header {
+  background-color: #DCE4ED;
+  border-bottom: 1px solid #A8C0D8;
+}
+
+.rstudio-themes-flat .btn-primary {
+  background-color: #0077CC;
+  border-color: #0077CC;
+  color: #FFFFFF;
+}
+
+.rstudio-themes-flat .btn-primary:hover {
+  background-color: #0069C0;
+  border-color: #0069C0;
+}
+
+.rstudio-themes-flat .btn-warning {
+  background-color: #E88800;
+  border-color: #E88800;
+  color: #FFFFFF;
+}
+
+.rstudio-themes-flat .btn-warning:hover {
+  background-color: #C47300;
+  border-color: #C47300;
+}
+
+.rstudio-themes-flat .btn-danger {
+  background-color: #E80000;
+  border-color: #E80000;
+  color: #FFFFFF;
+}
+
+.rstudio-themes-flat .btn-danger:hover {
+  background-color: #C40000;
+  border-color: #C40000;
+}
+
+.rstudio-themes-flat .btn-success {
+  background-color: #009933;
+  border-color: #009933;
+  color: #FFFFFF;
+}
+
+.rstudio-themes-flat .btn-success:hover {
+  background-color: #007F2A;
+  border-color: #007F2A;
+}
+
+.rstudio-themes-flat .form-control {
+  background-color: #FFFFFF;
+  border: 1px solid #A8C0D8;
+  color: #1A2A35;
+}
+
+.rstudio-themes-flat .form-control:focus {
+  border-color: #0077CC;
+  box-shadow: 0 0 0 2px #C5DEF9;
+}
+
+.rstudio-themes-flat .nav-tabs > li.active > a,
+.rstudio-themes-flat .nav-tabs > li.active > a:hover,
+.rstudio-themes-flat .nav-tabs > li.active > a:focus {
+  background-color: #F8FAFC;
+  border-color: #A8C0D8;
+  border-bottom-color: #F8FAFC;
+  color: #1A2A35;
+}
+
+.rstudio-themes-flat .nav-tabs > li > a:hover {
+  background-color: #D0E8F8;
+  border-color: #A8C0D8;
+}
+
+.rstudio-themes-flat .tab-pane {
+  background-color: #F8FAFC;
+}
+
+.rstudio-themes-flat .panel {
+  background-color: #FFFFFF;
+  border: 1px solid #A8C0D8;
+}
+
+.rstudio-themes-flat .panel-heading {
+  background-color: #DCE4ED;
+  border-bottom: 1px solid #A8C0D8;
+  color: #1A2A35;
+}
+
+.rstudio-themes-flat .table {
+  background-color: #FFFFFF;
+}
+
+.rstudio-themes-flat .table > thead > tr > th {
+  background-color: #DCE4ED;
+  border-bottom: 2px solid #A8C0D8;
+  color: #1A2A35;
+}
+
+.rstudio-themes-flat .table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #F0F4F8;
+}
+
+.rstudio-themes-flat .dropdown-menu {
+  background-color: #FFFFFF;
+  border: 1px solid #A8C0D8;
+}
+
+.rstudio-themes-flat .dropdown-menu > li > a:hover,
+.rstudio-themes-flat .dropdown-menu > li > a:focus {
+  background-color: #D0E8F8;
+  color: #1A2A35;
+}
+
+.rstudio-themes-flat .tooltip-inner {
+  background-color: #1A2A35;
+  color: #F8FAFC;
+}
+
+.rstudio-themes-flat .popover {
+  background-color: #FFFFFF;
+  border: 1px solid #A8C0D8;
+}
+
+.rstudio-themes-flat .popover-title {
+  background-color: #DCE4ED;
+  border-bottom: 1px solid #A8C0D8;
+  color: #1A2A35;
+}
+
+.rstudio-themes-flat .progress {
+  background-color: #DCE4ED;
+}
+
+.rstudio-themes-flat .progress-bar {
+  background-color: #0077CC;
+}
+
+.rstudio-themes-flat .progress-bar-success {
+  background-color: #009933;
+}
+
+.rstudio-themes-flat .progress-bar-warning {
+  background-color: #E88800;
+}
+
+.rstudio-themes-flat .progress-bar-danger {
+  background-color: #E80000;
+}
+
+.rstudio-themes-flat .alert-info {
+  background-color: #E6F4FF;
+  border-color: #0077CC;
+  color: #003D7A;
+}
+
+.rstudio-themes-flat .alert-success {
+  background-color: #E6F8E6;
+  border-color: #009933;
+  color: #004D1A;
+}
+
+.rstudio-themes-flat .alert-warning {
+  background-color: #FFF8E6;
+  border-color: #E88800;
+  color: #7A4A00;
+}
+
+.rstudio-themes-flat .alert-danger {
+  background-color: #FFEAEA;
+  border-color: #E80000;
+  color: #7A0000;
+}
+
+.rstudio-themes-flat .label-info {
+  background-color: #0077CC;
+}
+
+.rstudio-themes-flat .label-success {
+  background-color: #009933;
+}
+
+.rstudio-themes-flat .label-warning {
+  background-color: #E88800;
+}
+
+.rstudio-themes-flat .label-danger {
+  background-color: #E80000;
+}
+
+.rstudio-themes-flat .well {
+  background-color: #F0F4F8;
+  border: 1px solid #A8C0D8;
+}
+
+.rstudio-themes-flat .list-group-item {
+  background-color: #FFFFFF;
+  border: 1px solid #A8C0D8;
+}
+
+.rstudio-themes-flat .list-group-item.active {
+  background-color: #0077CC;
+  border-color: #0077CC;
+  color: #FFFFFF;
+}
+
+.rstudio-themes-flat .pagination > li > a,
+.rstudio-themes-flat .pagination > li > span {
+  color: #0077CC;
+  background-color: #FFFFFF;
+  border: 1px solid #A8C0D8;
+}
+
+.rstudio-themes-flat .pagination > li > a:hover,
+.rstudio-themes-flat .pagination > li > span:hover {
+  background-color: #D0E8F8;
+  border-color: #0077CC;
+}
+
+.rstudio-themes-flat .pagination > .active > a,
+.rstudio-themes-flat .pagination > .active > span {
+  background-color: #0077CC;
+  border-color: #0077CC;
+  color: #FFFFFF;
+}
+
+.rstudio-themes-flat .breadcrumb {
+  background-color: #DCE4ED;
+}
+
+.rstudio-themes-flat .breadcrumb > li > a {
+  color: #0077CC;
+}
+
+.rstudio-themes-flat .breadcrumb > .active {
+  color: #485C6E;
+}

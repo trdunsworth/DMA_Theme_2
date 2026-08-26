@@ -9,7 +9,7 @@ DMA Theme provides a consistent visual language across different development env
 - **Semantic color system** — Colors have meaning (error, warning, info, success) rather than just syntax roles
 - **Light and dark variants** — Defaults to light theme with softer white backgrounds and black text
 - **Bold, non-pastel palette** — Deep, saturated colors for better readability and reduced eye strain
-- **Cross-platform support** — VS Code, Positron, Emacs, Neovim, Kakoune, Helix, Zed, Notepad++, Ghostty, WezTerm, Cosmic Terminal, Yen, Warp, tmux, Microsoft Terminal, Obsidian
+- **Cross-platform support** — VS Code, Positron, Emacs, Neovim, Kakoune, Helix, Zed, Notepad++, Ghostty, WezTerm, Cosmic Terminal, Yen, Warp, tmux, Microsoft Terminal, Obsidian, RStudio
 
 ## Themes in Action
 
@@ -164,6 +164,7 @@ so they always match the shipped themes.
 
 ### Other
 - **Obsidian** — CSS theme with light/dark variants
+- **RStudio** — `.rstheme` format with light/dark variants
 
 ## Installation
 
@@ -622,6 +623,21 @@ The theme automatically adapts to Obsidian's light/dark mode setting. To force a
 /* Or forced dark: */
 .theme-dark { /* dark styles */ }
 ```
+
+---
+
+### RStudio
+
+```bash
+# Copy theme files
+cp themes/rstudio/dma-theme-light.rstheme ~/.config/rstudio/themes/
+cp themes/rstudio/dma-theme-dark.rstheme ~/.config/rstudio/themes/
+```
+
+1. Open RStudio
+2. Go to **Tools** → **Global Options** → **Appearance**
+3. Click **Add...** and select the `.rstheme` files
+4. Select **DMA Theme Light** or **DMA Theme Dark** from the Editor theme dropdown
 
 ---
 

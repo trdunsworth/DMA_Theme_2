@@ -60,7 +60,10 @@ CHROME_SURFACE = ("background", "border", "fill", "panel", "gutter", "scrollbar"
                   "linehighlight", "accent", "hover", "active", "modal",
                   "workspace", "tooltip", "menu", "frame", "header", "elevated",
                   "surface", "side", "statusbar", "titlebar", "activitybarbadge",
-                  "extensionbutton", "tab", "badge", "button", "shadow", "divider")
+                  "extensionbutton", "tab", "badge", "button", "btn", "shadow", "divider",
+                  "tooltip", "popover", "progress", "well", "list-group", "pagination",
+                  "breadcrumb", "alert", "label", "nav-tabs", "tab-pane", "dropdown",
+                  "form-control", "panel-heading", "panel-body", "modal-header")
 TEXT_HINTS = ("warning", "error", "conflict", "comment", "string",
                "keyword", "function", "escape", "number", "constant", "variable",
                "type", "operator", "tag", "attribute", "link", "git",
@@ -136,8 +139,8 @@ def block_for(text: str, fmt: str, variant: str) -> str:
                 return text
             return _balanced_brace(text, m.end() - 1)
         return text[:i] if i != -1 else text
-    if fmt in ("emacs", "elisp"):
-        # Single-file theme (light variant); dark is not yet shipped.
+    if fmt in ("emacs", "elisp", "rstheme"):
+        # Single-file theme per variant
         return text
     return text
 
@@ -194,6 +197,15 @@ def resolve_bg(text: str, fmt: str, variant: str) -> tuple[str | None, str]:
         m = re.search(r'defvar\s+dma-bg\s+"?#?([0-9a-fA-F]{6})', blk)
         if m:
             return "#" + m.group(1), "emacs:dma-bg"
+    if fmt == "rstheme":
+        # RStudio .ace_editor background-color
+        m = re.search(r'\.ace_editor\s*\{[^}]*background-color:\s*#?([0-9a-fA-F]{6})', blk, re.IGNORECASE | re.DOTALL)
+        if m:
+            return "#" + m.group(1), "rstheme:ace_editor.background-color"
+        # Fallback: any background-color in the file
+        m = re.search(r'background-color:\s*#?([0-9a-fA-F]{6})', blk)
+        if m:
+            return "#" + m.group(1), "rstheme:background-color"
     if fmt == "neovim":
         return _nvim_bg(blk, variant)
     return None, "UNRESOLVED"
@@ -354,6 +366,18 @@ def extract_tokens(text: str, fmt: str, variant: str) -> dict:
             elif name in ACCENT:
                 toks["css:onaccent:" + name] = val
         return toks
+    if fmt == "rstheme":
+        # RStudio theme: extract color (foreground) properties from CSS rules
+        # Only validate 'color' properties as text; background-color/border-color are surfaces
+        for m in re.finditer(r'([^{]+)\{([^}]*)\}', blk):
+            selector = m.group(1).strip()
+            props = m.group(2)
+            # Only extract 'color' (text foreground) properties
+            for pm in re.finditer(r'(?<!background-)(?<!border-)color\s*:\s*#?([0-9a-fA-F]{6})', props, re.IGNORECASE):
+                val = "#" + pm.group(1)
+                name = f"rstheme:{selector.split('{')[-1].strip()}.color"
+                toks[name] = val
+        return toks
     if fmt == "neovim":
         return _neovim_tokens(variant)
     if fmt == "tmux":
@@ -460,18 +484,19 @@ EDITORS = [
     ("VS Code", "vscode/dma-theme-light-color-theme.json", "vscode/dma-theme-dark-color-theme.json", "json", "editor"),
     ("Positron", "themes/positron/dma-theme-light.json", "themes/positron/dma-theme-dark.json", "json", "editor"),
     ("Zed", "themes/zed/dma-theme-light.json", "themes/zed/dma-theme-dark.json", "json", "editor"),
-    ("Helix", "themes/helix/dma-theme-light.toml", "themes/helix/dma-theme-dark.toml", "toml", "editor"),
+    ("Helix", "themes/helix/DMA Theme Light.toml", "themes/helix/DMA Theme Dark.toml", "toml", "editor"),
     ("Kakoune", "themes/kakoune/dma-theme-light.kak", "themes/kakoune/dma-theme-dark.kak", "kak", "editor"),
     ("Notepad++", "themes/notepadpp/dma-theme-light.xml", "themes/notepadpp/dma-theme-dark.xml", "xml", "editor"),
     ("Obsidian", "themes/obsidian/dma-theme.css", "themes/obsidian/dma-theme.css", "css", "editor"),
+    ("RStudio", "themes/rstudio/dma-theme-light.rstheme", "themes/rstudio/dma-theme-dark.rstheme", "rstheme", "editor"),
     ("Emacs", "themes/emacs/dma-theme-theme.el", "themes/emacs/dma-theme-dark.el", "elisp", "editor"),
     ("Neovim", "themes/neovim/lua/dma_theme/palette.lua", "themes/neovim/lua/dma_theme/palette.lua", "neovim", "editor"),
 ]
 TERMINALS = [
     ("Ghostty", "themes/ghostty/dma-theme-light", "themes/ghostty/dma-theme-dark", "ghostty", "terminal"),
     ("WezTerm", "themes/wezterm/dma-theme-light.toml", "themes/wezterm/dma-theme-dark.toml", "toml", "terminal"),
-    ("Cosmic", "themes/cosmic/dma-theme-light.toml", "themes/cosmic/dma-theme-dark.toml", "toml", "terminal"),
-    ("Yen", "themes/yen/dma-theme-light.yaml", "themes/yen/dma-theme-dark.yaml", "yaml", "terminal"),
+    ("Cosmic", "themes/cosmic/DMA Theme Light.ron", "themes/cosmic/DMA Theme Dark.ron", "ron", "terminal"),
+    ("Yen", "themes/yen/dma-theme-light", "themes/yen/dma-theme-dark", "ghostty", "terminal"),
     ("Warp", "themes/warp/dma-theme-light.yaml", "themes/warp/dma-theme-dark.yaml", "yaml", "terminal"),
     ("tmux", "themes/tmux/dma-theme-light.conf", "themes/tmux/dma-theme-dark.conf", "tmux", "terminal"),
     ("Microsoft Terminal", "themes/microsoft-terminal/dma-theme-light.json", "themes/microsoft-terminal/dma-theme-dark.json", "json", "terminal"),
