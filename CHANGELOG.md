@@ -38,6 +38,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Blue/teal/turquoise/green primary palette
 - Warm red/orange for errors and warnings
 
+## [1.1.1]
+
+### Changed
+- **Rewrote Obsidian theme for proper compatibility.** The previous theme used custom CSS variable names and non-standard selectors that caused issues:
+  - No color in markdown files
+  - System serif font appearing in chrome
+  - Tabs and icons surrounded by boxes of unequal sizes
+- New theme uses Obsidian's built-in CSS variables (`--background-primary`, `--text-normal`, etc.)
+- Added `manifest.json` required by Obsidian for theme installation
+- Renamed `dma-theme.css` to `theme.css` (Obsidian's expected filename)
+- System sans-serif font configuration via `--font-text-theme` and related variables
+- Full syntax highlighting using CodeMirror 6 token classes (`.tok-keyword`, `.tok-string`, etc.)
+- Markdown-specific styling with HyperMD classes (`.HyperMD-header`, `.HyperMD-strong`, etc.)
+- UI component styling for tabs, sidebar, modals, inputs, and buttons
+- Plugin support for Dataview, Kanban, and Calendar
+
 ## [1.1.0]
 
 ### Added

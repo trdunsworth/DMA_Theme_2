@@ -487,7 +487,7 @@ EDITORS = [
     ("Helix", "themes/helix/DMA Theme Light.toml", "themes/helix/DMA Theme Dark.toml", "toml", "editor"),
     ("Kakoune", "themes/kakoune/dma-theme-light.kak", "themes/kakoune/dma-theme-dark.kak", "kak", "editor"),
     ("Notepad++", "themes/notepadpp/dma-theme-light.xml", "themes/notepadpp/dma-theme-dark.xml", "xml", "editor"),
-    ("Obsidian", "themes/obsidian/dma-theme.css", "themes/obsidian/dma-theme.css", "css", "editor"),
+    ("Obsidian", "themes/obsidian/theme.css", "themes/obsidian/theme.css", "css", "editor"),
     ("RStudio", "themes/rstudio/dma-theme-light.rstheme", "themes/rstudio/dma-theme-dark.rstheme", "rstheme", "editor"),
     ("Emacs", "themes/emacs/dma-theme-theme.el", "themes/emacs/dma-theme-dark.el", "elisp", "editor"),
     ("Neovim", "themes/neovim/lua/dma_theme/palette.lua", "themes/neovim/lua/dma_theme/palette.lua", "neovim", "editor"),

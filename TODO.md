@@ -63,7 +63,14 @@
 - [x] `dma-theme-dark.xml` — Dark theme
 
 ### Obsidian
-- [x] `dma-theme.css` — CSS theme with light/dark variants using CSS variables
+- [x] `manifest.json` — Theme manifest with metadata
+- [x] `theme.css` — Proper Obsidian theme using built-in CSS variables
+- [x] Light and dark theme variants
+- [x] System sans-serif font configuration
+- [x] Full syntax highlighting with CodeMirror 6 token classes
+- [x] Markdown-specific styling with HyperMD classes
+- [x] UI component styling (tabs, sidebar, modals, inputs)
+- [x] Plugin support (Dataview, Kanban, Calendar)
 
 ### RStudio
 - [x] `dma-theme-light.rstheme` — Light theme (CSS-based .rstheme format)
@@ -121,7 +128,7 @@
 - [x] `themes/neovim/` — Update light theme palette/highlights
 - [x] `themes/kakoune/dma-theme-light.kak` — Update to brighter colors
 - [x] `themes/notepadpp/dma-theme-light.xml` — Update to brighter colors
-- [x] `themes/obsidian/dma-theme.css` — Update CSS variables for light mode
+- [x] `themes/obsidian/theme.css` — Complete rewrite with proper Obsidian CSS variables
 - [x] `themes/tmux/dma-theme-light.conf` — Update to brighter colors
 - [x] `themes/positron/dma-theme-light.json` — Synced from updated VS Code theme
 

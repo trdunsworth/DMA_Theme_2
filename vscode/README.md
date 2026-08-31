@@ -425,9 +425,10 @@ bind-key t run-shell "tmux source-file ~/.config/tmux/dma-theme-dark.conf"
 ### Obsidian
 
 ```bash
-# Copy theme file
-mkdir -p ".obsidian/themes"
-cp themes/obsidian/dma-theme.css ".obsidian/themes/dma-theme.css"
+# Copy theme files (manifest.json is required)
+mkdir -p ".obsidian/themes/DMA Theme"
+cp themes/obsidian/manifest.json ".obsidian/themes/DMA Theme/"
+cp themes/obsidian/theme.css ".obsidian/themes/DMA Theme/"
 ```
 
 1. Open Obsidian Settings (`Ctrl+,`)
@@ -439,7 +440,7 @@ cp themes/obsidian/dma-theme.css ".obsidian/themes/dma-theme.css"
 The theme automatically adapts to Obsidian's light/dark mode setting. To force a specific variant:
 
 ```css
-/* In .obsidian/themes/dma-theme.css, add at the top for forced light: */
+/* In .obsidian/themes/DMA Theme/theme.css, add at the top for forced light: */
 .theme-light, body:not(.theme-dark) { /* light styles */ }
 
 /* Or forced dark: */
