@@ -614,6 +614,22 @@ cp themes/obsidian/theme.css ".obsidian/themes/DMA Theme/"
 3. Click **Manage** → Enable **DMA Theme**
 4. Select **DMA Theme** from the theme dropdown
 
+#### Syncing Across Machines
+
+The theme files live in this repository (`themes/obsidian/`), not in your vault. After pulling updates on each machine, copy them into your vault:
+
+```bash
+# macOS / Linux
+cp themes/obsidian/manifest.json ~/Documents/GitHub/second_brain/.obsidian/themes/DMA\ Theme/
+cp themes/obsidian/theme.css ~/Documents/GitHub/second_brain/.obsidian/themes/DMA\ Theme/
+
+# Windows (PowerShell)
+Copy-Item "themes\obsidian\manifest.json" "$env:USERPROFILE\Documents\GitHub\second_brain\.obsidian\themes\DMA Theme\"
+Copy-Item "themes\obsidian\theme.css" "$env:USERPROFILE\Documents\GitHub\second_brain\.obsidian\themes\DMA Theme\"
+```
+
+Replace the vault path with your own. Restart Obsidian after copying.
+
 #### For Light/Dark Mode Switching
 The theme automatically adapts to Obsidian's light/dark mode setting. To force a specific variant:
 
