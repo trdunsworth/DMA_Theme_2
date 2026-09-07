@@ -1,34 +1,34 @@
-# DMA Theme — WCAG 2.1 Contrast Report
+# DMA Theme â€” WCAG 2.1 Contrast Report
 
 Generated from `palette.json` (the shipped source of truth) by
 `scripts/contrast_report.py`. Contrast ratios use the WCAG 2.1 relative-luminance
 formula.
 
-**Thresholds:** AAA (normal text) >= 7.0:1 · AA (normal text) >= 4.5:1 ·
+**Thresholds:** AAA (normal text) >= 7.0:1 Â· AA (normal text) >= 4.5:1 Â·
 AA Large (>= 18pt or >= 14pt bold) >= 3.0:1.
 
 ## Summary
 
 | Scope | Pairs tested | AA+ | AAA | AA Large | FAIL |
 |-------|-------------:|----:|----:|---------:|-----:|
-| Light theme — text/UI tokens | 56 | 34 | 20 | 22 | 0 |
-| Dark theme — text/UI tokens | 56 | 53 | 44 | 3 | 0 |
+| Light theme â€” text/UI tokens | 56 | 34 | 20 | 22 | 0 |
+| Dark theme â€” text/UI tokens | 56 | 53 | 44 | 3 | 0 |
 | Semantic status colors | 12 | 8 | 4 | 2 | 2 |
-| Terminal ANSI palette (reference) | 30 | — | — | — | — |
-| Shipped editor/terminal files — essential text | 34 | — | — | — | 0 |
+| Terminal ANSI palette (reference) | 30 | â€” | â€” | â€” | â€” |
+| Shipped editor/terminal files â€” essential text | 38 | â€” | â€” | â€” | 0 |
 
 **Canonical-palette verdict:** the source-of-truth `palette.json` meets WCAG AA
 (>= 4.5:1) for every body-text, syntax, UI, and semantic-status token in **both**
 themes. The only deliberate exceptions are de-emphasized tokens (comments, line
-numbers, subtle foreground), which sit in the AA-Large band — appropriate for
+numbers, subtle foreground), which sit in the AA-Large band â€” appropriate for
 non-essential text. Semantic *status text* on light surfaces uses the documented
 800 stop (`#9E5E00`), which passes AA; the brighter 500 stops are reserved for
 fills / large UI. The 16-color terminal ANSI palette is reported for reference
-only — ANSI palettes are not bound by WCAG text minimums.
+only â€” ANSI palettes are not bound by WCAG text minimums.
 
 **Per-file verdict:** the per-editor / per-terminal validation (section below)
 parses the files the repo actually ships and confirms that **every** background and
-essential-text token meets WCAG AA in both themes — **0 essential
+essential-text token meets WCAG AA in both themes â€” **0 essential
 text-token pairs** fall below AA across all shipped editor/terminal files. The
 light-theme 500-stop syntax/warning colors (teal `#00B3B3`, turquoise `#00B8B8`,
 green `#00B33B`, warning `#FF9F00` / `#E88800`) that previously fell below AA as
@@ -50,7 +50,7 @@ one.
 > text on the cursor surface are rendered on their own colored background and
 > are excluded from the FAIL count.
 
-## Light theme — background `#F8FAFC`
+## Light theme â€” background `#F8FAFC`
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -111,7 +111,7 @@ one.
 | `markupItalic` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 | `inputForeground` | #1A2A35 | 14.72:1 | AAA | on inputBackground |
 
-## Dark theme — background `#0A0F14`
+## Dark theme â€” background `#0A0F14`
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -240,11 +240,11 @@ so they are shown for reference and excluded from the compliance verdict.
 
 ## Per-editor / per-terminal validation (shipped files)
 
-Each shipped theme file is parsed directly. **Essential text** tokens (editor foreground, semantic status, links, git decorations, UI labels) are checked against the background *that file declares* — this catches drift between `palette.json` and the hand-authored environment files. Syntax-highlighting tokens (comments, strings, keywords) are listed for reference but are non-essential under WCAG 1.4.3 and are **not** counted as hard FAILs. UI-chrome foregrounds that sit on their own colored surface (buttons, badges, status bar) and terminal ANSI colors are excluded from the FAIL count.
+Each shipped theme file is parsed directly. **Essential text** tokens (editor foreground, semantic status, links, git decorations, UI labels) are checked against the background *that file declares* â€” this catches drift between `palette.json` and the hand-authored environment files. Syntax-highlighting tokens (comments, strings, keywords) are listed for reference but are non-essential under WCAG 1.4.3 and are **not** counted as hard FAILs. UI-chrome foregrounds that sit on their own colored surface (buttons, badges, status bar) and terminal ANSI colors are excluded from the FAIL count.
 
 ### Editors
 
-#### VS Code (light) — bg `#F8FAFC` <small>(json:colors.editor.background)</small>
+#### VS Code (light) â€” bg `#F8FAFC` <small>(json:colors.editor.background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -497,7 +497,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `semantictokencolors.variable` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 | `semantictokencolors.variable.property` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 
-#### VS Code (dark) — bg `#0A0F14` <small>(json:colors.editor.background)</small>
+#### VS Code (dark) â€” bg `#0A0F14` <small>(json:colors.editor.background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -750,7 +750,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `colors.button.foreground` | #FFFFFF | 19.24:1 | AAA | UI chrome on its own accent surface (by design) |
 | `colors.badge.foreground` | #FFFFFF | 19.24:1 | AAA | UI chrome on its own accent surface (by design) |
 
-#### Positron (light) — bg `#F8FAFC` <small>(json:colors.editor.background)</small>
+#### Positron (light) â€” bg `#F8FAFC` <small>(json:colors.editor.background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -1003,7 +1003,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `semantictokencolors.variable` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 | `semantictokencolors.variable.property` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 
-#### Positron (dark) — bg `#0A0F14` <small>(json:colors.editor.background)</small>
+#### Positron (dark) â€” bg `#0A0F14` <small>(json:colors.editor.background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -1256,7 +1256,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `colors.button.foreground` | #FFFFFF | 19.24:1 | AAA | UI chrome on its own accent surface (by design) |
 | `colors.badge.foreground` | #FFFFFF | 19.24:1 | AAA | UI chrome on its own accent surface (by design) |
 
-#### Zed (light) — bg `#F8FAFC` <small>(json:raw-background)</small>
+#### Zed (light) â€” bg `#F8FAFC` <small>(json:raw-background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -1378,7 +1378,7 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `syntax.markup.italic.color` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 | `syntax.text.color` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 
-#### Zed (dark) — bg `#0A0F14` <small>(json:raw-background)</small>
+#### Zed (dark) â€” bg `#0A0F14` <small>(json:raw-background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -1500,27 +1500,27 @@ Each shipped theme file is parsed directly. **Essential text** tokens (editor fo
 | `syntax.markup.italic.color` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 | `syntax.text.color` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 
-#### Helix (light) — bg `None` <small>(UNRESOLVED)</small>
+#### Helix (light) â€” bg `None` <small>(UNRESOLVED)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
 | `fg` | #007F7F | n/a | ? | no bg/value |
 
-#### Helix (dark) — bg `None` <small>(UNRESOLVED)</small>
+#### Helix (dark) â€” bg `None` <small>(UNRESOLVED)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
 | `fg` | #1ACECE | n/a | ? | no bg/value |
 
-#### Kakoune (light) — bg `None` <small>(UNRESOLVED)</small>
+#### Kakoune (light) â€” bg `None` <small>(UNRESOLVED)</small>
 
 _No text tokens extracted._
 
-#### Kakoune (dark) — bg `None` <small>(UNRESOLVED)</small>
+#### Kakoune (dark) â€” bg `None` <small>(UNRESOLVED)</small>
 
 _No text tokens extracted._
 
-#### Notepad++ (light) — bg `#F8FAFC` <small>(xml:DEFAULT.bgColor)</small>
+#### Notepad++ (light) â€” bg `#F8FAFC` <small>(xml:DEFAULT.bgColor)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -1538,7 +1538,7 @@ _No text tokens extracted._
 | `xml:OPERATORS` | #007F7F |  4.62:1 | AA | on editor bg |
 | `xml:KEYWORDS6` | #9E5E00 |  4.95:1 | AA | on editor bg |
 
-#### Notepad++ (dark) — bg `#0A0F14` <small>(xml:DEFAULT.bgColor)</small>
+#### Notepad++ (dark) â€” bg `#0A0F14` <small>(xml:DEFAULT.bgColor)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -1556,53 +1556,39 @@ _No text tokens extracted._
 | `xml:OPERATORS` | #4DE5E5 | 12.51:1 | AAA | on editor bg |
 | `xml:KEYWORDS2` | #94E2D5 | 12.92:1 | AAA | on editor bg |
 
-#### Obsidian (light) — bg `#F8FAFC` <small>(css:--background-primary)</small>
+#### Obsidian (light) â€” bg `#f8f9fb` <small>(css:--background-primary)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
-| `css:onaccent:--interactive-normal` | #0077CC |  1.00:1 | FAIL | on accent bg |
-| `css:--text-on-accent` | #FFFFFF |  1.05:1 | FAIL | on editor bg |
-| `css:--code-background` | #F0F4F8 |  1.06:1 | FAIL | on editor bg |
-| `css:--blockquote-background` | #F0F4F8 |  1.06:1 | FAIL | on editor bg |
-| `css:onaccent:--interactive-hover` | #0069C0 |  1.19:1 | FAIL | on accent bg |
-| `css:--code-border` | #A8C0D8 |  1.79:1 | FAIL | on editor bg |
-| `css:--link-external-color` | #009999 |  3.34:1 | AA Large | on editor bg |
-| `css:--text-faint` | #6E89A0 |  3.49:1 | AA Large | on editor bg |
-| `css:--blockquote-border` | #0077CC |  4.45:1 | AA Large | on editor bg |
-| `css:--link-color` | #0077CC |  4.45:1 | AA Large | on editor bg |
-| `css:--git-modified` | #0077CC |  4.45:1 | AA Large | on editor bg |
-| `css:onaccent:--button-primary-foreground` | #FFFFFF |  4.66:1 | AA | white/self-colored on accent/cursor (by design) |
-| `css:--git-conflict` | #9E5E00 |  4.95:1 | AA | on editor bg |
-| `css:--text-muted` | #485C6E |  6.62:1 | AA | on editor bg |
-| `css:--link-color-hover` | #00529E |  7.43:1 | AAA | on editor bg |
-| `css:--text-selection` | #002B5C | 13.38:1 | AAA | on editor bg |
-| `css:--text-normal` | #1A2A35 | 14.07:1 | AAA | on editor bg |
-| `css:--code-foreground` | #1A2A35 | 14.07:1 | AAA | on editor bg |
+| `css:--text-on-accent` | #ffffff |  1.05:1 | FAIL | on editor bg |
+| `css:onaccent:--interactive-hover` | #d0dce8 |  3.34:1 | AA Large | on accent bg |
+| `css:--text-faint` | #6e89a0 |  3.47:1 | AA Large | on editor bg |
+| `css:onaccent:--interactive-normal` | #e0e8f0 |  3.76:1 | AA Large | on accent bg |
+| `css:--text-accent` | #0077cc |  4.42:1 | AA Large | on editor bg |
+| `css:--text-error` | #c40000 |  5.96:1 | AA | on editor bg |
+| `css:--text-muted` | #4a5f72 |  6.29:1 | AA | on editor bg |
+| `css:--text-accent-hover` | #00529e |  7.38:1 | AAA | on editor bg |
+| `css:--text-selection` | #002b5c | 13.29:1 | AAA | on editor bg |
+| `css:--text-normal` | #1a2a35 | 13.97:1 | AAA | on editor bg |
+| `css:--text-code` | #1a2a35 | 13.97:1 | AAA | on editor bg |
 
-#### Obsidian (dark) — bg `#0A0F14` <small>(css:--background-primary)</small>
+#### Obsidian (dark) â€” bg `#0c1219` <small>(css:--background-primary)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
-| `css:--code-background` | #101820 |  1.08:1 | FAIL | on editor bg |
-| `css:--blockquote-background` | #101820 |  1.08:1 | FAIL | on editor bg |
-| `css:onaccent:--interactive-normal` | #1A91E6 |  1.38:1 | FAIL | on accent bg |
-| `css:onaccent:--interactive-hover` | #4DA8EE |  1.81:1 | FAIL | on accent bg |
-| `css:--code-border` | #2D4058 |  1.82:1 | FAIL | on editor bg |
-| `css:onaccent:--button-primary-foreground` | #FFFFFF |  4.66:1 | AA | UI chrome on its own accent surface (by design) |
-| `css:--text-faint` | #6E89A0 |  5.27:1 | AA | on editor bg |
-| `css:--blockquote-border` | #1A91E6 |  5.71:1 | AA | on editor bg |
-| `css:--link-color` | #4DA8EE |  7.47:1 | AAA | on editor bg |
-| `css:--git-modified` | #4DA8EE |  7.47:1 | AAA | on editor bg |
-| `css:--text-muted` | #93ABC3 |  8.11:1 | AAA | on editor bg |
-| `css:--link-color-hover` | #8FC3F5 | 10.35:1 | AAA | on editor bg |
-| `css:--git-conflict` | #E5C890 | 11.91:1 | AAA | on editor bg |
-| `css:--link-external-color` | #4DE5E5 | 12.51:1 | AAA | on editor bg |
-| `css:--text-normal` | #E0E8EF | 15.54:1 | AAA | on editor bg |
-| `css:--text-selection` | #E0E8EF | 15.54:1 | AAA | on editor bg |
-| `css:--code-foreground` | #E0E8EF | 15.54:1 | AAA | on editor bg |
-| `css:--text-on-accent` | #FFFFFF | 19.24:1 | AAA | on editor bg |
+| `css:onaccent:--interactive-hover` | #253848 |  2.60:1 | FAIL | on accent bg |
+| `css:onaccent:--interactive-normal` | #1e2d3a |  3.02:1 | AA Large | on accent bg |
+| `css:--text-faint` | #6e89a0 |  5.15:1 | AA | on editor bg |
+| `css:--text-error` | #ff4d4d |  5.75:1 | AA | on editor bg |
+| `css:--text-accent` | #4da8ee |  7.30:1 | AAA | on editor bg |
+| `css:--text-muted` | #93a8bd |  7.68:1 | AAA | on editor bg |
+| `css:--text-accent-hover` | #8fc3f5 | 10.12:1 | AAA | on editor bg |
+| `css:--text-normal` | #e0e8f0 | 15.20:1 | AAA | on editor bg |
+| `css:--text-selection` | #e0e8f0 | 15.20:1 | AAA | on editor bg |
+| `css:--text-code` | #e0e8f0 | 15.20:1 | AAA | on editor bg |
+| `css:--text-on-accent` | #ffffff | 18.81:1 | AAA | on editor bg |
 
-#### RStudio (light) — bg `#F8FAFC` <small>(rstheme:ace_editor.background-color)</small>
+#### RStudio (light) â€” bg `#F8FAFC` <small>(rstheme:ace_editor.background-color)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -1654,7 +1640,7 @@ _No text tokens extracted._
 .rstudio-themes-flat .dropdown-menu > li > a:focus.color` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 | `rstheme:.rstudio-themes-flat .popover-title.color` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 
-#### RStudio (dark) — bg `#0A0F14` <small>(rstheme:ace_editor.background-color)</small>
+#### RStudio (dark) â€” bg `#0A0F14` <small>(rstheme:ace_editor.background-color)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -1706,7 +1692,7 @@ _No text tokens extracted._
 | `rstheme:.rstudio-themes-flat .pagination > .active > a,
 .rstudio-themes-flat .pagination > .active > span.color` | #FFFFFF | 19.24:1 | AAA | on editor bg |
 
-#### Emacs (light) — bg `#F8FAFC` <small>(emacs:dma-bg)</small>
+#### Emacs (light) â€” bg `#F8FAFC` <small>(emacs:dma-bg)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -1879,7 +1865,7 @@ _No text tokens extracted._
 | `el:makefile-variable-face` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 | `el:sh-variable-face` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 
-#### Emacs (dark) — bg `#0A0F14` <small>(emacs:dma-bg)</small>
+#### Emacs (dark) â€” bg `#0A0F14` <small>(emacs:dma-bg)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2052,7 +2038,7 @@ _No text tokens extracted._
 | `el:makefile-variable-face` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 | `el:sh-variable-face` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 
-#### Neovim (light) — bg `#F8FAFC` <small>(neovim:neutral.dark.background)</small>
+#### Neovim (light) â€” bg `#F8FAFC` <small>(neovim:neutral.dark.background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2065,7 +2051,7 @@ _No text tokens extracted._
 | `nv:line_nr_active` | #00529E |  7.43:1 | AAA | on editor bg |
 | `nv:selection_fg` | #002B5C | 13.38:1 | AAA | on editor bg |
 
-#### Neovim (dark) — bg `#0A0F14` <small>(neovim:neutral.light.background)</small>
+#### Neovim (dark) â€” bg `#0A0F14` <small>(neovim:neutral.light.background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2079,7 +2065,7 @@ _No text tokens extracted._
 
 ### Terminals
 
-#### Ghostty (light) — bg `#F8FAFC` <small>(ghostty:background)</small>
+#### Ghostty (light) â€” bg `#F8FAFC` <small>(ghostty:background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2089,7 +2075,7 @@ _No text tokens extracted._
 | `foreground` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 | `selection-foreground` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 
-#### Ghostty (dark) — bg `#0A0F14` <small>(ghostty:background)</small>
+#### Ghostty (dark) â€” bg `#0A0F14` <small>(ghostty:background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2099,7 +2085,7 @@ _No text tokens extracted._
 | `foreground` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 | `selection-foreground` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 
-#### WezTerm (light) — bg `#F8FAFC` <small>(toml:background)</small>
+#### WezTerm (light) â€” bg `#F8FAFC` <small>(toml:background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2111,7 +2097,7 @@ _No text tokens extracted._
 | `foreground` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 | `selection_fg` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 
-#### WezTerm (dark) — bg `#0A0F14` <small>(toml:background)</small>
+#### WezTerm (dark) â€” bg `#0A0F14` <small>(toml:background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2123,7 +2109,7 @@ _No text tokens extracted._
 | `foreground` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 | `selection_fg` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 
-#### Cosmic (light) — bg `None` <small>(UNRESOLVED)</small>
+#### Cosmic (light) â€” bg `None` <small>(UNRESOLVED)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2132,7 +2118,7 @@ _No text tokens extracted._
 | `bright_foreground` | #0A0F14 | n/a | ? | no bg/value |
 | `dim_foreground` | #485C6E | n/a | ? | no bg/value |
 
-#### Cosmic (dark) — bg `None` <small>(UNRESOLVED)</small>
+#### Cosmic (dark) â€” bg `None` <small>(UNRESOLVED)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2141,7 +2127,7 @@ _No text tokens extracted._
 | `bright_foreground` | #F8FAFC | n/a | ? | no bg/value |
 | `dim_foreground` | #93ABC3 | n/a | ? | no bg/value |
 
-#### Yen (light) — bg `#F8FAFC` <small>(ghostty:background)</small>
+#### Yen (light) â€” bg `#F8FAFC` <small>(ghostty:background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2151,7 +2137,7 @@ _No text tokens extracted._
 | `selection-foreground` | #002B5C | 13.38:1 | AAA | on editor bg |
 | `foreground` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 
-#### Yen (dark) — bg `#0A0F14` <small>(ghostty:background)</small>
+#### Yen (dark) â€” bg `#0A0F14` <small>(ghostty:background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2161,7 +2147,7 @@ _No text tokens extracted._
 | `foreground` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 | `selection-foreground` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 
-#### Warp (light) — bg `#F8FAFC` <small>(yaml:background)</small>
+#### Warp (light) â€” bg `#F8FAFC` <small>(yaml:background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2176,7 +2162,7 @@ _No text tokens extracted._
 | `border_focus` | #0077CC |  4.45:1 | AA Large | on editor bg |
 | `selection_foreground` | #002B5C | 13.38:1 | AAA | on editor bg |
 
-#### Warp (dark) — bg `#0A0F14` <small>(yaml:background)</small>
+#### Warp (dark) â€” bg `#0A0F14` <small>(yaml:background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2191,7 +2177,7 @@ _No text tokens extracted._
 | `selection_foreground` | #E0E8EF | 15.54:1 | AAA | on editor bg |
 | `current_match_background` | #FFF0CC | 17.03:1 | AAA | on editor bg |
 
-#### tmux (light) — bg `light` <small>(tmux)</small>
+#### tmux (light) â€” bg `light` <small>(tmux)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2223,7 +2209,7 @@ _No text tokens extracted._
 | `tmux:fg:#F8FAFC` | #F8FAFC |  4.45:1 | AA-Large | on paired segment bg |
 | `tmux:fg:#F8FAFC` | #F8FAFC |  3.58:1 | AA-Large | on paired segment bg |
 
-#### tmux (dark) — bg `dark` <small>(tmux)</small>
+#### tmux (dark) â€” bg `dark` <small>(tmux)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2255,7 +2241,7 @@ _No text tokens extracted._
 | `tmux:fg:#0A0F14` | #0A0F14 |  5.71:1 | PASS | on paired segment bg |
 | `tmux:fg:#0A0F14` | #0A0F14 | 10.48:1 | PASS | on paired segment bg |
 
-#### Microsoft Terminal (light) — bg `#F8FAFC` <small>(json:background)</small>
+#### Microsoft Terminal (light) â€” bg `#F8FAFC` <small>(json:background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
@@ -2263,13 +2249,53 @@ _No text tokens extracted._
 | `selectionbackground` | #A8D0F0 |  1.55:1 | FAIL | on editor bg |
 | `foreground` | #1A2A35 | 14.07:1 | AAA | on editor bg |
 
-#### Microsoft Terminal (dark) — bg `#0A0F14` <small>(json:background)</small>
+#### Microsoft Terminal (dark) â€” bg `#0A0F14` <small>(json:background)</small>
 
 | Token | Color | Contrast | Level | Note |
 |-------|-------|---------:|-------|------|
 | `background` | #0A0F14 |  1.00:1 | FAIL | on editor bg |
 | `selectionbackground` | #003D7A |  1.79:1 | FAIL | on editor bg |
 | `foreground` | #E0E8EF | 15.54:1 | AAA | on editor bg |
+
+#### macOS Terminal (light) â€” bg `#f8fafc` <small>(macterm:BackgroundColor)</small>
+
+| Token | Color | Contrast | Level | Note |
+|-------|-------|---------:|-------|------|
+| `macterm:BackgroundColor` | #f8fafc |  1.00:1 | FAIL | on editor bg |
+| `macterm:SelectionColor` | #a8d0f0 |  1.55:1 | FAIL | on editor bg |
+| `macterm:TextColor` | #1a2a35 | 14.07:1 | AAA | on editor bg |
+| `macterm:TextBoldColor` | #1a2a35 | 14.07:1 | AAA | on editor bg |
+
+#### macOS Terminal (dark) â€” bg `#0a0f14` <small>(macterm:BackgroundColor)</small>
+
+| Token | Color | Contrast | Level | Note |
+|-------|-------|---------:|-------|------|
+| `macterm:BackgroundColor` | #0a0f14 |  1.00:1 | FAIL | on editor bg |
+| `macterm:SelectionColor` | #003d7a |  1.79:1 | FAIL | on editor bg |
+| `macterm:TextColor` | #e0e8ef | 15.54:1 | AAA | on editor bg |
+| `macterm:TextBoldColor` | #e0e8ef | 15.54:1 | AAA | on editor bg |
+
+#### iTerm2 (light) â€” bg `#f8fafc` <small>(macterm:BackgroundColor)</small>
+
+| Token | Color | Contrast | Level | Note |
+|-------|-------|---------:|-------|------|
+| `macterm:Background Color` | #f8fafc |  1.00:1 | FAIL | on editor bg |
+| `macterm:Cursor Text Color` | #f8fafc |  1.00:1 | FAIL | white/self-colored on accent/cursor (by design) |
+| `macterm:Selection Color` | #a8d0f0 |  1.55:1 | FAIL | on editor bg |
+| `macterm:Text Color` | #1a2a35 | 14.07:1 | AAA | on editor bg |
+| `macterm:Bold Text Color` | #1a2a35 | 14.07:1 | AAA | on editor bg |
+| `macterm:Selected Text Color` | #1a2a35 | 14.07:1 | AAA | on editor bg |
+
+#### iTerm2 (dark) â€” bg `#0a0f14` <small>(macterm:BackgroundColor)</small>
+
+| Token | Color | Contrast | Level | Note |
+|-------|-------|---------:|-------|------|
+| `macterm:Background Color` | #0a0f14 |  1.00:1 | FAIL | on editor bg |
+| `macterm:Cursor Text Color` | #0a0f14 |  1.00:1 | FAIL | text on cursor surface (by design) |
+| `macterm:Selection Color` | #003d7a |  1.79:1 | FAIL | on editor bg |
+| `macterm:Text Color` | #e0e8ef | 15.54:1 | AAA | on editor bg |
+| `macterm:Bold Text Color` | #e0e8ef | 15.54:1 | AAA | on editor bg |
+| `macterm:Selected Text Color` | #e0e8ef | 15.54:1 | AAA | on editor bg |
 
 **Essential text-token FAILs (shipped files): 0**  
 **Syntax-highlighting sub-AA tokens (informational, not WCAG-essential): 0**

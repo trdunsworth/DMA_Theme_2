@@ -125,6 +125,52 @@ def _balanced_brace(text: str, open_pos: int) -> str:
     return text[open_pos:]
 
 
+def _plist_color_for_key(text: str, key: str) -> str | None:
+    """Extract an sRGB hex color from an Apple plist XML color dict.
+
+    Handles two formats found in .terminal / .itermcolors files:
+    1. XML dict with Red/Green/Blue Component keys (iTerm2 colors)
+    2. NSKeyedArchiver-encoded <data> block (Terminal.app colors)
+    Returns ``#RRGGBB`` or None.
+    """
+    import base64, plistlib, io
+
+    # Format 1: <key>KEY</key> <dict> with Red/Green/Blue Component keys
+    m = re.search(rf'<key>\s*{re.escape(key)}\s*</key>\s*<dict>(.*?)</dict>', text, re.S)
+    if m:
+        block = m.group(1)
+        rm = re.search(r'<key>\s*Red Component\s*</key>\s*<real>([\d.]+)</real>', block)
+        gm = re.search(r'<key>\s*Green Component\s*</key>\s*<real>([\d.]+)</real>', block)
+        bm = re.search(r'<key>\s*Blue Component\s*</key>\s*<real>([\d.]+)</real>', block)
+        if rm and gm and bm:
+            r = min(255, max(0, int(round(float(rm.group(1)) * 255))))
+            g = min(255, max(0, int(round(float(gm.group(1)) * 255))))
+            b = min(255, max(0, int(round(float(bm.group(1)) * 255))))
+            return f"#{r:02x}{g:02x}{b:02x}"
+
+    # Format 2: NSKeyedArchiver-encoded <data> block
+    dm = re.search(rf'<key>\s*{re.escape(key)}\s*</key>\s*<data>\s*([^<]+?)\s*</data>', text, re.S)
+    if dm:
+        try:
+            raw = base64.b64decode(dm.group(1).replace('\n', '').replace(' ', ''))
+            archive = plistlib.loads(raw)
+            obj = archive["$objects"][1]
+            if "NSRGB" in obj:
+                raw = obj["NSRGB"].decode().rstrip("\x00").strip()
+                parts = raw.split()
+                r, g, b = int(float(parts[0]) * 255), int(float(parts[1]) * 255), int(float(parts[2]) * 255)
+                return f"#{min(255,r):02x}{min(255,g):02x}{min(255,b):02x}"
+            elif "NSWhite" in obj:
+                raw = obj["NSWhite"].decode().rstrip("\x00").strip()
+                parts = raw.split()
+                w = int(float(parts[0]) * 255)
+                return f"#{w:02x}{w:02x}{w:02x}"
+        except Exception:
+            pass
+
+    return None
+
+
 def block_for(text: str, fmt: str, variant: str) -> str:
     if fmt in ("obsidian", "css"):
         # The trailing `@media print` block (dark text on white paper) must be
@@ -184,6 +230,13 @@ def resolve_bg(text: str, fmt: str, variant: str) -> tuple[str | None, str]:
         m = re.search(r'^\s*background\s*=\s*#?([0-9a-fA-F]{6})', blk, re.M)
         if m:
             return "#" + m.group(1), "ghostty:background"
+    if fmt == "macterm":
+        # Apple plist XML: look for both "Background Color" and "BackgroundColor" keys
+        bg_hex = _plist_color_for_key(blk, "Background Color")
+        if not bg_hex:
+            bg_hex = _plist_color_for_key(blk, "BackgroundColor")
+        if bg_hex:
+            return bg_hex, "macterm:BackgroundColor"
     if fmt == "tmux":
         # tmux is a status-bar overlay: the dominant surface is the status-style bg.
         m = re.search(r'status-style\s*"[^"]*bg=(#[0-9a-fA-F]{6})', blk)
@@ -282,6 +335,12 @@ def resolve_term_bg(text: str, fmt: str) -> str | None:
         m = re.search(r'set-face global Default\s+(\S+)\s+(\S+)', text)
         if m:
             return vm.get(m.group(1).lstrip("$").lower())
+    if fmt == "macterm":
+        # Ansi 0 Color = black = terminal background (or ANSIBlackColor for Terminal.app)
+        bg = _plist_color_for_key(text, "Ansi 0 Color")
+        if not bg:
+            bg = _plist_color_for_key(text, "ANSIBlackColor")
+        return bg
     return None
 
 
@@ -350,6 +409,32 @@ def extract_tokens(text: str, fmt: str, variant: str) -> dict:
     if fmt == "xml":
         for m in re.finditer(r'name="([^"]+)"\s+fgColor="([0-9a-fA-F]{6})"', blk):
             toks["xml:" + m.group(1)] = "#" + m.group(2)
+        return toks
+    if fmt == "macterm":
+        # Extract all named color keys from the plist XML
+        # Support both "Ansi 0 Color" / "Background Color" (iTerm2) and
+        # "ANSIBlackColor" / "BackgroundColor" (Terminal.app) naming conventions
+        PLIST_COLOR_KEYS = (
+            "Ansi 0 Color", "Ansi 1 Color", "Ansi 2 Color", "Ansi 3 Color",
+            "Ansi 4 Color", "Ansi 5 Color", "Ansi 6 Color", "Ansi 7 Color",
+            "Ansi 8 Color", "Ansi 9 Color", "Ansi 10 Color", "Ansi 11 Color",
+            "Ansi 12 Color", "Ansi 13 Color", "Ansi 14 Color", "Ansi 15 Color",
+            "Background Color", "Text Color", "Bold Text Color",
+            "Cursor Color", "Cursor Text Color",
+            "Selection Color", "Selected Text Color",
+            # Terminal.app key names
+            "ANSIBlackColor", "ANSIRedColor", "ANSIGreenColor", "ANSIYellowColor",
+            "ANSIBlueColor", "ANSIMagentaColor", "ANSICyanColor", "ANSIWhiteColor",
+            "ANSIBrightBlackColor", "ANSIBrightRedColor", "ANSIBrightGreenColor",
+            "ANSIBrightYellowColor", "ANSIBrightBlueColor", "ANSIBrightMagentaColor",
+            "ANSIBrightCyanColor", "ANSIBrightWhiteColor",
+            "BackgroundColor", "TextColor", "TextBoldColor",
+            "CursorColor", "SelectionColor",
+        )
+        for key in PLIST_COLOR_KEYS:
+            hex_val = _plist_color_for_key(blk, key)
+            if hex_val:
+                toks["macterm:" + key] = hex_val
         return toks
     if fmt == "css":
         # Page-background text variables (validated against --background-primary)
@@ -500,6 +585,8 @@ TERMINALS = [
     ("Warp", "themes/warp/dma-theme-light.yaml", "themes/warp/dma-theme-dark.yaml", "yaml", "terminal"),
     ("tmux", "themes/tmux/dma-theme-light.conf", "themes/tmux/dma-theme-dark.conf", "tmux", "terminal"),
     ("Microsoft Terminal", "themes/microsoft-terminal/dma-theme-light.json", "themes/microsoft-terminal/dma-theme-dark.json", "json", "terminal"),
+    ("macOS Terminal", "themes/mac-terminal/dma-theme-light.terminal", "themes/mac-terminal/dma-theme-dark.terminal", "macterm", "terminal"),
+    ("iTerm2", "themes/iterm2/dma-theme-light.itermcolors", "themes/iterm2/dma-theme-dark.itermcolors", "macterm", "terminal"),
 ]
 
 

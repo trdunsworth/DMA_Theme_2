@@ -9,7 +9,7 @@ DMA Theme provides a consistent visual language across different development env
 - **Semantic color system** — Colors have meaning (error, warning, info, success) rather than just syntax roles
 - **Light and dark variants** — Defaults to light theme with softer white backgrounds and black text
 - **Bold, non-pastel palette** — Deep, saturated colors for better readability and reduced eye strain
-- **Cross-platform support** — VS Code, Positron, Emacs, Neovim, Kakoune, Helix, Zed, Notepad++, Ghostty, WezTerm, Cosmic Terminal, Yen, Warp, tmux, Microsoft Terminal, Obsidian, RStudio
+- **Cross-platform support** — VS Code, Positron, Emacs, Neovim, Kakoune, Helix, Zed, Notepad++, Ghostty, WezTerm, Cosmic Terminal, Yen, Warp, tmux, Microsoft Terminal, macOS Terminal, iTerm2, Obsidian, RStudio
 
 ## Themes in Action
 
@@ -161,6 +161,8 @@ so they always match the shipped themes.
 - **Warp** — YAML theme configuration
 - **tmux** — Configuration with status line
 - **Microsoft Terminal (Windows Terminal)** — JSON theme configuration
+- **macOS Terminal** — `.terminal` plist XML color profile
+- **iTerm2** — `.itermcolors` plist XML color profile
 
 ### Other
 - **Obsidian** — CSS theme with light/dark variants
@@ -596,6 +598,45 @@ To apply to all profiles, add it to `profiles.defaults`:
     "colorScheme": "DMA Theme Light"
   }
 }
+```
+
+---
+
+### macOS Terminal
+
+macOS Terminal uses `.terminal` plist XML color profiles. These profiles are configured with **CommitMonoDrDMac** at **12pt** and include the full DMA color palette.
+
+#### Import via GUI
+1. Open **Terminal.app**
+2. Go to **Terminal → Settings → Profiles**
+3. Click the **Gear** icon (bottom-left) → **Import…**
+4. Select `themes/mac-terminal/dma-theme-light.terminal` (or `dma-theme-dark.terminal`)
+5. Select the imported profile and click **Default**
+
+#### Quick Install (opens Settings for you)
+```bash
+python3 scripts/install_mac_terminal.py
+```
+
+---
+
+### iTerm2
+
+iTerm2 uses `.itermcolors` plist XML color profiles plus Dynamic Profile JSON files for font configuration. The themes are configured with **CommitMonoDrDMac** at **12pt** and include the full DMA color palette.
+
+#### Quick Install (recommended)
+```bash
+# Copy the Dynamic Profiles to iTerm2's directory (includes colors + font)
+mkdir -p ~/Library/Application\ Support/iTerm2/DynamicProfiles/
+cp themes/iterm2/dma-theme-light-profile.json ~/Library/Application\ Support/iTerm2/DynamicProfiles/
+cp themes/iterm2/dma-theme-dark-profile.json ~/Library/Application\ Support/iTerm2/DynamicProfiles/
+```
+Restart iTerm2. The profiles "DMA Theme Light" and "DMA Theme Dark" will appear in **iTerm2 → Settings → Profiles**.
+
+#### Colors Only (no font config)
+```bash
+# Double-click to import colors, then manually set font to CommitMonoDrDMac-Regular 12pt
+open themes/iterm2/dma-theme-light.itermcolors
 ```
 
 ---

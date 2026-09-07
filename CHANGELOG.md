@@ -54,6 +54,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - UI component styling for tabs, sidebar, modals, inputs, and buttons
 - Plugin support for Dataview, Kanban, and Calendar
 
+### Added
+- **macOS Terminal** — Light and dark `.terminal` plist XML color profiles with full 16-color ANSI palette, UI colors, and **CommitMonoDrDMac-Regular 12pt** font (NSKeyedArchiver-encoded)
+- **iTerm2** — Light and dark `.itermcolors` plist XML color profiles with full 16-color ANSI palette, UI colors, and Dynamic Profile JSON files (`dma-theme-{light,dark}-profile.json`) with **CommitMonoDrDMac-Regular 12pt** font configuration
+- Contrast validation support for `macterm` format in `scripts/editor_contrast.py`
+
 ## [1.1.0]
 
 ### Added

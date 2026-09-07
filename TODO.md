@@ -106,6 +106,16 @@
 - [x] `dma-theme-light.json` — Light theme
 - [x] `dma-theme-dark.json` — Dark theme
 
+#### macOS Terminal
+- [x] `dma-theme-light.terminal` — Light theme (plist XML color profile + CommitMonoDrDMac-Regular 12pt font)
+- [x] `dma-theme-dark.terminal` — Dark theme (plist XML color profile + CommitMonoDrDMac-Regular 12pt font)
+
+#### iTerm2
+- [x] `dma-theme-light.itermcolors` — Light theme (plist XML color profile)
+- [x] `dma-theme-dark.itermcolors` — Dark theme (plist XML color profile)
+- [x] `dma-theme-light-profile.json` — Light Dynamic Profile (colors + CommitMonoDrDMac-Regular 12pt font)
+- [x] `dma-theme-dark-profile.json` — Dark Dynamic Profile (colors + CommitMonoDrDMac-Regular 12pt font)
+
 ---
 
 ## 🔄 In Progress

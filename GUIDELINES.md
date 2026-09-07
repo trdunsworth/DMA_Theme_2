@@ -164,6 +164,16 @@ themes/{editor}/
 - Include semantic color ranges in indexed palette (indices 32-255)
 - Define UI colors (scrollbar, selection, cursor, copy mode)
 
+### macOS Terminal / iTerm2 (plist XML)
+- Use Apple plist XML format with `Color Space`, `Red Component`, `Green Component`, `Blue Component`, `Alpha Component` (all floating-point 0.0–1.0)
+- macOS Terminal uses `.terminal` extension; iTerm2 uses `.itermcolors` extension + Dynamic Profile JSON
+- Both share identical plist structure: `<key>NAME Color</key><dict>...</dict>` for each color
+- Key color entries: `Ansi 0–15 Color`, `Background Color`, `Text Color`, `Bold Text Color`, `Cursor Color`, `Cursor Text Color`, `Selection Color`, `Selected Text Color`
+- Each file is variant-specific (light or dark), not combined
+- Font is embedded via NSKeyedArchiver `<data>` block in `.terminal` files (key: `Font`)
+- iTerm2 font is set in Dynamic Profile JSON via `"Normal Font": "FontName Size"` (e.g., `"CommitMonoDrDMac-Regular 12"`)
+- Both terminals use **CommitMonoDrDMac-Regular** at **12pt** by default
+
 ### Obsidian (CSS)
 - Use CSS custom properties for light/dark switching
 - Target `.theme-light` and `.theme-dark` classes
@@ -202,7 +212,8 @@ Every shipped theme file is checked for WCAG 2.1 contrast against the background
      (backgrounds, borders, accents) are tagged `"surface"` so only real text is scored.
     Supported `fmt` values today: `json` (VS Code/Positron/Zed), `toml` (Helix/WezTerm),
     `ron` (COSMIC Terminal), `ghostty` (Yen/Ghostty/tmux-style palettes), `yaml`
-    (Warp), `kak`, `xml` (Notepad++), `css` (Obsidian), `rstheme` (RStudio), `elisp` (Emacs), `neovim`.
+    (Warp), `kak`, `xml` (Notepad++), `css` (Obsidian), `rstheme` (RStudio),
+    `elisp` (Emacs), `neovim`, `macterm` (macOS Terminal/iTerm2).
 4. Run the validator and confirm **zero essential text-token FAILs**:
 
    ```bash
