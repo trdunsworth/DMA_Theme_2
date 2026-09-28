@@ -31,6 +31,15 @@
   background: #003D7A;
 }
 
+.ace_marker-layer .ace_active-line {
+  background: #101820;
+}
+
+.ace_marker-layer .ace_selected-word {
+  background: #003D7A;
+  border: 1px solid #1A91E6;
+}
+
 .ace_marker-layer .ace_active-debug-line {
   background: #7A4A00;
 }
@@ -72,6 +81,11 @@
   color: #4DA8EE;
 }
 
+.ace_constant.ace_boolean {
+  color: #4DA8EE;
+  font-weight: bold;
+}
+
 .ace_keyword {
   color: #4DE5E5;
   font-weight: bold;
@@ -81,12 +95,28 @@
   color: #4DE5E5;
 }
 
+/* R operators: <-, ->, =, |>, %>%, %in%, etc. (Ace R mode scopes these as keyword.operator) */
+.ace_keyword.ace_operator.ace_infix,
+.ace_keyword.ace_operator.ace_assignment,
+.ace_keyword.ace_operator.ace_pipe {
+  color: #4DE5E5;
+  font-weight: bold;
+}
+
 .ace_meta.ace_tag {
   color: #4DE5E5;
 }
 
 .ace_storage {
   color: #4DE5E5;
+  font-weight: bold;
+}
+
+/* R library()/require() calls and namespace operators (::, :::) */
+.ace_support.ace_library,
+.ace_storage.ace_type.ace_r {
+  color: #4DE5E5;
+  font-weight: bold;
 }
 
 .ace_string {
@@ -245,14 +275,14 @@
 }
 
 .rstudio-themes-flat .btn-warning {
-  background-color: #E5C890;
-  border-color: #E5C890;
+  background-color: #FF9F00;
+  border-color: #FF9F00;
   color: #0A0F14;
 }
 
 .rstudio-themes-flat .btn-warning:hover {
-  background-color: #EF9F76;
-  border-color: #EF9F76;
+  background-color: #FFAD33;
+  border-color: #FFAD33;
 }
 
 .rstudio-themes-flat .btn-danger {
@@ -371,7 +401,7 @@
 }
 
 .rstudio-themes-flat .progress-bar-warning {
-  background-color: #E5C890;
+  background-color: #FF9F00;
 }
 
 .rstudio-themes-flat .progress-bar-danger {
@@ -411,7 +441,7 @@
 }
 
 .rstudio-themes-flat .label-warning {
-  background-color: #E5C890;
+  background-color: #FF9F00;
 }
 
 .rstudio-themes-flat .label-danger {

@@ -19,7 +19,7 @@
 }
 
 .ace_gutter-active-line .ace_gutter-cell {
-  color: #00529E;
+  color: #005A9E;
   font-weight: bold;
 }
 
@@ -29,6 +29,15 @@
 
 .ace_marker-layer .ace_selection {
   background: #A8D0F0;
+}
+
+.ace_marker-layer .ace_active-line {
+  background: #D0E8F8;
+}
+
+.ace_marker-layer .ace_selected-word {
+  background: #D0E4EC;
+  border: 1px solid #0077CC;
 }
 
 .ace_marker-layer .ace_active-debug-line {
@@ -46,7 +55,7 @@
 
 .ace_deprecated {
   color: #FFFFFF;
-  background-color: #C47300;
+  background-color: #9E5E00;
 }
 
 .ace_fold {
@@ -60,37 +69,58 @@
 }
 
 .ace_constant {
-  color: #005A9E;
+  color: #D47800;
 }
 
 .ace_constant.ace_language {
-  color: #005A9E;
+  color: #D47800;
   font-weight: bold;
 }
 
 .ace_constant.ace_numeric {
-  color: #005A9E;
+  color: #0077CC;
+}
+
+.ace_constant.ace_boolean {
+  color: #0077CC;
+  font-weight: bold;
 }
 
 .ace_keyword {
-  color: #005A5A;
+  color: #007F7F;
   font-weight: bold;
 }
 
 .ace_keyword.ace_operator {
-  color: #005A5A;
+  color: #007F7F;
+}
+
+/* R operators: <-, ->, =, |>, %>%, %in%, etc. (Ace R mode scopes these as keyword.operator) */
+.ace_keyword.ace_operator.ace_infix,
+.ace_keyword.ace_operator.ace_assignment,
+.ace_keyword.ace_operator.ace_pipe {
+  color: #007F7F;
+  font-weight: bold;
 }
 
 .ace_meta.ace_tag {
-  color: #005A5A;
+  color: #007F7F;
 }
 
 .ace_storage {
-  color: #005A5A;
+  color: #007F7F;
+  font-weight: bold;
+}
+
+/* R library()/require() calls and namespace operators (::, :::) */
+.ace_support.ace_library,
+.ace_storage.ace_type.ace_r {
+  color: #007F7F;
+  font-weight: bold;
 }
 
 .ace_string {
-  color: #008F33;
+  color: #009933;
 }
 
 .ace_support.ace_function {
@@ -98,12 +128,12 @@
 }
 
 .ace_support.ace_class {
-  color: #007373;
+  color: #008C8C;
   font-weight: bold;
 }
 
 .ace_support.ace_type {
-  color: #007373;
+  color: #008C8C;
   font-weight: bold;
 }
 
@@ -116,24 +146,24 @@
 }
 
 .ace_entity.ace_name.ace_function {
-  color: #005A9E;
+  color: #0077CC;
 }
 
 .ace_entity.ace_name.ace_tag {
-  color: #005A5A;
+  color: #007F7F;
 }
 
 .ace_entity.ace_other.ace_attribute-name {
-  color: #008C8C;
+  color: #009999;
 }
 
 .ace_markup.ace_heading {
-  color: #005A5A;
+  color: #007F7F;
   font-weight: bold;
 }
 
 .ace_markup.ace_list {
-  color: #005A5A;
+  color: #007F7F;
 }
 
 .ace_indent-guide {
@@ -149,7 +179,7 @@
 }
 
 .ace_heading {
-  color: #005A5A;
+  color: #007F7F;
   font-weight: bold;
 }
 
